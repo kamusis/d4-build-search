@@ -5,6 +5,7 @@ import logging
 import os
 import time
 import argparse
+import re
 from typing import Dict, List, Any, Optional
 
 # Path to ChromeDriver for Apple Silicon (mac-arm64)
@@ -405,104 +406,163 @@ class Scraper:
         logger.info(f"Using Selenium to fetch equipment from {build_url}")
         
         try:
-            # Initialize the driver if not already done
-            if not self.driver:
-                self.driver = self._init_selenium_driver()
-                if not self.driver:
-                    raise Exception("Failed to initialize Selenium WebDriver")
-            
+            # Initialize WebDriver
+            driver = self._init_selenium_driver()
+            if not driver:
+                return []
+                
             # Navigate to the build page
-            self.driver.get(build_url)
+            driver.get(build_url)
             
             # Wait for the page to load
-            wait = WebDriverWait(self.driver, 10)
-            wait.until(EC.presence_of_element_located((By.TAG_NAME, "body")))
+            try:
+                WebDriverWait(driver, 10).until(
+                    EC.presence_of_element_located((By.TAG_NAME, "h1"))
+                )
+            except TimeoutException:
+                logger.error(f"Timeout waiting for page to load: {build_url}")
+                driver.quit()
+                return []
             
-            # Get the page source after JavaScript has loaded the content
-            page_source = self.driver.page_source
-            soup = BeautifulSoup(page_source, 'html.parser')
+            # Get the page source and parse with BeautifulSoup
+            soup = BeautifulSoup(driver.page_source, 'html.parser')
             
             # Initialize equipment list
             equipment = []
             
-            # 1. Look for structured equipment sections
-            equipment_sections = soup.select(".equipment-item, .d4-item, .d4-gear-item, .item-card, .gear")
-            for item in equipment_sections:
-                item_name_elem = item.select_one(".item-name, .gear-name, h3, strong, .name")
-                item_name = item_name_elem.text.strip() if item_name_elem else "Unknown Item"
-                
-                item_type_elem = item.select_one(".item-type, .gear-type, .item-slot, .slot")
-                item_type = item_type_elem.text.strip() if item_type_elem else "Unknown Type"
-                
-                # Check if it's a unique/legendary item
-                is_unique = False
-                if item.get('class'):
-                    is_unique = any(unique_term in item.get('class').lower() for unique_term in ['unique', 'legendary', 'mythic'])
-                elif item_name_elem and item_name_elem.get('class'):
-                    is_unique = any(unique_term in item_name_elem.get('class').lower() for unique_term in ['unique', 'legendary', 'mythic'])
-                
-                # Also check if name matches any known unique
-                if not is_unique:
-                    is_unique = any(unique_name.lower() in item_name.lower() for unique_name in known_uniques)
-                
-                equipment.append({
-                    "name": item_name,
-                    "type": item_type,
-                    "is_unique": is_unique
-                })
+            # Try a more direct approach to find the unique items in the Great Uniques section
+            # This is based on the HTML structure seen in the screenshot
+            great_uniques_text = "Great Uniques for this build"
             
-            # 2. Extract text content for analysis
-            # Get all text from the page
-            all_text = soup.get_text(" ")
+            # Look for the exact text in any element
+            great_uniques_elements = [elem for elem in soup.find_all() if elem.string and great_uniques_text in elem.string]
             
-            # 3. Find mentions of known unique items in the text
-            for unique_item in known_uniques:
-                if unique_item in all_text:
-                    # Check if we already found this item
-                    if not any(item['name'] == unique_item for item in equipment):
-                        equipment.append({
-                            "name": unique_item,
-                            "type": "Unique/Legendary",
-                            "is_unique": True
-                        })
-            
-            # 4. Extract text from likely content areas
-            content_sections = soup.select(".content, .guide-content, article, .build-guide, main")
-            paragraphs = []
-            
-            # If we found content sections, use those
-            if content_sections:
-                for section in content_sections:
-                    paragraphs.extend(section.find_all(['p', 'li', 'div', 'h3', 'h4', 'span']))
-            # Otherwise, get all paragraphs and list items
-            else:
-                paragraphs = soup.find_all(['p', 'li', 'div', 'h3', 'h4', 'span'])
-            
-            # 5. Advanced pattern matching for item detection
-            text_blocks = [p.get_text() for p in paragraphs]
-            for block in text_blocks:
-                # Look for item-like patterns
-                # Pattern 1: Capitalized phrases that might be item names followed by verbs
-                potential_matches = re.findall(r'([A-Z][a-z]+(?:\s+[A-Z][a-z]+){0,4})\s+(?:provides|gives|offers|helps|grants|is)', block)
+            if great_uniques_elements:
+                logger.info(f"Found {len(great_uniques_elements)} Great Uniques sections using direct search")
                 
-                # Pattern 2: Item references like "X is best in slot" or "X is optional"
-                bos_matches = re.findall(r'([A-Z][a-z]+(?:\s+[A-Z][a-z]+){0,4})\s+(?:is best in slot|is mandatory|is optional)', block)
-                potential_matches.extend(bos_matches)
+                for section in great_uniques_elements:
+                    logger.info(f"Processing Great Uniques section: {section.text.strip()}")
+                    
+                    # Try to find the ordered list that follows this section
+                    # First, look at parent elements to find the container
+                    parent = section.parent
+                    while parent and parent.name not in ['article', 'section', 'div', 'body', 'html']:
+                        parent = parent.parent
+                    
+                    if parent:
+                        # Look for all ordered lists in this container
+                        ordered_lists = parent.find_all('ol')
+                        for ol in ordered_lists:
+                            # Check if this list is after our section
+                            if ol.sourceline > section.sourceline:
+                                logger.info(f"Found ordered list with {len(ol.find_all('li'))} items")
+                                for item in ol.find_all('li'):
+                                    # Extract the item text and clean it up
+                                    item_text = item.text.strip()
+                                    logger.info(f"Processing list item: {item_text}")
+                                    
+                                    # For these specific items, we know they're unique items
+                                    # So we can directly create equipment entries
+                                    # The item text might not have the number prefix if it's extracted directly from the HTML
+                                    # So we'll handle both cases
+                                    match = re.match(r'(?:\d+\.\s+)?(.+)', item_text)
+                                    if match:
+                                        item_name = match.group(1).strip()
+                                        # Remove any invisible characters that might be present
+                                        item_name = re.sub(r'[\u200B-\u200F\uFEFF]', '', item_name)
+                                        # Determine item type based on name
+                                        item_type = "Unique"
+                                        if "rod" in item_name.lower():
+                                            item_type = "Weapon"
+                                        elif "harmony" in item_name.lower():
+                                            item_type = "Weapon"
+                                        elif "ring" in item_name.lower() or "signet" in item_name.lower():
+                                            item_type = "Jewelry"
+                                        elif "mantle" in item_name.lower() or "embrace" in item_name.lower():
+                                            item_type = "Armor"
+                                            
+                                        # Check if this item is already in the equipment list to avoid duplicates
+                                        if not any(e["name"] == item_name for e in equipment):
+                                            equipment_item = {
+                                                "name": item_name,
+                                                "type": item_type,
+                                                "is_unique": True,
+                                                "category": "Great Uniques",
+                                                "description": item_text
+                                            }
+                                            equipment.append(equipment_item)
+                                break  # Only process the first ordered list after our section
+            
+            # If we didn't find any equipment using the direct approach, try the more general approach
+            if not equipment:
+                logger.info("Trying alternative approach to find Great Uniques")
+                great_uniques_sections = soup.find_all(['h3', 'h4', 'strong'], string=lambda text: text and 'great uniques' in text.lower())
                 
-                # Pattern 3: "Pick up X for..."
-                pickup_matches = re.findall(r'(?:Pick up|Use|Equip)\s+([A-Z][a-z]+(?:\s+[A-Z][a-z]+){0,4})\s+for', block)
-                potential_matches.extend(pickup_matches)
+                # If we found Great Uniques sections, prioritize those
+                if great_uniques_sections:
+                    logger.info(f"Found {len(great_uniques_sections)} Great Uniques sections")
+                    
+                    for section in great_uniques_sections:
+                        section_title = section.text.strip()
+                        logger.info(f"Processing Great Uniques section: {section_title}")
+                        
+                        # Process the Great Uniques section
+                        current = getattr(section, 'next_sibling', None)
+                        
+                        # Find the next list element
+                        while current and current.name not in ['ul', 'ol', 'h1', 'h2', 'h3']:
+                            current = getattr(current, 'next_sibling', None)
+                        
+                        # Process the list if found
+                        if current and current.name in ['ul', 'ol']:
+                            logger.info(f"Found list in Great Uniques section with {len(current.find_all('li'))} items")
+                            for item in current.find_all('li'):
+                                self._process_equipment_item(item.text.strip(), "Great Uniques", known_uniques, equipment)
+            
+            # Next, look for Legendaries & Uniques sections
+            legendaries_uniques_sections = soup.find_all(['h2', 'h3'], string=lambda text: text and ('legendaries' in text.lower() or 'uniques' in text.lower()))
+            
+            # If we found Legendaries & Uniques sections, process those
+            if legendaries_uniques_sections:
+                logger.info(f"Found {len(legendaries_uniques_sections)} Legendaries & Uniques sections")
                 
-                for match in potential_matches:
-                    # Filter out common non-item terms
-                    if (len(match) > 3 and 
-                        not match in ['This', 'The', 'These', 'Those', 'That', 'Each', 'Every', 'Some', 'Your', 'Their'] and
-                        not any(item['name'] == match for item in equipment)):
-                        equipment.append({
-                            "name": match,
-                            "type": "Unique/Legendary (Detected)",
-                            "is_unique": True
-                        })
+                for section in legendaries_uniques_sections:
+                    section_title = section.text.strip()
+                    logger.info(f"Processing priority section: {section_title}")
+                    
+                    # Process the main Legendaries & Uniques section
+                    current = getattr(section, 'next_sibling', None)
+                    while current and current.name not in ['h1', 'h2']:
+                        if current.name in ['ul', 'ol']:
+                            for item in current.find_all('li'):
+                                self._process_equipment_item(item.text.strip(), section_title, known_uniques, equipment)
+                        elif current.name == 'p' and (current.find('strong') or any(unique.lower() in current.text.lower() for unique in known_uniques)):
+                            self._process_equipment_item(current.text.strip(), section_title, known_uniques, equipment)
+                        current = getattr(current, 'next_sibling', None)
+            
+            # If we didn't find any equipment yet, look for other equipment sections
+            if not equipment:
+                logger.info("No equipment found in priority sections, looking for other equipment sections")
+                equipment_sections = soup.find_all(['h2', 'h3'], string=lambda text: text and any(keyword in text.lower() for keyword in ['gear', 'equipment', 'items', 'jackpot']))
+                
+                for section in equipment_sections:
+                    section_title = section.text.strip()
+                    logger.info(f"Found equipment section: {section_title}")
+                    
+                    # Get the content following this section header
+                    current = getattr(section, 'next_sibling', None)
+                    
+                    # Collect elements until we hit another header or run out of siblings
+                    while current and current.name not in ['h1', 'h2', 'h3']:
+                        if current.name in ['ul', 'ol']:
+                            for item in current.find_all('li'):
+                                self._process_equipment_item(item.text.strip(), section_title, known_uniques, equipment)
+                        elif current.name == 'p' and (current.find('strong') or any(unique.lower() in current.text.lower() for unique in known_uniques)):
+                            self._process_equipment_item(current.text.strip(), section_title, known_uniques, equipment)
+                        current = getattr(current, 'next_sibling', None)
+            
+            # Clean up
+            driver.quit()
             
             logger.info(f"Found {len(equipment)} equipment items using Selenium")
             return equipment
@@ -510,12 +570,107 @@ class Scraper:
         except Exception as e:
             logger.error(f"Error fetching build equipment with Selenium: {e}")
             return []
+            
+    def _process_equipment_item(self, item_text: str, section_title: str, known_uniques: List[str], equipment: List[Dict[str, str]]) -> None:
+        """
+        Process a potential equipment item text and add it to the equipment list if valid.
+        
+        Args:
+            item_text: The text containing potential equipment information
+            section_title: The title of the section this item was found in
+            known_uniques: List of known unique items to check against
+            equipment: The equipment list to add to
+        """
+        # Check if this contains a known unique item
+        item_name = "Unknown"
+        item_type = "Unknown"
+        is_unique = False
+        
+        # First check against our known uniques list
+        for unique in known_uniques:
+            if unique.lower() in item_text.lower():
+                item_name = unique
+                item_type = "Unique/Legendary"
+                is_unique = True
+                break
+        
+        # If we didn't find a known unique, try to extract the item name
+        if item_name == "Unknown":
+            # Check for numbered list format like "1. Item Name" or "1. Item Name (description)"
+            # This pattern is common in the "Great Uniques for this build" section
+            numbered_match = re.match(r'\d+\.\s+([A-Z][^\(\)\[\]\{\}\d\n]*?)(?:\s+\(|$|\s+\-)', item_text)
+            if numbered_match:
+                item_name = numbered_match.group(1).strip()
+            else:
+                # Look for specific item name patterns
+                # Pattern 1: Full item name with prepositions (e.g., "Rod of Kepeleke", "Ring of the Midnight Sun")
+                full_item_match = re.search(r'([A-Z][a-z]+(?:\'s|\s+of|\s+the|\s+[A-Z][a-z]+){1,4})', item_text)
+                if full_item_match:
+                    item_name = full_item_match.group(1).strip()
+                else:
+                    # Pattern 2: Simple capitalized item name (e.g., "Harmony of Ebewaka")
+                    capitalized_match = re.search(r'([A-Z][a-z]+(?:\s+[A-Z][a-z]+){1,4})', item_text)
+                    if capitalized_match:
+                        item_name = capitalized_match.group(1).strip()
+            
+            # Clean up item name - remove trailing punctuation
+            if item_name != "Unknown":
+                item_name = re.sub(r'[\.,:;\s]+$', '', item_name)
+            
+            # Try to determine item type based on context
+            if "aspect" in item_text.lower() or "aspect's" in item_text.lower():
+                item_type = "Legendary Aspect"
+            elif "unique" in section_title.lower() or "uniques" in section_title.lower() or "great uniques" in section_title.lower():
+                item_type = "Unique"
+                is_unique = True
+            elif any(weapon_type in item_text.lower() for weapon_type in ["sword", "axe", "mace", "staff", "wand", "bow", "crossbow", "dagger", "rod"]):
+                item_type = "Weapon"
+            elif any(armor_type in item_text.lower() for armor_type in ["helm", "chest", "gloves", "boots", "pants", "shoulders", "mantle"]):
+                item_type = "Armor"
+            elif any(jewelry_type in item_text.lower() for jewelry_type in ["ring", "amulet", "necklace", "signet", "embrace"]):
+                item_type = "Jewelry"
+        
+        # Determine category based on section title
+        category = "Unknown"
+        if "must-have" in section_title.lower():
+            category = "Must Have"
+        elif "nice-to-have" in section_title.lower():
+            category = "Nice to Have"
+        elif "great uniques" in section_title.lower():
+            category = "Great Uniques"
+        elif "jackpot" in section_title.lower():
+            category = "Jackpot"
+        elif "build-defining" in section_title.lower():
+            category = "Build Defining"
+        elif "legendaries & uniques" in section_title.lower():
+            category = "Legendaries & Uniques"
+        else:
+            category = section_title
+        
+        # Filter out common non-item terms that might be mistakenly extracted
+        common_terms = ["This", "The", "These", "Those", "That", "Each", "Every", "Some", "Your", "Their", 
+                      "Build", "Best", "Alternative", "Endgame", "Leveling", "Rock Splitter Thorns", "Thrash"]
+        if item_name in common_terms:
+            return
+        
+        # Filter out items that are too short or likely not actual items
+        if item_name != "Unknown" and len(item_name) > 3 and not item_name.startswith("In the") and not item_name.startswith("With the") and not item_name.startswith("Pit"):
+            # Check if this item is already in the equipment list to avoid duplicates
+            if not any(e["name"] == item_name for e in equipment):
+                equipment_item = {
+                    "name": item_name,
+                    "type": item_type,
+                    "is_unique": is_unique,
+                    "category": category,
+                    "description": item_text
+                }
+                equipment.append(equipment_item)
 
     def scrape_all_builds(self) -> List[Dict[str, Any]]:
         """
         Scrape all builds and their equipment.
         
-        Returns:
+{{ ... }}
             A list of dictionaries containing build and equipment information.
         """
         # Check if we have cached data
@@ -549,17 +704,70 @@ class Scraper:
         
         return builds
 
-    def search_builds_by_equipment(self, equipment_name: str) -> List[Dict[str, Any]]:
+    def get_equipment_for_builds(self, builds: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
         """
-        Search for builds that use a specific piece of equipment.
+        Get equipment data for a list of builds.
         
         Args:
-            equipment_name: The name of the equipment to search for.
+            builds: A list of build dictionaries.
             
         Returns:
-            A list of builds that use the specified equipment.
+            The same list of builds with equipment data added.
         """
-        builds = self.scrape_all_builds()
+        total_builds = len(builds)
+        logger.info(f"Getting equipment for {total_builds} builds")
+        
+        for i, build in enumerate(builds):
+            build_url = build['url']
+            logger.info(f"Processing build {i+1}/{total_builds}: {build['title']}")
+            
+            try:
+                # Get equipment for this build
+                equipment = self.get_build_equipment(build_url)
+                build['equipment'] = equipment
+                logger.info(f"Found {len(equipment)} equipment items for build: {build['title']}")
+                
+                # Sleep briefly to avoid overloading the server
+                time.sleep(1)
+            except Exception as e:
+                logger.error(f"Error getting equipment for build {build['title']}: {e}")
+                build['equipment'] = []
+        
+        return builds
+    
+    def _load_builds(self) -> List[Dict[str, Any]]:
+        """Load builds from the JSON file.
+        
+        Returns:
+            A list of builds.
+        """
+        try:
+            with open("all_builds.json", 'r') as f:
+                builds = json.load(f)
+            logger.info(f"Loaded {len(builds)} builds from all_builds.json")
+            return builds
+        except (FileNotFoundError, json.JSONDecodeError):
+            logger.info("No existing builds file found, fetching builds first")
+            builds = self.get_build_list()
+            return builds
+    
+    def search_builds_by_equipment(self, equipment_name: str) -> List[Dict[str, Any]]:
+        """Search for builds that use a specific equipment item.
+        
+        Args:
+            equipment_name: The name of the equipment item to search for.
+            
+        Returns:
+            A list of builds that use the specified equipment item.
+        """
+        builds = self._load_builds()
+        if not any('equipment' in build and build['equipment'] for build in builds):
+            logger.info("Builds don't have equipment data, fetching equipment first")
+            builds = self.get_equipment_for_builds(builds)
+            # Save the updated builds data
+            with open("all_builds.json", 'w') as f:
+                json.dump(builds, f, indent=2)
+        
         equipment_name = equipment_name.lower()
         
         matching_builds = []
@@ -571,9 +779,13 @@ class Scraper:
                         "url": build['url'],
                         "class": build['class'],
                         "difficulty": build.get('difficulty', 'Unknown'),
-                        "matched_item": item['name']
+                        "matched_item": item['name'],
+                        "item_type": item.get('type', 'Unknown'),
+                        "is_unique": item.get('is_unique', False),
+                        "category": item.get('category', 'Unknown'),
+                        "description": item.get('description', '')
                     })
-                    break
+                    break  # Only add each build once
         
         logger.info(f"Found {len(matching_builds)} builds matching '{equipment_name}'")
         return matching_builds
@@ -600,23 +812,73 @@ def save_all_builds(output_file: str = "all_builds.json") -> list[dict]:
         raise
 
 if __name__ == "__main__":
-    # Set up argument parser
-    parser = argparse.ArgumentParser(description="Diablo 4 Build Scraper")
-    parser.add_argument("--get-all-builds", action="store_true", help="Extract all builds and save to JSON")
-    parser.add_argument("--output", default="all_builds.json", help="Output file for builds data")
-    parser.add_argument("--search", help="Search for builds using a specific piece of equipment")
-    
-    args = parser.parse_args()
-    
-    if args.get_all_builds:
-        builds = save_all_builds(args.output)
-        print(f"Extracted {len(builds)} builds and saved to {args.output}")
-    
-    elif args.search:
+    def main():
+        parser = argparse.ArgumentParser(description="Diablo 4 Build Scraper")
+        parser.add_argument("--get-all-builds", action="store_true", help="Get all builds from MaxRoll")
+        parser.add_argument("--output", type=str, default="all_builds.json", help="Output file for builds data")
+        parser.add_argument("--search", type=str, help="Search for builds that use a specific piece of equipment")
+        parser.add_argument("--get-equipment", action="store_true", help="Get equipment for all builds")
+        parser.add_argument("--build-url", type=str, help="URL of a specific build to get equipment for")
+        
+        args = parser.parse_args()
+        
         scraper = Scraper()
-        results = scraper.search_builds_by_equipment(args.search)
-        print(json.dumps(results, indent=2))
-    
-    else:
-        # No arguments provided, show usage
-        parser.print_help()
+        
+        if args.get_all_builds:
+            builds = scraper.get_build_list()
+            with open(args.output, 'w') as f:
+                json.dump(builds, f, indent=2)
+            print(f"Extracted {len(builds)} builds and saved to {args.output}")
+        elif args.get_equipment:
+            # Load existing builds or get new ones
+            try:
+                with open(args.output, 'r') as f:
+                    builds = json.load(f)
+            except (FileNotFoundError, json.JSONDecodeError):
+                logger.info(f"No existing builds file found at {args.output}, fetching builds first")
+                builds = scraper.get_build_list()
+        
+            # Get equipment for each build
+            builds_with_equipment = scraper.get_equipment_for_builds(builds)
+            with open(args.output, 'w') as f:
+                json.dump(builds_with_equipment, f, indent=2)
+            print(f"Updated {len(builds_with_equipment)} builds with equipment data and saved to {args.output}")
+        elif args.build_url:
+            # Get equipment for a specific build URL
+            equipment = scraper.get_build_equipment(args.build_url)
+            print(f"Found {len(equipment)} equipment items for {args.build_url}:")
+            for item in equipment:
+                print(f"- {item['name']} ({item['type']}) - {item['category']}")
+        elif args.search:
+            matching_builds = scraper.search_builds_by_equipment(args.search)
+            print(f"Found {len(matching_builds)} builds that use '{args.search}':")
+            print("\nSearch Results:")
+            print("-" * 80)
+            
+            # Group builds by class for better organization
+            builds_by_class = {}
+            for build in matching_builds:
+                class_name = build['class']
+                if class_name not in builds_by_class:
+                    builds_by_class[class_name] = []
+                builds_by_class[class_name].append(build)
+            
+            # Print builds grouped by class
+            for class_name, builds in sorted(builds_by_class.items()):
+                print(f"\n{class_name} Builds ({len(builds)}):")
+                print("-" * 40)
+                
+                for build in builds:
+                    print(f"Title: {build['title']}")
+                    print(f"URL: {build['url']}")
+                    print(f"Difficulty: {build['difficulty']}")
+                    print(f"Item: {build['matched_item']} ({build['item_type']})")
+                    if build['category'] != 'Unknown':
+                        print(f"Category: {build['category']}")
+                    if build['description']:
+                        print(f"Description: {build['description']}")
+                    print("-" * 40)
+        else:
+            parser.print_help()
+            
+    main()

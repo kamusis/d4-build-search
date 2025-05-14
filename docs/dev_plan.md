@@ -17,7 +17,34 @@ To approach this project:
 
 To gather all build titles, permalinks, and relevant metadata, the scraper uses Selenium to automate a headless browser session. It navigates to the Maxroll build guides page, scrolls to the bottom to trigger dynamic loading of all builds, and then parses the fully loaded HTML. The extracted build metadata is saved locally in a JSON file for efficient searching and further processing.
 
-### Step 2: Understand the HTML structure of a specific build
+### Step 2: Extract equipment data from build pages
 
-From examining the HTML structure of the maxroll.gg/d4/build-guides/penetrating-shot-rogue-guide page, I can see:
+To extract equipment data from individual build pages, we implemented a multi-step approach:
 
+1. **Identify Equipment Sections**: The scraper looks for specific sections in the build page that contain equipment information, prioritizing sections titled "Legendaries & Uniques", "Great Uniques", and "Jackpot Drops".
+
+2. **Extract Equipment Items**: For each identified section, the scraper extracts item names, types (Weapon, Armor, Jewelry, etc.), and categorizes them as unique or legendary based on context.
+
+3. **Handle Special Cases**: Special handling was implemented for:
+   - Ordered and unordered lists in "Great Uniques" sections
+   - Invisible characters in item names
+   - Duplicate items appearing in multiple sections
+
+4. **Store Equipment Data**: Each extracted item is stored with its name, type, category, whether it's unique, and any available description.
+
+5. **Update Build Database**: All builds in the JSON database are updated with their associated equipment, enabling efficient searching by equipment name.
+
+### Step 3: Implement equipment-based build search
+
+With the equipment data extracted and stored, we implemented a search function that allows users to find builds based on equipment names:
+
+1. **Case-Insensitive Search**: The search function performs case-insensitive matching against all equipment names.
+
+2. **Detailed Results**: Search results include comprehensive information about each matching build, including:
+   - Build title, URL, and class
+   - Difficulty rating
+   - Matched item details (name, type, category, description)
+
+3. **Organized Output**: Results are grouped by character class for better readability.
+
+This implementation successfully meets the project requirements, allowing users to quickly find builds that utilize specific unique or legendary items they've found in the game.
