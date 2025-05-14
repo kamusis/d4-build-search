@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Refreshing Data - Diablo 4 Build Search Tool</title>
+    <style>
+        :root {
+            --primary-color: #8b0000;
+            --secondary-color: #333;
+            --text-color: #eee;
+            --bg-color: #121212;
+            --card-bg: #1e1e1e;
+            --accent-color: #ff4040;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-bottom: 30px;
+            border-bottom: 4px solid #470000;
+        }
+        
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        /* Navigation styles */
+        .main-nav {
+            background-color: #1a1a1a;
+            border-bottom: 1px solid #333;
+            margin-bottom: 30px;
+        }
+        
+        .nav-list {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .nav-item {
+            display: block;
+            padding: 15px 20px;
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: bold;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-item:hover {
+            background-color: #252525;
+            color: var(--accent-color);
+        }
+        
+        .nav-item.active {
+            border-bottom-color: var(--primary-color);
+            color: var(--accent-color);
+        }
+        
+        .refresh-container {
+            background-color: var(--card-bg);
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .refresh-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .refresh-title {
+            font-size: 1.8em;
+            color: var(--accent-color);
+            margin: 0;
+        }
+        
+        .progress-container {
+            width: 100%;
+            background-color: #333;
+            height: 30px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+        
+        .progress-bar {
+            height: 100%;
+            background-color: var(--primary-color);
+            width: 0%;
+            transition: width 0.5s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .log-container {
+            background-color: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 4px;
+            padding: 15px;
+            height: 400px;
+            overflow-y: auto;
+            font-family: monospace;
+            margin-bottom: 20px;
+        }
+        
+        .log-entry {
+            margin-bottom: 5px;
+            line-height: 1.4;
+            white-space: pre-wrap;
+            word-break: break-all;
+        }
+        
+        .log-info {
+            color: #4a90e2;
+        }
+        
+        .log-warning {
+            color: #ffcc00;
+        }
+        
+        .log-error {
+            color: #ff4040;
+        }
+        
+        .status-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .status-text {
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+        
+        .status-running {
+            color: #4a90e2;
+        }
+        
+        .status-completed {
+            color: #00cc44;
+        }
+        
+        .status-error {
+            color: #ff4040;
+        }
+        
+        .back-button {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        
+        .back-button:hover {
+            background-color: var(--accent-color);
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Diablo 4 Build Search Tool</h1>
+        <p>Refreshing build and equipment data</p>
+    </header>
+    
+    <nav class="main-nav">
+        <div class="container">
+            <ul class="nav-list">
+                <li><a href="/" class="nav-item">Search</a></li>
+                <li><a href="/tier-list" class="nav-item">Equipment Tier List</a></li>
+                <li><a href="#" class="nav-item active">Refresh Data</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <div class="refresh-container">
+            <div class="refresh-header">
+                <h2 class="refresh-title">Refreshing Data</h2>
+            </div>
+            
+            <div class="status-container">
+                <div class="status-text status-running" id="status-text">Status: Running...</div>
+                <div id="build-count">Builds: 0/0</div>
+            </div>
+            
+            <div class="progress-container">
+                <div class="progress-bar" id="progress-bar">0%</div>
+            </div>
+            
+            <div class="log-container" id="log-container">
+                <div class="log-entry log-info">Starting data refresh process...</div>
+            </div>
+            
+            <div id="completion-message" style="display: none;">
+                <p>Data refresh completed successfully! You can now:</p>
+                <div style="display: flex; gap: 15px; margin-top: 15px;">
+                    <a href="/" class="back-button">Return to Search</a>
+                    <a href="/tier-list" class="back-button">View Equipment Tier List</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>Data sourced from <a href="https://maxroll.gg/d4/build-guides" target="_blank">MaxRoll.gg</a></p>
+            <p>This tool is not affiliated with MaxRoll or Blizzard Entertainment.</p>
+        </div>
+    </div>
+    
+    <script>
+        // WebSocket connection for real-time updates
+        const logContainer = document.getElementById('log-container');
+        const progressBar = document.getElementById('progress-bar');
+        const statusText = document.getElementById('status-text');
+        const buildCount = document.getElementById('build-count');
+        const completionMessage = document.getElementById('completion-message');
+        
+        // Function to add a log entry
+        function addLogEntry(message, type = 'info') {
+            const entry = document.createElement('div');
+            entry.className = `log-entry log-${type}`;
+            entry.textContent = message;
+            logContainer.appendChild(entry);
+            logContainer.scrollTop = logContainer.scrollHeight;
+        }
+        
+        // Function to update progress
+        function updateProgress(current, total) {
+            const percentage = Math.round((current / total) * 100);
+            progressBar.style.width = `${percentage}%`;
+            progressBar.textContent = `${percentage}%`;
+            buildCount.textContent = `Builds: ${current}/${total}`;
+        }
+        
+        // Function to mark as completed
+        function markCompleted(buildCount) {
+            statusText.textContent = 'Status: Completed';
+            statusText.className = 'status-text status-completed';
+            progressBar.style.width = '100%';
+            progressBar.textContent = '100%';
+            completionMessage.style.display = 'block';
+            addLogEntry(`Data refresh completed successfully! Found ${buildCount} builds.`, 'info');
+        }
+        
+        // Function to mark as error
+        function markError(error) {
+            statusText.textContent = 'Status: Error';
+            statusText.className = 'status-text status-error';
+            addLogEntry(`Error: ${error}`, 'error');
+        }
+        
+        // Start the data refresh process
+        fetch('/api/refresh-data')
+            .then(response => {
+                const eventSource = new EventSource('/api/refresh-events');
+                
+                eventSource.onmessage = function(event) {
+                    const data = JSON.parse(event.data);
+                    
+                    if (data.type === 'log') {
+                        addLogEntry(data.message, data.log_level || 'info');
+                    } else if (data.type === 'progress') {
+                        updateProgress(data.current, data.total);
+                    } else if (data.type === 'completed') {
+                        markCompleted(data.build_count);
+                        eventSource.close();
+                    } else if (data.type === 'error') {
+                        markError(data.message);
+                        eventSource.close();
+                    }
+                };
+                
+                eventSource.onerror = function() {
+                    addLogEntry('Connection to server lost. The refresh process may still be running in the background.', 'warning');
+                    eventSource.close();
+                };
+            })
+            .catch(error => {
+                markError('Failed to start refresh process: ' + error.message);
+            });
+    </script>
+</body>
+</html>

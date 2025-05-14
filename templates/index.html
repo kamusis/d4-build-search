@@ -177,6 +177,124 @@
             margin-bottom: 15px;
             font-weight: bold;
             color: var(--accent-color);
+            font-size: 1.2em;
+        }
+        
+        .class-section {
+            margin-bottom: 30px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 20px;
+        }
+        
+        .class-title {
+            color: var(--accent-color);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 8px;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+        }
+        
+        .equipment-details {
+            background-color: #1a1a1a;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 4px;
+            border-left: 3px solid #555;
+        }
+        
+        .equipment-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #aaa;
+        }
+        
+        .equipment-info {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 8px;
+        }
+        
+        .item-name {
+            font-weight: bold;
+            color: #ffd700;
+        }
+        
+        .item-type {
+            font-size: 0.8em;
+        }
+        
+        .item-category {
+            color: #aaa;
+            font-size: 0.9em;
+        }
+        
+        .equipment-description {
+            font-style: italic;
+            color: #bbb;
+            font-size: 0.9em;
+            margin-top: 5px;
+            line-height: 1.4;
+        }
+        
+        .unique-badge {
+            background-color: #8b4513;
+        }
+        
+        .result-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 10px;
+        }
+        
+        .result-link {
+            display: inline-block;
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .result-link:hover {
+            text-decoration: underline;
+        }
+        
+        .external-link {
+            color: #4a90e2;
+        }
+        
+        /* Navigation styles */
+        .main-nav {
+            background-color: #1a1a1a;
+            border-bottom: 1px solid #333;
+            margin-bottom: 30px;
+        }
+        
+        .nav-list {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .nav-item {
+            display: block;
+            padding: 15px 20px;
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: bold;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-item:hover {
+            background-color: #252525;
+            color: var(--accent-color);
+        }
+        
+        .nav-item.active {
+            border-bottom-color: var(--primary-color);
+            color: var(--accent-color);
         }
     </style>
 </head>
@@ -185,6 +303,16 @@
         <h1>Diablo 4 Build Search Tool</h1>
         <p>Find builds that use your favorite unique and mythic items</p>
     </header>
+    
+    <nav class="main-nav">
+        <div class="container">
+            <ul class="nav-list">
+                <li><a href="/" class="nav-item active">Search</a></li>
+                <li><a href="/tier-list" class="nav-item">Equipment Tier List</a></li>
+                <li><a href="#" class="nav-item" id="refresh-data-link">Refresh Data</a></li>
+            </ul>
+        </div>
+    </nav>
     
     <div class="container">
         <div class="search-form">
@@ -207,15 +335,48 @@
                     Found {{ results|length }} builds using "{{ equipment_name }}"
                 </div>
                 
+                <!-- Group results by class -->
+                {% set classes = {} %}
                 {% for result in results %}
-                <div class="result-item">
-                    <div class="result-title">{{ result.title }}</div>
-                    <div class="result-info">
-                        <span class="badge">{{ result.class }}</span>
-                        <span class="badge">{{ result.difficulty }}</span>
-                        <span class="badge">{{ result.matched_item }}</span>
+                    {% if result.class not in classes %}
+                        {% set _ = classes.update({result.class: []}) %}
+                    {% endif %}
+                    {% set _ = classes[result.class].append(result) %}
+                {% endfor %}
+                
+                <!-- Display results by class -->
+                {% for class_name, class_results in classes.items() %}
+                <div class="class-section">
+                    <h2 class="class-title">{{ class_name }} Builds ({{ class_results|length }})</h2>
+                    
+                    {% for result in class_results %}
+                    <div class="result-item">
+                        <div class="result-title">{{ result.title }}</div>
+                        <div class="result-info">
+                            <span class="badge">{{ result.class }}</span>
+                            <span class="badge">{{ result.difficulty }}</span>
+                        </div>
+                        
+                        <div class="equipment-details">
+                            <div class="equipment-title">Matched Item:</div>
+                            <div class="equipment-info">
+                                <span class="item-name">{{ result.matched_item }}</span>
+                                <span class="item-type badge {% if result.is_unique %}unique-badge{% endif %}">{{ result.item_type }}</span>
+                                {% if result.category != 'Unknown' %}
+                                <span class="item-category">Category: {{ result.category }}</span>
+                                {% endif %}
+                            </div>
+                            {% if result.description %}
+                            <div class="equipment-description">{{ result.description }}</div>
+                            {% endif %}
+                        </div>
+                        
+                        <div class="result-links">
+                            <a href="/build/{{ result.url.split('/')[-1] }}" class="result-link">View Build Details</a>
+                            <a href="{{ result.url }}" target="_blank" class="result-link external-link">View on MaxRoll.gg →</a>
+                        </div>
                     </div>
-                    <a href="{{ result.url }}" target="_blank" class="result-link">View Build on MaxRoll.gg →</a>
+                    {% endfor %}
                 </div>
                 {% endfor %}
             {% else %}
@@ -239,6 +400,15 @@
         document.querySelector('form').addEventListener('submit', function() {
             document.getElementById('search-btn').disabled = true;
             document.getElementById('loader').style.display = 'block';
+        });
+        
+        // Add confirmation dialog for refresh data
+        document.getElementById('refresh-data-link').addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            if (confirm('Warning: Refreshing data will scrape all build pages from MaxRoll.gg and may take 10 minutes or longer to complete. During this time, the server will be busy and may be less responsive.\n\nAre you sure you want to continue?')) {
+                window.location.href = '/refresh-data';
+            }
         });
     </script>
 </body>

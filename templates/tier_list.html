@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diablo 4 Equipment Tier List</title>
+    <style>
+        :root {
+            --primary-color: #8b0000;
+            --secondary-color: #333;
+            --text-color: #eee;
+            --bg-color: #121212;
+            --card-bg: #1e1e1e;
+            --accent-color: #ff4040;
+            
+            /* Tier colors */
+            --tier-s-color: #ff7f00;
+            --tier-a-color: #ffcc00;
+            --tier-b-color: #00cc44;
+            --tier-c-color: #3399ff;
+            --tier-d-color: #9966cc;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-bottom: 30px;
+            border-bottom: 4px solid #470000;
+        }
+        
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .tier-list-container {
+            background-color: var(--card-bg);
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .tier-list-info {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .tier-list-info p {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+        
+        .tier-section {
+            margin-bottom: 30px;
+        }
+        
+        .tier-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #333;
+            padding-bottom: 10px;
+        }
+        
+        .tier-badge {
+            font-size: 2em;
+            font-weight: bold;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin-right: 15px;
+        }
+        
+        .tier-s {
+            background-color: var(--tier-s-color);
+            color: #000;
+        }
+        
+        .tier-a {
+            background-color: var(--tier-a-color);
+            color: #000;
+        }
+        
+        .tier-b {
+            background-color: var(--tier-b-color);
+            color: #000;
+        }
+        
+        .tier-c {
+            background-color: var(--tier-c-color);
+            color: #000;
+        }
+        
+        .tier-d {
+            background-color: var(--tier-d-color);
+            color: #000;
+        }
+        
+        .tier-description {
+            flex: 1;
+        }
+        
+        .tier-title {
+            font-size: 1.5em;
+            margin: 0 0 5px 0;
+        }
+        
+        .tier-criteria {
+            font-size: 0.9em;
+            color: #aaa;
+        }
+        
+        .equipment-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 15px;
+        }
+        
+        .equipment-card {
+            background-color: #252525;
+            border-left: 4px solid var(--primary-color);
+            padding: 15px;
+            border-radius: 4px;
+            position: relative;
+        }
+        
+        .equipment-count {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+        
+        .equipment-name {
+            font-weight: bold;
+            color: #ffd700;
+            margin-bottom: 8px;
+            padding-right: 35px;
+            font-size: 1.1em;
+        }
+        
+        .equipment-info {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 8px;
+        }
+        
+        .badge {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.85em;
+        }
+        
+        .unique-badge {
+            background-color: #8b4513;
+        }
+        
+        .equipment-description {
+            font-style: italic;
+            color: #bbb;
+            font-size: 0.9em;
+            margin: 10px 0;
+            line-height: 1.4;
+        }
+        
+        .builds-used {
+            font-size: 0.9em;
+            margin-top: 10px;
+        }
+        
+        .builds-toggle {
+            color: var(--accent-color);
+            cursor: pointer;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 5px;
+        }
+        
+        .builds-list {
+            display: none;
+            margin-top: 5px;
+            padding-left: 15px;
+        }
+        
+        .builds-list.active {
+            display: block;
+        }
+        
+        .build-link {
+            display: block;
+            color: #4a90e2;
+            text-decoration: none;
+            margin-bottom: 3px;
+            font-size: 0.9em;
+        }
+        
+        .build-link:hover {
+            text-decoration: underline;
+        }
+        
+        .build-class {
+            color: #aaa;
+            font-size: 0.8em;
+        }
+        
+        .nav-links {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        
+        .nav-link {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        
+        .nav-link:hover {
+            background-color: var(--accent-color);
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            color: #777;
+        }
+        
+        .no-items {
+            text-align: center;
+            padding: 20px;
+            font-style: italic;
+            color: #aaa;
+        }
+        
+        /* Navigation styles */
+        .main-nav {
+            background-color: #1a1a1a;
+            border-bottom: 1px solid #333;
+            margin-bottom: 30px;
+        }
+        
+        .nav-list {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .nav-item {
+            display: block;
+            padding: 15px 20px;
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: bold;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-item:hover {
+            background-color: #252525;
+            color: var(--accent-color);
+        }
+        
+        .nav-item.active {
+            border-bottom-color: var(--primary-color);
+            color: var(--accent-color);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Diablo 4 Equipment Tier List</h1>
+        <p>Discover the most popular unique and legendary items used in builds</p>
+    </header>
+    
+    <nav class="main-nav">
+        <div class="container">
+            <ul class="nav-list">
+                <li><a href="/" class="nav-item">Search</a></li>
+                <li><a href="/tier-list" class="nav-item active">Equipment Tier List</a></li>
+                <li><a href="#" class="nav-item" id="refresh-data-link">Refresh Data</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <div class="container">
+        
+        <div class="tier-list-container">
+            <div class="tier-list-info">
+                <p>This tier list ranks {{ total_items }} unique and legendary items based on how frequently they're used across all builds.</p>
+                <p>Items used in more builds are likely to be more versatile and powerful in the current meta.</p>
+            </div>
+            
+            {% for tier_name in ['S', 'A', 'B', 'C', 'D'] %}
+            <div class="tier-section">
+                <div class="tier-header">
+                    <div class="tier-badge tier-{{ tier_name.lower() }}">{{ tier_name }}</div>
+                    <div class="tier-description">
+                        <h2 class="tier-title">Tier {{ tier_name }}</h2>
+                        {% if tier_name == 'S' %}
+                        <div class="tier-criteria">Items used in {{ tier_thresholds[tier_name] }}+ builds - Meta-defining items</div>
+                        {% elif tier_name == 'A' %}
+                        <div class="tier-criteria">Items used in {{ tier_thresholds[tier_name] }}-{{ tier_thresholds['S'] - 1 }} builds - Extremely powerful items</div>
+                        {% elif tier_name == 'B' %}
+                        <div class="tier-criteria">Items used in {{ tier_thresholds[tier_name] }}-{{ tier_thresholds['A'] - 1 }} builds - Strong items</div>
+                        {% elif tier_name == 'C' %}
+                        <div class="tier-criteria">Items used in {{ tier_thresholds[tier_name] }}-{{ tier_thresholds['B'] - 1 }} builds - Useful items</div>
+                        {% else %}
+                        <div class="tier-criteria">Items used in {{ tier_thresholds[tier_name] }}-{{ tier_thresholds['C'] - 1 }} builds - Niche items</div>
+                        {% endif %}
+                    </div>
+                </div>
+                
+                {% if tiers[tier_name]|length > 0 %}
+                <div class="equipment-grid">
+                    {% for item in tiers[tier_name] %}
+                    <div class="equipment-card">
+                        <div class="equipment-count">{{ item.count }}</div>
+                        <div class="equipment-name">{{ item.name }}</div>
+                        <div class="equipment-info">
+                            <span class="badge {% if item.details.is_unique %}unique-badge{% endif %}">{{ item.details.type }}</span>
+                            {% if item.details.category != "Unknown" %}
+                            <span class="badge">{{ item.details.category }}</span>
+                            {% endif %}
+                        </div>
+                        
+                        {% if item.details.description %}
+                        <div class="equipment-description">{{ item.details.description }}</div>
+                        {% endif %}
+                        
+                        <div class="builds-used">
+                            <div class="builds-toggle" onclick="toggleBuilds(this)">Show {{ item.details.builds|length }} builds that use this item ▼</div>
+                            <div class="builds-list">
+                                {% for build in item.details.builds %}
+                                <a href="/build/{{ build.url.split('/')[-1] }}" class="build-link">
+                                    {{ build.title }}
+                                    <span class="build-class">({{ build.class }})</span>
+                                </a>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% else %}
+                <div class="no-items">No items in this tier.</div>
+                {% endif %}
+            </div>
+            {% endfor %}
+        </div>
+        
+        <div class="footer">
+            <p>Data sourced from <a href="https://maxroll.gg/d4/build-guides" target="_blank">MaxRoll.gg</a></p>
+            <p>This tool is not affiliated with MaxRoll or Blizzard Entertainment.</p>
+        </div>
+    </div>
+    
+    <script>
+        function toggleBuilds(element) {
+            const buildsList = element.nextElementSibling;
+            buildsList.classList.toggle('active');
+            
+            if (buildsList.classList.contains('active')) {
+                element.textContent = element.textContent.replace('▼', '▲');
+            } else {
+                element.textContent = element.textContent.replace('▲', '▼');
+            }
+        }
+        
+        // Add confirmation dialog for refresh data
+        document.getElementById('refresh-data-link').addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            if (confirm('Warning: Refreshing data will scrape all build pages from MaxRoll.gg and may take 10 minutes or longer to complete. During this time, the server will be busy and may be less responsive.\n\nAre you sure you want to continue?')) {
+                window.location.href = '/refresh-data';
+            }
+        });
+    </script>
+</body>
+</html>

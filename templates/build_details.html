@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ build.title }} - Diablo 4 Build Details</title>
+    <style>
+        :root {
+            --primary-color: #8b0000;
+            --secondary-color: #333;
+            --text-color: #eee;
+            --bg-color: #121212;
+            --card-bg: #1e1e1e;
+            --accent-color: #ff4040;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-bottom: 30px;
+            border-bottom: 4px solid #470000;
+        }
+        
+        h1 {
+            margin: 0;
+            font-size: 2.2em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .build-details {
+            background-color: var(--card-bg);
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .build-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .build-title {
+            font-size: 1.8em;
+            color: var(--accent-color);
+            margin: 0;
+        }
+        
+        .build-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .badge {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.85em;
+        }
+        
+        .equipment-section {
+            margin-top: 30px;
+        }
+        
+        .section-title {
+            color: var(--accent-color);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 8px;
+            margin-bottom: 15px;
+        }
+        
+        .equipment-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 15px;
+        }
+        
+        .equipment-card {
+            background-color: #252525;
+            border-left: 4px solid var(--primary-color);
+            padding: 15px;
+            border-radius: 4px;
+        }
+        
+        .equipment-name {
+            font-weight: bold;
+            color: #ffd700;
+            margin-bottom: 8px;
+        }
+        
+        .equipment-info {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 8px;
+        }
+        
+        .equipment-description {
+            font-style: italic;
+            color: #bbb;
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+        
+        .unique-badge {
+            background-color: #8b4513;
+        }
+        
+        .back-button {
+            display: inline-block;
+            margin-top: 20px;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        
+        .back-button:hover {
+            background-color: var(--accent-color);
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            color: #777;
+        }
+        
+        .external-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .external-link:hover {
+            text-decoration: underline;
+        }
+        
+        /* Navigation styles */
+        .main-nav {
+            background-color: #1a1a1a;
+            border-bottom: 1px solid #333;
+            margin-bottom: 30px;
+        }
+        
+        .nav-list {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .nav-item {
+            display: block;
+            padding: 15px 20px;
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: bold;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-item:hover {
+            background-color: #252525;
+            color: var(--accent-color);
+        }
+        
+        .nav-item.active {
+            border-bottom-color: var(--primary-color);
+            color: var(--accent-color);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Diablo 4 Build Details</h1>
+    </header>
+    
+    <nav class="main-nav">
+        <div class="container">
+            <ul class="nav-list">
+                <li><a href="/" class="nav-item">Search</a></li>
+                <li><a href="/tier-list" class="nav-item">Equipment Tier List</a></li>
+                <li><a href="#" class="nav-item" id="refresh-data-link">Refresh Data</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <div class="build-details">
+            <div class="build-header">
+                <h2 class="build-title">{{ build.title }}</h2>
+                <div class="build-meta">
+                    <span class="badge">{{ build.class }}</span>
+                    <span class="badge">{{ build.difficulty }}</span>
+                    {% for tag in build.tags %}
+                    <span class="badge">{{ tag }}</span>
+                    {% endfor %}
+                </div>
+            </div>
+            
+            <div class="equipment-section">
+                <h3 class="section-title">Equipment</h3>
+                <div class="equipment-grid">
+                    {% for item in build.equipment %}
+                    <div class="equipment-card">
+                        <div class="equipment-name">{{ item.name }}</div>
+                        <div class="equipment-info">
+                            <span class="badge {% if item.is_unique %}unique-badge{% endif %}">{{ item.type }}</span>
+                            {% if item.category != "Unknown" %}
+                            <span class="badge">{{ item.category }}</span>
+                            {% endif %}
+                        </div>
+                        {% if item.description %}
+                        <div class="equipment-description">{{ item.description }}</div>
+                        {% endif %}
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            
+            <a href="{{ build.url }}" target="_blank" class="external-link">View Full Build on MaxRoll.gg →</a>
+        </div>
+        
+        <a href="/" class="back-button">← Back to Search</a>
+        
+        <div class="footer">
+            <p>Data sourced from <a href="https://maxroll.gg/d4/build-guides" target="_blank">MaxRoll.gg</a></p>
+            <p>This tool is not affiliated with MaxRoll or Blizzard Entertainment.</p>
+        </div>
+    </div>
+    <script>
+        // Add confirmation dialog for refresh data
+        document.getElementById('refresh-data-link').addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            if (confirm('Warning: Refreshing data will scrape all build pages from MaxRoll.gg and may take 10 minutes or longer to complete. During this time, the server will be busy and may be less responsive.\n\nAre you sure you want to continue?')) {
+                window.location.href = '/refresh-data';
+            }
+        });
+    </script>
+</body>
+</html>
