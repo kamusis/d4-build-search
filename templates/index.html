@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diablo 4 Build Search Tool</title>
+    <style>
+        :root {
+            --primary-color: #8b0000;
+            --secondary-color: #333;
+            --text-color: #eee;
+            --bg-color: #121212;
+            --card-bg: #1e1e1e;
+            --accent-color: #ff4040;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-bottom: 30px;
+            border-bottom: 4px solid #470000;
+        }
+        
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .search-form {
+            background-color: var(--card-bg);
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+        
+        input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #333;
+            background-color: #252525;
+            color: var(--text-color);
+            border-radius: 4px;
+            font-size: 1em;
+            box-sizing: border-box;
+        }
+        
+        button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        
+        button:hover {
+            background-color: var(--accent-color);
+        }
+        
+        .results {
+            background-color: var(--card-bg);
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .result-item {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #252525;
+            border-left: 4px solid var(--primary-color);
+            border-radius: 4px;
+        }
+        
+        .result-title {
+            font-size: 1.2em;
+            margin-bottom: 8px;
+            color: var(--accent-color);
+        }
+        
+        .result-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+        
+        .badge {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.85em;
+        }
+        
+        .result-link {
+            display: inline-block;
+            margin-top: 10px;
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+        
+        .result-link:hover {
+            text-decoration: underline;
+        }
+        
+        .no-results {
+            text-align: center;
+            padding: 20px;
+            font-style: italic;
+            color: #aaa;
+        }
+        
+        .loader {
+            border: 5px solid #333;
+            border-top: 5px solid var(--primary-color);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+            display: none;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            color: #777;
+        }
+        
+        .loading .loader {
+            display: block;
+        }
+        
+        .search-count {
+            margin-bottom: 15px;
+            font-weight: bold;
+            color: var(--accent-color);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Diablo 4 Build Search Tool</h1>
+        <p>Find builds that use your favorite unique and mythic items</p>
+    </header>
+    
+    <div class="container">
+        <div class="search-form">
+            <form action="/search" method="post">
+                <div class="form-group">
+                    <label for="equipment_name">Enter Unique/Mythic Item Name:</label>
+                    <input type="text" id="equipment_name" name="equipment_name" 
+                           placeholder="e.g., Andariel's Visage, Harlequin Crest..." 
+                           required
+                           value="{{ equipment_name if equipment_name else '' }}">
+                </div>
+                <button type="submit" id="search-btn">Search Builds</button>
+            </form>
+        </div>
+        
+        {% if results is not none %}
+        <div class="results">
+            {% if results|length > 0 %}
+                <div class="search-count">
+                    Found {{ results|length }} builds using "{{ equipment_name }}"
+                </div>
+                
+                {% for result in results %}
+                <div class="result-item">
+                    <div class="result-title">{{ result.title }}</div>
+                    <div class="result-info">
+                        <span class="badge">{{ result.class }}</span>
+                        <span class="badge">{{ result.difficulty }}</span>
+                        <span class="badge">{{ result.matched_item }}</span>
+                    </div>
+                    <a href="{{ result.url }}" target="_blank" class="result-link">View Build on MaxRoll.gg →</a>
+                </div>
+                {% endfor %}
+            {% else %}
+                <div class="no-results">
+                    <p>No builds found using "{{ equipment_name }}".</p>
+                    <p>Try searching for a different item or check your spelling.</p>
+                </div>
+            {% endif %}
+        </div>
+        {% endif %}
+        
+        <div class="loader" id="loader"></div>
+        
+        <div class="footer">
+            <p>Data sourced from <a href="https://maxroll.gg/d4/build-guides" target="_blank">MaxRoll.gg</a></p>
+            <p>This tool is not affiliated with MaxRoll or Blizzard Entertainment.</p>
+        </div>
+    </div>
+    
+    <script>
+        document.querySelector('form').addEventListener('submit', function() {
+            document.getElementById('search-btn').disabled = true;
+            document.getElementById('loader').style.display = 'block';
+        });
+    </script>
+</body>
+</html>
