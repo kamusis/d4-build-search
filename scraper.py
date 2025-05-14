@@ -1,12 +1,70 @@
 import requests
 from bs4 import BeautifulSoup
 import json
+import logging
 import os
 import time
-import logging
-import re
 import argparse
 from typing import Dict, List, Any, Optional
+
+# Path to ChromeDriver for Apple Silicon (mac-arm64)
+CHROMEDRIVER_PATH = "/Users/kamus/.wdm/drivers/chromedriver/mac64/136.0.7103.93/chromedriver-mac-arm64/chromedriver"
+
+# Constants for Diablo 4 classes
+D4_CLASSES = ["Rogue", "Barbarian", "Druid", "Sorcerer", "Necromancer", "Spiritborn"]
+D4_CLASSES_LOWER = [class_name.lower() for class_name in D4_CLASSES]
+
+# Constants for build types
+BUILD_TYPES = ["endgame", "leveling"]
+
+# Constants for skill/build tags
+SKILL_TAGS = [
+    # Original class skills
+    "penetrating shot", "hammer of the ancients", "incinerate", "flurry", "barrage",
+    "twisting blades", "blood wave", "sever", "blizzard", "blood surge", "boulder",
+    "bone spear", "blight", "pulverize", "shred", "tornado", "firewall", "whirlwind",
+    "ice shards", "frozen orb", "shadow step", "rend", "landslide", "thorns", "rapid fire",
+    "blood lance", "double swing", "ball lightning", "lightning storm", "support", "companion",
+    "chain lightning", "meteor", "infinimist", "earthquake", "death trap", "lightning spear",
+    "rupture", "death blow", "stone burst", "dance of knives", "rain of arrows", "cataclysm",
+    "mighty throw", "invigorating strike", "heartseeker", "bone spirit", "minion",
+    
+    # Spiritborn skills
+    "quill volley", "eagle", "spirit surge", "spirit storm", "wrath", "panther", "snake", "bear",
+    "wolf", "tiger", "gorilla", "owl", "hawk", "falcon", "vulture", "condor", "eagle form",
+    "panther form", "snake form", "bear form", "wolf form", "tiger form", "gorilla form", "owl form",
+    "hawk form", "falcon form", "vulture form", "condor form", "spirit guide"
+]
+
+# Constants for season tags
+SEASON_TAGS = {
+    "season 8": ["season 8", "belial's return"]
+}
+
+# Known unique items in Diablo 4
+KNOWN_UNIQUES = [
+    # Weapons
+    'Eaglehorn', 'Doombringer', 'Grandfather', 'Andariel\'s Visage', 'Harlequin Crest',
+    'The Butcher\'s Cleaver', 'Melted Heart of Selig', 'Maltorius\' Petrified Skull',
+    # Armor
+    'Fists of Fate', 'Cowl of the Nameless', 'Penitent Greaves', 'Shroud of Khanduras',
+    'Shroud of False Death', 'Tyrael\'s Might', 'Iceheart Brais', 'Razorplate',
+    'Tassets of the Dawning Sky', 
+    # Jewelry
+    'Ring of Starless Skies', 'Skull of Garesh',
+    'Tibault\'s Will', 'Temptation',
+    # Mythics
+    'Heir of Perdition', 'Godslayer Crown', 'Banished Lord\'s Talisman',
+    'Dirge of Melandru', 'Storm\'s Companion', 'Lidless Wall',
+    'Wind Striker', 'Monster Hunter\'s Glow', 'Curucle\'s Favor'
+]
+
+# Configure logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+)
+logger = logging.getLogger(__name__)
 
 # Selenium imports
 from selenium import webdriver
@@ -18,23 +76,18 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException, NoSuchElementException
 from webdriver_manager.chrome import ChromeDriverManager
 
-# Set up logging
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
-)
+# End of imports
 logger = logging.getLogger(__name__)
 
 class Scraper:
     """A scraper to extract Diablo 4 build data from MaxRoll.gg."""
     
-    def __init__(self, base_url: str = "https://maxroll.gg", use_selenium: bool = True):
+    def __init__(self, base_url: str = "https://maxroll.gg"):
         """
         Initialize the scraper.
         
         Args:
             base_url: The base URL for the MaxRoll website.
-            use_selenium: Whether to use Selenium for scraping (better for dynamic content).
         """
         self.base_url = base_url
         self.builds_url = f"{base_url}/d4/build-guides"
@@ -42,7 +95,6 @@ class Scraper:
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"
         }
         self.builds_data_file = "builds_data.json"
-        self.use_selenium = use_selenium
         self.driver = None
     
     def __del__(self):
@@ -78,8 +130,8 @@ class Scraper:
             chrome_options.add_argument("--disable-gpu")
             chrome_options.add_argument(f"user-agent={self.headers['User-Agent']}")
             
-            # Set up Chrome driver
-            service = Service(ChromeDriverManager().install())
+            # Set up Chrome driver using the manually specified path for Apple Silicon (mac-arm64)
+            service = Service(executable_path=CHROMEDRIVER_PATH)
             driver = webdriver.Chrome(service=service, options=chrome_options)
             
             return driver
@@ -96,117 +148,11 @@ class Scraper:
         """
         logger.info(f"Fetching build list from {self.builds_url}")
         
-        # Fallback list of known builds in case our scraping methods fail
-        known_builds = [
-            {
-                "title": "Penetrating Shot Rogue Endgame Build Guide",
-                "url": "https://maxroll.gg/d4/build-guides/penetrating-shot-rogue-guide",
-                "class": "Rogue",
-                "difficulty": "High",
-                "tags": ["ranged", "aoe"],
-                "equipment": []
-            },
-            {
-                "title": "Flurry Rogue Endgame Build Guide",
-                "url": "https://maxroll.gg/d4/build-guides/flurry-rogue-guide",
-                "class": "Rogue",
-                "difficulty": "Medium",
-                "tags": ["melee", "aoe"],
-                "equipment": []
-            },
-            {
-                "title": "Twisting Blades Rogue Endgame Build Guide",
-                "url": "https://maxroll.gg/d4/build-guides/twisting-blades-rogue-guide",
-                "class": "Rogue",
-                "difficulty": "Medium",
-                "tags": ["melee", "aoe"],
-                "equipment": []
-            },
-            {
-                "title": "Trap Rogue Endgame Build Guide",
-                "url": "https://maxroll.gg/d4/build-guides/trap-rogue-guide",
-                "class": "Rogue",
-                "difficulty": "Medium",
-                "tags": ["traps", "control"],
-                "equipment": []
-            },
-            {
-                "title": "Siphon Necromancer Endgame Build Guide",
-                "url": "https://maxroll.gg/d4/build-guides/siphon-necromancer-guide",
-                "class": "Necromancer",
-                "difficulty": "Medium",
-                "tags": ["ranged", "aoe"],
-                "equipment": []
-            },
-            {
-                "title": "Bone Spear Necromancer Endgame Build Guide",
-                "url": "https://maxroll.gg/d4/build-guides/bone-spear-necromancer-guide",
-                "class": "Necromancer",
-                "difficulty": "Medium",
-                "tags": ["ranged", "aoe"],
-                "equipment": []
-            },
-            {
-                "title": "Whirlwind Barbarian Endgame Build Guide",
-                "url": "https://maxroll.gg/d4/build-guides/whirlwind-barbarian-guide", 
-                "class": "Barbarian",
-                "difficulty": "Low",
-                "tags": ["melee", "aoe"],
-                "equipment": []
-            },
-            {
-                "title": "Hammer of the Ancients Barbarian Endgame Build Guide",
-                "url": "https://maxroll.gg/d4/build-guides/hammer-of-the-ancients-barbarian-guide",
-                "class": "Barbarian",
-                "difficulty": "Low",
-                "tags": ["melee", "aoe"],
-                "equipment": []
-            },
-            {
-                "title": "Ball Lightning Sorcerer Endgame Build Guide",
-                "url": "https://maxroll.gg/d4/build-guides/ball-lightning-sorcerer-guide",
-                "class": "Sorcerer",
-                "difficulty": "Medium",
-                "tags": ["ranged", "aoe"],
-                "equipment": []
-            },
-            {
-                "title": "Firewall Sorcerer Endgame Build Guide",
-                "url": "https://maxroll.gg/d4/build-guides/firewall-sorcerer-guide",
-                "class": "Sorcerer",
-                "difficulty": "Medium",
-                "tags": ["ranged", "aoe"],
-                "equipment": []
-            },
-            {
-                "title": "Thorns Golem Druid Endgame Build Guide",
-                "url": "https://maxroll.gg/d4/build-guides/thorns-golem-druid-guide",
-                "class": "Druid",
-                "difficulty": "Medium",
-                "tags": ["pet", "thorns"],
-                "equipment": []
-            },
-            {
-                "title": "Pulverize Druid Endgame Build Guide",
-                "url": "https://maxroll.gg/d4/build-guides/pulverize-druid-guide",
-                "class": "Druid",
-                "difficulty": "Medium",
-                "tags": ["melee", "aoe"],
-                "equipment": []
-            }
-        ]
-        
         try:
-            if self.use_selenium:
-                return self._get_build_list_selenium()
-            else:
-                # Try traditional scraping approach
-                return self._get_build_list_beautifulsoup()
+            return self._get_build_list_selenium()
         except Exception as e:
             logger.error(f"Error fetching build list: {e}")
-            # Fall back to known builds if there's an error
-            logger.info("Falling back to predefined builds list.")
-            return known_builds
+            raise RuntimeError(f"Failed to fetch build list: {e}")
     
     def _get_build_list_selenium(self) -> List[Dict[str, Any]]:
         """
@@ -220,28 +166,59 @@ class Scraper:
         try:
             # Initialize the driver if not already done
             if not self.driver:
+                logger.info("Initializing Selenium WebDriver...")
                 self.driver = self._init_selenium_driver()
                 if not self.driver:
+                    logger.error("Failed to initialize Selenium WebDriver")
                     raise Exception("Failed to initialize Selenium WebDriver")
             
-            # Navigate to the build guides page
+            logger.info(f"Navigating to build guides page: {self.builds_url}")
             self.driver.get(self.builds_url)
+            logger.info("Page requested, waiting for build cards to appear...")
             
-            # Wait for the page to load and the build cards to appear
-            # We'll try several possible selectors for the build cards
-            selectors = [".d4-build-card", ".build-card", ".guide-card", ".guide-item", ".content-card", "article"]
-            
-            # Wait for at least one of the selectors to appear on the page
+            # Try 'article' selector first, then fallback to others if needed
+            selectors = ["article", ".d4-build-card", ".build-card", ".guide-card", ".guide-item", ".content-card"]
             wait = WebDriverWait(self.driver, 10)
-            for selector in selectors:
-                try:
-                    wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, selector)))
-                    logger.info(f"Found build cards with selector: {selector}")
+            found_selector = None
+
+            logger.info("Trying primary selector: article")
+            try:
+                wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, "article")))
+                logger.info("Found build cards with selector: article")
+                found_selector = "article"
+            except TimeoutException:
+                logger.info("Timeout waiting for selector: article; trying fallback selectors...")
+                # Try other selectors as fallback
+                for selector in selectors[1:]:
+                    logger.info(f"Waiting for selector: {selector}")
+                    try:
+                        wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, selector)))
+                        logger.info(f"Found build cards with selector: {selector}")
+                        found_selector = selector
+                        break
+                    except TimeoutException:
+                        logger.info(f"Timeout waiting for selector: {selector}")
+                        continue
+            if not found_selector:
+                logger.warning("No build card selectors found after waiting.")
+            else:
+                logger.info(f"Proceeding to parse page source using selector: {found_selector}")
+
+            # Scroll to the bottom of the page to load all builds (infinite scroll)
+            logger.info("Scrolling to load all builds...")
+            last_height = self.driver.execute_script("return document.body.scrollHeight")
+            scroll_attempt = 1
+            while True:
+                logger.info(f"Scroll attempt {scroll_attempt}: Scrolling to bottom...")
+                self.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+                time.sleep(2)  # Wait for new builds to load
+                new_height = self.driver.execute_script("return document.body.scrollHeight")
+                if new_height == last_height:
+                    logger.info("No more content loaded after scrolling. Assuming all builds are loaded.")
                     break
-                except TimeoutException:
-                    continue
-            
-            # Get the page source after JavaScript has loaded the content
+                last_height = new_height
+                scroll_attempt += 1
+            logger.info("Fetching page source and parsing with BeautifulSoup...")
             page_source = self.driver.page_source
             soup = BeautifulSoup(page_source, 'html.parser')
             
@@ -251,23 +228,42 @@ class Scraper:
                 build_cards = soup.select(selector)
                 if build_cards:
                     logger.info(f"Found {len(build_cards)} build cards with selector: {selector}")
+                    
+                    # Save a sample build card HTML to a file for inspection
+                    if len(build_cards) > 0:
+                        with open("sample_build_card.html", "w", encoding="utf-8") as f:
+                            f.write(str(build_cards[0]))
+                        logger.info("Saved sample build card HTML to sample_build_card.html")
                     for card in build_cards:
                         # Try to extract title and link (several possible selectors)
                         title_elem = card.select_one(".title, h2, h3, .card-title, .guide-title, a")
                         if not title_elem:
+                            logger.info("Skipping card: No title element found")
                             continue
                         
                         title = title_elem.text.strip()
-                        # Skip if title is too short or doesn't look like a build guide title
-                        if len(title) < 5 or not any(class_name in title.lower() for class_name in ["rogue", "barbarian", "druid", "sorcerer", "necromancer"]):
+                        # Skip if title is too short
+                        if len(title) < 5:
+                            logger.info(f"Skipping card: Title too short: '{title}'")
+                            continue
+                            
+                        # Check if it looks like a build guide title
+                        if not any(class_name in title.lower() for class_name in D4_CLASSES_LOWER):
+                            logger.info(f"Skipping card: No class name in title: '{title}'")
                             continue
                         
                         link_elem = card.select_one("a")
                         if not link_elem:
+                            logger.info(f"Skipping card with title '{title}': No link element found")
                             continue
                         
                         link = link_elem.get("href")
-                        if not link or not "/d4/build-guides/" in link:
+                        if not link:
+                            logger.info(f"Skipping card with title '{title}': Empty link")
+                            continue
+                            
+                        if not "/d4/build-guides/" in link:
+                            logger.info(f"Skipping card with title '{title}': Not a build guide link: {link}")
                             continue
                             
                         full_url = f"{self.base_url}{link}" if link.startswith("/") else link
@@ -278,7 +274,7 @@ class Scraper:
                         
                         # If class name is unknown, try to extract it from the title
                         if class_name == "Unknown":
-                            for c in ["Rogue", "Barbarian", "Druid", "Sorcerer", "Necromancer"]:
+                            for c in D4_CLASSES:
                                 if c.lower() in title.lower():
                                     class_name = c
                                     break
@@ -287,9 +283,31 @@ class Scraper:
                         difficulty_elem = card.select_one(".difficulty, .build-difficulty")
                         difficulty_text = difficulty_elem.text.strip() if difficulty_elem else "Medium"
                         
-                        # Extract tags if available
-                        tag_elems = card.select(".tag, .build-tag, .content-tag")
-                        tags = [tag.text.strip() for tag in tag_elems] if tag_elems else []
+                        # Extract tags from the title since MaxRoll doesn't have explicit tag elements
+                        title_lower = title.lower()
+                        tags = []
+                        
+                        # Extract build type tag (Endgame or Leveling)
+                        for build_type in BUILD_TYPES:
+                            if build_type in title_lower:
+                                tags.append(build_type)
+                                break
+                        
+                        # Extract class tag
+                        for class_tag in D4_CLASSES_LOWER:
+                            if class_tag in title_lower:
+                                tags.append(class_tag)
+                        
+                        # Extract skill/build type tags
+                        for skill_tag in SKILL_TAGS:
+                            if skill_tag in title_lower:
+                                tags.append(skill_tag)
+                        
+                        # Add Season tags
+                        for season_key, season_values in SEASON_TAGS.items():
+                            if season_key in title_lower or any(tag in title_lower for tag in season_values):
+                                for tag in season_values:
+                                    tags.append(tag)
                         
                         # Create a build entry
                         build_data = {
@@ -302,7 +320,9 @@ class Scraper:
                         }
                         
                         # Avoid duplicates
-                        if not any(b["url"] == full_url for b in builds):
+                        if any(b["url"] == full_url for b in builds):
+                            logger.info(f"Skipping duplicate build: {title} ({full_url})")
+                        else:
                             builds.append(build_data)
                     
                     # If we found builds with this selector, we can break
@@ -316,75 +336,7 @@ class Scraper:
             logger.error(f"Error fetching build list with Selenium: {e}")
             return self._get_build_list_fallback()
     
-    def _get_build_list_beautifulsoup(self) -> List[Dict[str, Any]]:
-        """
-        Get the list of all builds using BeautifulSoup (this may not work for JS-loaded content).
-        
-        Returns:
-            A list of dictionaries containing build information.
-        """
-        logger.info("Using BeautifulSoup to fetch build list")
-        
-        try:
-            # Try to extract data from the page structure
-            response = requests.get(self.builds_url, headers=self.headers)
-            response.raise_for_status()
-            
-            soup = BeautifulSoup(response.text, 'html.parser')
-            
-            # Try different selector patterns that might be used on the site
-            selectors = [".d4-build-card", ".build-card", ".guide-card", "article", ".content-card"]
-            
-            builds = []
-            for selector in selectors:
-                build_cards = soup.select(selector)
-                if build_cards:
-                    logger.info(f"Found {len(build_cards)} build cards with selector: {selector}")
-                    for card in build_cards:
-                        # Process each card similar to the Selenium method
-                        # ... (similar extraction logic)
-                        title_elem = card.select_one(".title, h2, h3, .card-title, .guide-title, a")
-                        if not title_elem:
-                            continue
-                        
-                        title = title_elem.text.strip()
-                        link_elem = card.select_one("a")
-                        if not link_elem:
-                            continue
-                        
-                        link = link_elem.get("href")
-                        full_url = f"{self.base_url}{link}" if link.startswith("/") else link
-                        
-                        # Extract class and difficulty
-                        class_elem = card.select_one(".class, .character-class, .build-class")
-                        class_name = class_elem.text.strip() if class_elem else "Unknown"
-                        
-                        difficulty_elem = card.select_one(".difficulty, .build-difficulty")
-                        difficulty_text = difficulty_elem.text.strip() if difficulty_elem else "Unknown"
-                        
-                        # Extract tags if available
-                        tag_elems = card.select(".tag, .build-tag, .content-tag")
-                        tags = [tag.text.strip() for tag in tag_elems] if tag_elems else []
-                        
-                        builds.append({
-                            "title": title,
-                            "url": full_url,
-                            "class": class_name,
-                            "difficulty": difficulty_text,
-                            "tags": tags,
-                            "equipment": []  # Will be populated later
-                        })
-                    
-                    # If we found builds with this selector, we can break
-                    if builds:
-                        break
-            
-            logger.info(f"Found {len(builds)} builds using BeautifulSoup")
-            return builds if builds else self._get_build_list_fallback()
-            
-        except Exception as e:
-            logger.error(f"Error fetching build list with BeautifulSoup: {e}")
-            return self._get_build_list_fallback()
+    # BeautifulSoup method removed as we're focusing solely on Selenium implementation
     
     def _get_build_list_fallback(self) -> List[Dict[str, Any]]:
         """
@@ -430,45 +382,26 @@ class Scraper:
         """
         logger.info(f"Fetching equipment from {build_url}")
         
-        # Compile a list of known unique items in Diablo 4
-        # This list can be expanded over time
-        known_uniques = [
-            # Weapons
-            'Eaglehorn', 'Doombringer', 'Grandfather', 'Andariel\'s Visage', 'Harlequin Crest',
-            'The Butcher\'s Cleaver', 'Melted Heart of Selig', 'Maltorius\' Petrified Skull',
-            # Armor
-            'Fists of Fate', 'Cowl of the Nameless', 'Penitent Greaves', 'Shroud of Khanduras',
-            'Shroud of False Death', 'Tyrael\'s Might', 'Iceheart Brais', 'Razorplate',
-            'Tassets of the Dawning Sky', 
-            # Jewelry
-            'Ring of Starless Skies', 'Skull of Garesh',
-            'Tibault\'s Will', 'Temptation',
-            # Mythics
-            'Heir of Perdition', 'Godslayer Crown', 'Banished Lord\'s Talisman',
-            'Dirge of Melandru', 'Storm\'s Companion', 'Lidless Wall',
-            'Wind Striker', 'Monster Hunter\'s Glow', 'Curucle\'s Favor'
-        ]
-        
         try:
-            if self.use_selenium:
-                return self._get_build_equipment_selenium(build_url, known_uniques)
-            else:
-                return self._get_build_equipment_beautifulsoup(build_url, known_uniques)
+            return self._get_build_equipment_selenium(build_url, KNOWN_UNIQUES)
         except Exception as e:
             logger.error(f"Error fetching build equipment: {e}")
             return []
     
-    def _get_build_equipment_selenium(self, build_url: str, known_uniques: List[str]) -> List[Dict[str, str]]:
+    def _get_build_equipment_selenium(self, build_url: str, known_uniques: List[str] = None) -> List[Dict[str, str]]:
         """
         Extract equipment information from a build page using Selenium.
         
         Args:
             build_url: The URL of the build page.
-            known_uniques: List of known unique items to look for.
+            known_uniques: Optional list of known unique items to look for. If None, uses the global KNOWN_UNIQUES list.
             
         Returns:
             A list of dictionaries containing equipment information.
         """
+        # Use the global KNOWN_UNIQUES list if none provided
+        if known_uniques is None:
+            known_uniques = KNOWN_UNIQUES
         logger.info(f"Using Selenium to fetch equipment from {build_url}")
         
         try:
@@ -576,93 +509,6 @@ class Scraper:
         
         except Exception as e:
             logger.error(f"Error fetching build equipment with Selenium: {e}")
-            return self._get_build_equipment_beautifulsoup(build_url, known_uniques)
-    
-    def _get_build_equipment_beautifulsoup(self, build_url: str, known_uniques: List[str]) -> List[Dict[str, str]]:
-        """
-        Extract equipment information from a build page using BeautifulSoup.
-        
-        Args:
-            build_url: The URL of the build page.
-            known_uniques: List of known unique items to look for.
-            
-        Returns:
-            A list of dictionaries containing equipment information.
-        """
-        logger.info(f"Using BeautifulSoup to fetch equipment from {build_url}")
-        
-        try:
-            response = requests.get(build_url, headers=self.headers)
-            response.raise_for_status()
-            
-            soup = BeautifulSoup(response.text, 'html.parser')
-            
-            # Initialize equipment list
-            equipment = []
-            
-            # Traditional approach - structured HTML elements
-            equipment_sections = soup.select(".equipment-item, .d4-item, .d4-gear-item")
-            for item in equipment_sections:
-                item_name_elem = item.select_one(".item-name, .gear-name, h3, strong")
-                item_name = item_name_elem.text.strip() if item_name_elem else "Unknown Item"
-                
-                item_type_elem = item.select_one(".item-type, .gear-type, .item-slot")
-                item_type = item_type_elem.text.strip() if item_type_elem else "Unknown Type"
-                
-                # Check if it's a unique/legendary item
-                is_unique = False
-                if item.get('class'):
-                    is_unique = 'unique' in item.get('class') or 'legendary' in item.get('class')
-                elif item_name_elem and item_name_elem.get('class'):
-                    is_unique = 'unique' in item_name_elem.get('class') or 'legendary' in item_name_elem.get('class')
-                
-                equipment.append({
-                    "name": item_name,
-                    "type": item_type,
-                    "is_unique": is_unique
-                })
-            
-            # New approach - text-based extraction from paragraphs
-            # Look for paragraphs that might mention equipment
-            paragraphs = soup.find_all(['p', 'li', 'div'])
-            
-            # Extract text from all elements
-            all_text = ' '.join([p.get_text() for p in paragraphs])
-            
-            # Find mentions of unique items in the text
-            for unique_item in known_uniques:
-                if unique_item in all_text:
-                    # Check if we already found this item
-                    if not any(item['name'] == unique_item for item in equipment):
-                        equipment.append({
-                            "name": unique_item,
-                            "type": "Unique/Legendary",
-                            "is_unique": True
-                        })
-            
-            # Advanced extraction - search for patterns like "Unique Name provides/gives/offers..."
-            # This tries to find unique items even if they're not in our known list
-            text_blocks = [p.get_text() for p in paragraphs]
-            for block in text_blocks:
-                # Look for capitalized terms that might be item names followed by verbs
-                potential_matches = re.findall(r'([A-Z][a-z]+(?:\s+[A-Z][a-z]+){0,4})\s+(?:provides|gives|offers|helps)', block)
-                
-                for match in potential_matches:
-                    # Filter out common non-item terms
-                    if (len(match) > 3 and 
-                        not match in ['This', 'The', 'These', 'Those', 'That', 'Each', 'Every', 'Some'] and
-                        not any(item['name'] == match for item in equipment)):
-                        equipment.append({
-                            "name": match,
-                            "type": "Unique/Legendary (Detected)",
-                            "is_unique": True
-                        })
-            
-            logger.info(f"Found {len(equipment)} equipment items using BeautifulSoup")
-            return equipment
-        
-        except Exception as e:
-            logger.error(f"Error fetching build equipment with BeautifulSoup: {e}")
             return []
 
     def scrape_all_builds(self) -> List[Dict[str, Any]]:
@@ -732,22 +578,26 @@ class Scraper:
         logger.info(f"Found {len(matching_builds)} builds matching '{equipment_name}'")
         return matching_builds
 
-def save_all_builds(output_file="all_builds.json"):
+def save_all_builds(output_file: str = "all_builds.json") -> list[dict]:
     """
     Extract all builds from MaxRoll and save to a JSON file.
-    
+
     Args:
-        output_file: The file to save the builds data to.
+        output_file (str): The file to save the builds data to.
+
+    Returns:
+        list[dict]: A list of dictionaries containing build information.
     """
-    scraper = Scraper()
-    builds = scraper.get_build_list()
-    
-    # Save to file
-    with open(output_file, 'w', encoding='utf-8') as f:
-        json.dump(builds, f, indent=2)
-    
-    logger.info(f"Saved {len(builds)} builds to {output_file}")
-    return builds
+    try:
+        scraper = Scraper()
+        builds = scraper.get_build_list()
+        with open(output_file, 'w', encoding='utf-8') as f:
+            json.dump(builds, f, indent=2)
+        logger.info(f"Saved {len(builds)} builds to {output_file}")
+        return builds
+    except Exception as e:
+        logger.error(f"Failed to save builds: {e}")
+        raise
 
 if __name__ == "__main__":
     # Set up argument parser

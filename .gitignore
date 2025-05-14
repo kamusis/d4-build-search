@@ -24,6 +24,7 @@ var/
 venv/
 ENV/
 env/
+.venv/
 
 # IDE files
 .idea/
@@ -32,7 +33,8 @@ env/
 *.swo
 
 # Project specific
-builds_data.json
+all_builds.json
+sample_build_card.html
 
 # User specific
-windsurfrules
+.windsurf
