@@ -8,8 +8,15 @@ import argparse
 import re
 from typing import Dict, List, Any, Optional
 
-# Path to ChromeDriver for Apple Silicon (mac-arm64)
-CHROMEDRIVER_PATH = "/Users/kamus/.wdm/drivers/chromedriver/mac64/136.0.7103.93/chromedriver-mac-arm64/chromedriver"
+# Platform detection for ChromeDriver path
+import platform
+
+# Default to None for automatic detection
+CHROMEDRIVER_PATH = None
+
+# Use hardcoded path only on macOS ARM
+if platform.system() == "Darwin" and platform.machine() == "arm64":
+    CHROMEDRIVER_PATH = "/Users/kamus/.wdm/drivers/chromedriver/mac64/136.0.7103.93/chromedriver-mac-arm64/chromedriver"
 
 # Constants for Diablo 4 classes
 D4_CLASSES = ["Rogue", "Barbarian", "Druid", "Sorcerer", "Necromancer", "Spiritborn"]
@@ -95,7 +102,8 @@ class Scraper:
         self.headers = {
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"
         }
-        self.builds_data_file = "builds_data.json"
+        # Internal cache file for the scraper (different from the app's all_builds.json output file)
+        self.builds_data_file = "scraper_cache.json"
         self.driver = None
     
     def __del__(self):
@@ -129,11 +137,24 @@ class Scraper:
             chrome_options.add_argument("--no-sandbox")
             chrome_options.add_argument("--disable-dev-shm-usage")
             chrome_options.add_argument("--disable-gpu")
+            chrome_options.add_argument("--log-level=3")  # Only show fatal errors
+            chrome_options.add_argument("--silent")
+            chrome_options.add_argument("--disable-logging")
+            chrome_options.add_argument("--disable-extensions")
+            chrome_options.add_argument("--enable-unsafe-swiftshader")  # Address WebGL warnings
             chrome_options.add_argument(f"user-agent={self.headers['User-Agent']}")
             
-            # Set up Chrome driver using the manually specified path for Apple Silicon (mac-arm64)
-            service = Service(executable_path=CHROMEDRIVER_PATH)
-            driver = webdriver.Chrome(service=service, options=chrome_options)
+            # Suppress console logging
+            chrome_options.add_experimental_option('excludeSwitches', ['enable-logging'])
+            
+            # Set up Chrome driver based on platform
+            if CHROMEDRIVER_PATH:
+                # Use manually specified path for macOS ARM
+                service = Service(executable_path=CHROMEDRIVER_PATH)
+                driver = webdriver.Chrome(service=service, options=chrome_options)
+            else:
+                # Use WebDriver Manager for automatic driver detection
+                driver = webdriver.Chrome(options=chrome_options)
             
             return driver
         except Exception as e:
