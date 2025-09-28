@@ -414,19 +414,6 @@
             document.getElementById('loader').style.display = 'block';
         });
         
-        // Add confirmation dialog for refresh data
-        const refreshDataLink = document.getElementById('refresh-data-link');
-        if (refreshDataLink) {
-            refreshDataLink.addEventListener('click', function(e) {
-                if (refreshDataLink.getAttribute('href') === '/refresh-data') {
-                    e.preventDefault();
-                }
-
-                if (confirm('Warning: Refreshing data will scrape all build pages from MaxRoll.gg and may take 10 minutes or longer to complete. During this time, the server will be busy and may be less responsive.\n\nAre you sure you want to continue?')) {
-                    window.location.href = '/refresh-data';
-                }
-            });
-        }
     </script>
 </body>
 </html>
