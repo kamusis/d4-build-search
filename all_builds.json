@@ -1,0 +1,6013 @@
+[
+  {
+    "title": "Penetrating Shot Rogue Endgame Build GuideBy mattias | Last Updated: September 25, 2025EndgameRogue",
+    "url": "https://maxroll.gg/d4/build-guides/penetrating-shot-rogue-guide",
+    "class": "Rogue",
+    "difficulty": "Medium",
+    "tags": [
+      "endgame",
+      "rogue",
+      "penetrating shot"
+    ],
+    "equipment": [
+      {
+        "name": "Cowl of the Nameless",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Cowl of the Nameless - Duriel, King of Maggots, Andariel"
+      },
+      {
+        "name": "Eaglehorn",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Eaglehorn - The Beast in the Ice"
+      },
+      {
+        "name": "Grasp of Shadow",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Grasp of Shadow - Grigoire, The Galvanic Saint"
+      },
+      {
+        "name": "Heir of Perdition",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Heir of Perdition"
+      },
+      {
+        "name": "Shroud of False Death",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Shroud of False Death"
+      },
+      {
+        "name": "Crown of Lucion",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Crown of Lucion"
+      },
+      {
+        "name": "Fists of Fate",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Fists of Fate"
+      },
+      {
+        "name": "Ring of Starless Skies",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Ring of Starless Skies"
+      }
+    ]
+  },
+  {
+    "title": "Hammer of the Ancients Barbarian Endgame Build GuideBy snail | Last Updated: September 24, 2025Season 10   Infernal ChaosEndgameBarbarian",
+    "url": "https://maxroll.gg/d4/build-guides/hammer-of-the-ancients-barbarian-guide",
+    "class": "Barbarian",
+    "difficulty": "Medium",
+    "tags": [
+      "endgame",
+      "barbarian",
+      "hammer of the ancients"
+    ],
+    "equipment": [
+      {
+        "name": "Crown of Lucion",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Crown of Lucion - Infernal Hordes"
+      },
+      {
+        "name": "Mantle of Mountain's Fury",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Mantle of Mountain's Fury"
+      },
+      {
+        "name": "Ramaladni's Magnum Opus",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Ramaladni's Magnum Opus - Lord Zir"
+      },
+      {
+        "name": "Sabre of Tsasgal",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Sabre of Tsasgal"
+      },
+      {
+        "name": "Fists of Fate",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Fists of Fate - The Beast in the Ice"
+      },
+      {
+        "name": "Tibault's Will",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Tibault's Will - Duriel, King of Maggots, Andariel"
+      },
+      {
+        "name": "Battle Trance",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Battle Trance"
+      },
+      {
+        "name": "Ring of Red Furor",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Ring of Red Furor - Echo of Varshan"
+      },
+      {
+        "name": "Banished Lord's Talisman",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Banished Lord's Talisman - Duriel, King of Maggots, Andariel"
+      },
+      {
+        "name": "Grandfather",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "The Grandfather"
+      }
+    ]
+  },
+  {
+    "title": "Twisting Blades Rogue Endgame Build GuideBy Ava | Last Updated: September 27, 2025Season 10   Infernal ChaosEndgameRogue",
+    "url": "https://maxroll.gg/d4/build-guides/twisting-blades-rogue-guide",
+    "class": "Rogue",
+    "difficulty": "Medium",
+    "tags": [
+      "endgame",
+      "rogue",
+      "twisting blades"
+    ],
+    "equipment": [
+      {
+        "name": "Harlequin Crest",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Harlequin Crest"
+      },
+      {
+        "name": "Shroud of False Death",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Shroud of False Death"
+      },
+      {
+        "name": "Crown of Lucion",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Crown of Lucion"
+      },
+      {
+        "name": "Ring of Starless Skies",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Ring of Starless Skies"
+      }
+    ]
+  },
+  {
+    "title": "Flurry Rogue Endgame Build GuideBy mattias | Last Updated: September 28, 2025EndgameRogue",
+    "url": "https://maxroll.gg/d4/build-guides/flurry-rogue-guide",
+    "class": "Rogue",
+    "difficulty": "Medium",
+    "tags": [
+      "endgame",
+      "rogue",
+      "flurry"
+    ],
+    "equipment": [
+      {
+        "name": "Deathmask of Nirmitruq",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Deathmask of Nirmitruq"
+      },
+      {
+        "name": "Grasp of Shadow",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Grasp of Shadow - Grigoire, The Galvanic Saint"
+      },
+      {
+        "name": "Penitent Greaves",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Penitent Greaves - Grigoire, The Galvanic Saint"
+      },
+      {
+        "name": "Heir of Perdition",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Heir of Perdition"
+      },
+      {
+        "name": "Shroud of False Death",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Shroud of False Death"
+      },
+      {
+        "name": "Fists of Fate",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Fists of Fate"
+      }
+    ]
+  },
+  {
+    "title": "Barrage Rogue Leveling GuideBy dieoxide | Last Updated: September 22, 2025Season 10   Infernal ChaosLevelingRogue",
+    "url": "https://maxroll.gg/d4/build-guides/barrage-rogue-leveling-guide",
+    "class": "Rogue",
+    "difficulty": "Medium",
+    "tags": [
+      "leveling",
+      "rogue",
+      "barrage"
+    ],
+    "equipment": [
+      {
+        "name": "Cowl of the Nameless",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Great Uniques",
+        "description": "\u200dCowl of the Nameless"
+      },
+      {
+        "name": "Fists of Fate",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Great Uniques",
+        "description": "\u200dFists of Fate"
+      },
+      {
+        "name": "Penitent Greaves",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Great Uniques",
+        "description": "\u200dPenitent Greaves"
+      }
+    ]
+  },
+  {
+    "title": "Flurry Rogue Leveling GuideBy mattias | Last Updated: September 27, 2025LevelingRogue",
+    "url": "https://maxroll.gg/d4/build-guides/flurry-rogue-leveling-guide",
+    "class": "Rogue",
+    "difficulty": "Medium",
+    "tags": [
+      "leveling",
+      "rogue",
+      "flurry"
+    ],
+    "equipment": [
+      {
+        "name": "Deathmask of Nirmitruq",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Great Uniques",
+        "description": "\u200dDeathmask of Nirmitruq"
+      },
+      {
+        "name": "Grasp of Shadow",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Great Uniques",
+        "description": "\u200dGrasp of Shadow"
+      },
+      {
+        "name": "Cowl of the Nameless",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Great Uniques",
+        "description": "\u200dCowl of the Nameless"
+      },
+      {
+        "name": "Asheara's Khanjar",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Great Uniques",
+        "description": "\u200dAsheara's Khanjar"
+      },
+      {
+        "name": "Penitent Greaves",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Great Uniques",
+        "description": "\u200dPenitent Greaves"
+      },
+      {
+        "name": "Condemnation",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Great Uniques",
+        "description": "\u200dCondemnation"
+      },
+      {
+        "name": "Tibault's Will",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Great Uniques",
+        "description": "\u200dTibault's Will"
+      }
+    ]
+  },
+  {
+    "title": "Penetrating Shot Rogue Leveling GuideBy mattias | Last Updated: September 20, 2025Season 10   Infernal ChaosLevelingRogue",
+    "url": "https://maxroll.gg/d4/build-guides/penetrating-shot-rogue-leveling-guide",
+    "class": "Rogue",
+    "difficulty": "Medium",
+    "tags": [
+      "leveling",
+      "rogue",
+      "penetrating shot"
+    ],
+    "equipment": [
+      {
+        "name": "Eaglehorn",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Great Uniques",
+        "description": "\u200dEaglehorn"
+      },
+      {
+        "name": "Grasp of Shadow",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Great Uniques",
+        "description": "\u200dGrasp of Shadow"
+      },
+      {
+        "name": "Cowl of the Nameless",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Great Uniques",
+        "description": "\u200dCowl of the Nameless"
+      },
+      {
+        "name": "Godslayer Crown",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Great Uniques",
+        "description": "\u200dGodslayer Crown"
+      },
+      {
+        "name": "Fists of Fate",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Great Uniques",
+        "description": "\u200dFists of Fate"
+      },
+      {
+        "name": "Penitent Greaves",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Great Uniques",
+        "description": "\u200dPenitent Greaves"
+      }
+    ]
+  },
+  {
+    "title": "Pulverize Druid Leveling GuideBy boiler | Last Updated: September 24, 2025Season 10   Infernal ChaosLevelingDruid",
+    "url": "https://maxroll.gg/d4/build-guides/pulverize-druid-leveling-guide",
+    "class": "Druid",
+    "difficulty": "Medium",
+    "tags": [
+      "leveling",
+      "druid",
+      "pulverize"
+    ],
+    "equipment": [
+      {
+        "name": "Rotting Lightbringer",
+        "type": "Jewelry",
+        "is_unique": true,
+        "category": "Great Uniques",
+        "description": "\u200dRotting Lightbringer"
+      },
+      {
+        "name": "Insatiable Fury",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Great Uniques",
+        "description": "\u200dInsatiable Fury"
+      },
+      {
+        "name": "Vasily's Prayer",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Great Uniques",
+        "description": "\u200dVasily's Prayer"
+      },
+      {
+        "name": "Tibault's Will",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Great Uniques",
+        "description": "\u200dTibault's Will"
+      }
+    ]
+  },
+  {
+    "title": "Twisting Blades Rogue Leveling GuideBy Ava | Last Updated: September 21, 2025Season 10   Infernal ChaosLevelingRogue",
+    "url": "https://maxroll.gg/d4/build-guides/twisting-blades-rogue-leveling-guide",
+    "class": "Rogue",
+    "difficulty": "Medium",
+    "tags": [
+      "leveling",
+      "rogue",
+      "twisting blades"
+    ],
+    "equipment": [
+      {
+        "name": "Cowl of the Nameless",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Great Uniques",
+        "description": "\u200dCowl of the Nameless"
+      },
+      {
+        "name": "Penitent Greaves",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Great Uniques",
+        "description": "\u200dPenitent Greaves"
+      }
+    ]
+  },
+  {
+    "title": "Blood Surge Necromancer Leveling Build GuideBy MacroBioBoi | Last Updated: September 23, 2025Season 10   Infernal ChaosLevelingNecromancer",
+    "url": "https://maxroll.gg/d4/build-guides/blood-surge-necromancer-leveling-guide",
+    "class": "Necromancer",
+    "difficulty": "Medium",
+    "tags": [
+      "leveling",
+      "necromancer",
+      "blood surge"
+    ],
+    "equipment": [
+      {
+        "name": "Cruor's Embrace",
+        "type": "Armor",
+        "is_unique": true,
+        "category": "Great Uniques",
+        "description": "\u200dCruor's Embrace"
+      },
+      {
+        "name": "Blood Moon Breeches",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Great Uniques",
+        "description": "\u200dBlood Moon Breeches"
+      },
+      {
+        "name": "Ring of the Sacrilegious Soul",
+        "type": "Jewelry",
+        "is_unique": true,
+        "category": "Great Uniques",
+        "description": "\u200dRing of the Sacrilegious Soul"
+      }
+    ]
+  },
+  {
+    "title": "Sever Necromancer Leveling GuideBy MacroBioBoi | Last Updated: September 22, 2025Season 10   Infernal ChaosLevelingNecromancer",
+    "url": "https://maxroll.gg/d4/build-guides/sever-necromancer-leveling-guide",
+    "class": "Necromancer",
+    "difficulty": "Medium",
+    "tags": [
+      "leveling",
+      "necromancer",
+      "sever"
+    ],
+    "equipment": [
+      {
+        "name": "Greaves of the Empty Tomb (Best in Slot Item)",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Great Uniques",
+        "description": "\u200dGreaves of the Empty Tomb (Best in Slot Item)"
+      },
+      {
+        "name": "Ring of the Sacrilegious Soul",
+        "type": "Jewelry",
+        "is_unique": true,
+        "category": "Great Uniques",
+        "description": "\u200dRing of the Sacrilegious Soul"
+      },
+      {
+        "name": "Mother's Embrace",
+        "type": "Armor",
+        "is_unique": true,
+        "category": "Great Uniques",
+        "description": "\u200dMother's Embrace"
+      },
+      {
+        "name": "Penitent Greaves",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Great Uniques",
+        "description": "\u200dPenitent Greaves"
+      }
+    ]
+  },
+  {
+    "title": "Blizzard Sorcerer Leveling GuideBy pandaglassjaw | Last Updated: September 21, 2025Season 10   Infernal ChaosLevelingSorcerer",
+    "url": "https://maxroll.gg/d4/build-guides/blizzard-sorcerer-leveling-guide",
+    "class": "Sorcerer",
+    "difficulty": "Medium",
+    "tags": [
+      "leveling",
+      "sorcerer",
+      "blizzard"
+    ],
+    "equipment": [
+      {
+        "name": "Tal Rasha's Iridescent Loop",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Great Uniques",
+        "description": "\u200dTal Rasha's Iridescent Loop"
+      },
+      {
+        "name": "Blue Rose",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Great Uniques",
+        "description": "\u200dBlue Rose"
+      },
+      {
+        "name": "Esu's Heirloom",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Great Uniques",
+        "description": "\u200dEsu's Heirloom"
+      }
+    ]
+  },
+  {
+    "title": "Upheaval Barbarian Leveling GuideBy kondyss | Last Updated: September 23, 2025Season 10   Infernal ChaosLevelingBarbarian",
+    "url": "https://maxroll.gg/d4/build-guides/upheaval-barbarian-leveling-guide",
+    "class": "Barbarian",
+    "difficulty": "Medium",
+    "tags": [
+      "leveling",
+      "barbarian"
+    ],
+    "equipment": [
+      {
+        "name": "Ring of Red Furor",
+        "type": "Jewelry",
+        "is_unique": true,
+        "category": "Great Uniques",
+        "description": "\u200dRing of Red Furor"
+      },
+      {
+        "name": "Banished Lord's Talisman",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Great Uniques",
+        "description": "\u200dBanished Lord's Talisman"
+      },
+      {
+        "name": "Hellhammer",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Great Uniques",
+        "description": "\u200dHellhammer"
+      }
+    ]
+  },
+  {
+    "title": "Hammer of the Ancients Barbarian Leveling GuideBy kondyss | Last Updated: September 23, 2025Season 10   Infernal ChaosLevelingBarbarian",
+    "url": "https://maxroll.gg/d4/build-guides/hammer-of-the-ancients-barbarian-leveling-guide",
+    "class": "Barbarian",
+    "difficulty": "Medium",
+    "tags": [
+      "leveling",
+      "barbarian",
+      "hammer of the ancients"
+    ],
+    "equipment": [
+      {
+        "name": "Ring of Red Furor",
+        "type": "Jewelry",
+        "is_unique": true,
+        "category": "Great Uniques",
+        "description": "\u200dRing of Red Furor"
+      },
+      {
+        "name": "Banished Lord's Talisman",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Great Uniques",
+        "description": "\u200dBanished Lord's Talisman"
+      },
+      {
+        "name": "Yen's Blessing",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Great Uniques",
+        "description": "\u200dYen's Blessing"
+      }
+    ]
+  },
+  {
+    "title": "Rend Barbarian Leveling GuideBy kondyss | Last Updated: September 23, 2025Season 10   Infernal ChaosLevelingBarbarian",
+    "url": "https://maxroll.gg/d4/build-guides/rend-barbarian-leveling-guide",
+    "class": "Barbarian",
+    "difficulty": "Medium",
+    "tags": [
+      "leveling",
+      "barbarian",
+      "rend"
+    ],
+    "equipment": [
+      {
+        "name": "Ring of the Ravenous",
+        "type": "Jewelry",
+        "is_unique": true,
+        "category": "Great Uniques",
+        "description": "\u200dRing of the Ravenous"
+      },
+      {
+        "name": "Rage of Harrogath",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Great Uniques",
+        "description": "\u200dRage of Harrogath"
+      },
+      {
+        "name": "Fields of Crimson (Add Rupture instead of Wrath of the Berserker)",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Great Uniques",
+        "description": "\u200dFields of Crimson (Add \u200dRupture instead of \u200dWrath of the Berserker)"
+      }
+    ]
+  },
+  {
+    "title": "Bone Spear Necromancer Leveling Build GuideBy serocifkre | Last Updated: September 23, 2025Season 10   Infernal ChaosLevelingNecromancer",
+    "url": "https://maxroll.gg/d4/build-guides/bone-spear-necromancer-leveling-guide",
+    "class": "Necromancer",
+    "difficulty": "Medium",
+    "tags": [
+      "leveling",
+      "necromancer",
+      "bone spear"
+    ],
+    "equipment": [
+      {
+        "name": "Deathless Visage",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Great Uniques",
+        "description": "\u200dDeathless Visage"
+      },
+      {
+        "name": "Indira's Memory",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Great Uniques",
+        "description": "\u200dIndira's Memory"
+      },
+      {
+        "name": "Path of Trag'Oul",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Great Uniques",
+        "description": "\u200dPath of Trag'Oul"
+      }
+    ]
+  },
+  {
+    "title": "Blight Necromancer Leveling GuideBy MacroBioBoi | Last Updated: September 22, 2025Season 10   Infernal ChaosLevelingNecromancer",
+    "url": "https://maxroll.gg/d4/build-guides/blight-necromancer-leveling-guide",
+    "class": "Necromancer",
+    "difficulty": "Medium",
+    "tags": [
+      "leveling",
+      "necromancer",
+      "blight"
+    ],
+    "equipment": [
+      {
+        "name": "Ebonpiercer (Best in Slot Item)",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Great Uniques",
+        "description": "\u200dEbonpiercer (Best in Slot Item)"
+      },
+      {
+        "name": "Ring of the Sacrilegious Soul",
+        "type": "Jewelry",
+        "is_unique": true,
+        "category": "Great Uniques",
+        "description": "\u200dRing of the Sacrilegious Soul"
+      },
+      {
+        "name": "Penitent Greaves",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Great Uniques",
+        "description": "\u200dPenitent Greaves"
+      }
+    ]
+  },
+  {
+    "title": "Pulverize Druid Endgame Build GuideBy boiler | Last Updated: September 26, 2025Season 10   Infernal ChaosEndgameDruid",
+    "url": "https://maxroll.gg/d4/build-guides/pulverize-druid-guide",
+    "class": "Druid",
+    "difficulty": "Medium",
+    "tags": [
+      "endgame",
+      "druid",
+      "pulverize"
+    ],
+    "equipment": [
+      {
+        "name": "Vasily's Prayer",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Vasily's Prayer - Echo of Varshan"
+      },
+      {
+        "name": "Insatiable Fury",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Insatiable Fury - Grigoire, The Galvanic Saint"
+      },
+      {
+        "name": "Rotting Lightbringer",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Rotting Lightbringer"
+      },
+      {
+        "name": "Tibault's Will",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Tibault's Will - Duriel, King of Maggots, Andariel"
+      },
+      {
+        "name": "Heir of Perdition",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Heir of Perdition"
+      },
+      {
+        "name": "Shroud of False Death",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Shroud of False Death"
+      },
+      {
+        "name": "Banished Lord's Talisman",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Banished Lord's Talisman"
+      },
+      {
+        "name": "Ring of Starless Skies",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Ring of Starless Skies"
+      }
+    ]
+  },
+  {
+    "title": "Shred Druid Endgame Build GuideBy boiler | Last Updated: September 26, 2025Season 10   Infernal ChaosEndgameDruid",
+    "url": "https://maxroll.gg/d4/build-guides/shred-druid-guide",
+    "class": "Druid",
+    "difficulty": "Medium",
+    "tags": [
+      "endgame",
+      "druid",
+      "shred"
+    ],
+    "equipment": [
+      {
+        "name": "Mad Wolf's Glee",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Mad Wolf's Glee - Echo of Varshan"
+      },
+      {
+        "name": "Waxing Gibbous",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Waxing Gibbous - Grigoire, The Galvanic Saint"
+      },
+      {
+        "name": "Heir of Perdition",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Heir of Perdition"
+      },
+      {
+        "name": "Fists of Fate",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Fists of Fate"
+      },
+      {
+        "name": "Banished Lord's Talisman",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Banished Lord's Talisman"
+      },
+      {
+        "name": "Malefic Crescent",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Malefic Crescent"
+      }
+    ]
+  },
+  {
+    "title": "Bone Spirit Necromancer Endgame Build GuideBy serocifkre | Last Updated: September 23, 2025Season 10   Infernal ChaosEndgameNecromancer",
+    "url": "https://maxroll.gg/d4/build-guides/bone-spirit-necromancer-guide",
+    "class": "Necromancer",
+    "difficulty": "Medium",
+    "tags": [
+      "endgame",
+      "necromancer",
+      "bone spirit"
+    ],
+    "equipment": [
+      {
+        "name": "Crown of Lucion",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Crown of Lucion - Infernal Hordes"
+      },
+      {
+        "name": "Gospel of the Devotee",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Gospel of the Devotee"
+      },
+      {
+        "name": "Shard of Verathiel",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Shard of Verathiel - Infernal Hordes"
+      },
+      {
+        "name": "Lidless Wall",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Lidless Wall"
+      },
+      {
+        "name": "Path of Trag",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Path of Trag'Oul - Grigoire, The Galvanic Saint"
+      },
+      {
+        "name": "Paingorger's Gauntlets",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Paingorger's Gauntlets"
+      },
+      {
+        "name": "Shroud of False Death",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Shroud of False Death"
+      }
+    ]
+  },
+  {
+    "title": "Ice Shards Sorcerer Leveling GuideBy pandaglassjaw | Last Updated: September 21, 2025Season 10   Infernal ChaosLevelingSorcerer",
+    "url": "https://maxroll.gg/d4/build-guides/ice-shards-sorcerer-leveling-guide",
+    "class": "Sorcerer",
+    "difficulty": "Medium",
+    "tags": [
+      "leveling",
+      "sorcerer",
+      "ice shards"
+    ],
+    "equipment": [
+      {
+        "name": "Hydra Endgame",
+        "type": "Unknown",
+        "is_unique": false,
+        "category": "Jackpot",
+        "description": "\u200dSerpentine (enables Hydra Endgame)"
+      },
+      {
+        "name": "Frozen Tundra",
+        "type": "Unknown",
+        "is_unique": false,
+        "category": "Jackpot",
+        "description": "\u200dGlacial / \u200dFrozen Tundra (enables Blizzard Endgame)"
+      },
+      {
+        "name": "Flamethrower's",
+        "type": "Unknown",
+        "is_unique": false,
+        "category": "Jackpot",
+        "description": "\u200dFlamethrower's / \u200dOverheating (enables Incinerate Endgame)"
+      },
+      {
+        "name": "Unique Items",
+        "type": "Unknown",
+        "is_unique": false,
+        "category": "Jackpot",
+        "description": "Build-defining Unique Items"
+      },
+      {
+        "name": "Ophidian Iris",
+        "type": "Unknown",
+        "is_unique": false,
+        "category": "Jackpot",
+        "description": "\u200dOphidian Iris (enables Hydra Endgame)"
+      },
+      {
+        "name": "Primordial Binding",
+        "type": "Unknown",
+        "is_unique": false,
+        "category": "Jackpot",
+        "description": "\u200dCir + \u200dCeh provides additional summons that Freeze enemies and apply Vulnerable. These also activate \u200dPrimordial Binding for mobility and Mana Regeneration."
+      },
+      {
+        "name": "Critical Strike Chance",
+        "type": "Unknown",
+        "is_unique": false,
+        "category": "Jackpot",
+        "description": "\u200dGar provides additional Critical Strike Chance and is a great generic option."
+      },
+      {
+        "name": "Shocking Impact",
+        "type": "Unknown",
+        "is_unique": false,
+        "category": "Jackpot",
+        "description": "\u200dTun triggers \u200dShocking Impact for a large burst of damage. This is the highest damage potential once you have enough ranks of \u200dShocking Impact and plenty of movement speed to replace \u200dQua."
+      },
+      {
+        "name": "Invocation Runes",
+        "type": "Unknown",
+        "is_unique": false,
+        "category": "Jackpot",
+        "description": "\u200dTec for extra damage, with this you creates an earthquake and has the highest damage potential for early Invocation Runes."
+      },
+      {
+        "name": "Ritual Runes",
+        "type": "Unknown",
+        "is_unique": false,
+        "category": "Jackpot",
+        "description": "\u200dYax and \u200dPoc are other options for Ritual Runes."
+      }
+    ]
+  },
+  {
+    "title": "Shoutgun Dust Devils Barbarian Endgame Build GuideBy aoinomiku | Last Updated: September 27, 2025Season 10   Infernal ChaosEndgameBarbarian",
+    "url": "https://maxroll.gg/d4/build-guides/dust-devils-barbarian-guide",
+    "class": "Barbarian",
+    "difficulty": "Medium",
+    "tags": [
+      "endgame",
+      "barbarian"
+    ],
+    "equipment": [
+      {
+        "name": "Ugly Bastard Helm",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Ugly Bastard Helm"
+      },
+      {
+        "name": "Sabre of Tsasgal",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Sabre of Tsasgal"
+      },
+      {
+        "name": "Fists of Fate",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Fists of Fate - The Beast in the Ice"
+      },
+      {
+        "name": "Tibault's Will",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Tibault's Will - Duriel, King of Maggots, Andariel"
+      },
+      {
+        "name": "Battle Trance",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Battle Trance"
+      },
+      {
+        "name": "Grandfather",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "The Grandfather"
+      },
+      {
+        "name": "Crown of Lucion",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Crown of Lucion"
+      },
+      {
+        "name": "Ring of Starless Skies",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Ring of Starless Skies"
+      }
+    ]
+  },
+  {
+    "title": "Shred Druid Leveling GuideBy boiler | Last Updated: September 22, 2025Season 10   Infernal ChaosLevelingDruid",
+    "url": "https://maxroll.gg/d4/build-guides/shred-druid-leveling-guide",
+    "class": "Druid",
+    "difficulty": "Medium",
+    "tags": [
+      "leveling",
+      "druid",
+      "shred"
+    ],
+    "equipment": [
+      {
+        "name": "Waxing Gibbous",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Great Uniques",
+        "description": "\u200dWaxing Gibbous"
+      },
+      {
+        "name": "Mad Wolf's Glee",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Great Uniques",
+        "description": "\u200dMad Wolf's Glee"
+      }
+    ]
+  },
+  {
+    "title": "Bone Spear Necromancer Endgame Build GuideBy serocifkre | Last Updated: September 23, 2025Season 10   Infernal ChaosEndgameNecromancer",
+    "url": "https://maxroll.gg/d4/build-guides/bone-spear-necromancer-guide",
+    "class": "Necromancer",
+    "difficulty": "Medium",
+    "tags": [
+      "endgame",
+      "necromancer",
+      "bone spear"
+    ],
+    "equipment": [
+      {
+        "name": "Deathless Visage",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Deathless Visage - Echo of Varshan"
+      },
+      {
+        "name": "Indira's Memory",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Indira's Memory"
+      },
+      {
+        "name": "Banished Lord's Talisman",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Banished Lord's Talisman"
+      },
+      {
+        "name": "Lidless Wall",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Lidless Wall"
+      },
+      {
+        "name": "Shroud of False Death",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Shroud of False Death"
+      },
+      {
+        "name": "Ring of Starless Skies",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Ring of Starless Skies"
+      }
+    ]
+  },
+  {
+    "title": "Ice Shards Sorcerer Endgame GuideBy pandaglassjaw | Last Updated: September 25, 2025Season 10   Infernal ChaosEndgameSorcerer",
+    "url": "https://maxroll.gg/d4/build-guides/ice-shards-sorcerer-guide",
+    "class": "Sorcerer",
+    "difficulty": "Medium",
+    "tags": [
+      "endgame",
+      "sorcerer",
+      "ice shards"
+    ],
+    "equipment": [
+      {
+        "name": "Hail of Verglas",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Hail of Verglas"
+      },
+      {
+        "name": "Tal Rasha's Iridescent Loop",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Tal Rasha's Iridescent Loop - Echo of Varshan"
+      },
+      {
+        "name": "Shroud of False Death",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Shroud of False Death"
+      },
+      {
+        "name": "Ring of Starless Skies",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Ring of Starless Skies"
+      }
+    ]
+  },
+  {
+    "title": "Death Trap Rogue Endgame Build GuideBy Ava | Last Updated: September 28, 2025Season 10   Infernal ChaosEndgameRogue",
+    "url": "https://maxroll.gg/d4/build-guides/death-trap-rogue-guide",
+    "class": "Rogue",
+    "difficulty": "Medium",
+    "tags": [
+      "endgame",
+      "rogue",
+      "death trap"
+    ],
+    "equipment": [
+      {
+        "name": "Scoundrel's Leathers",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Scoundrel's Leathers - Duriel, King of Maggots, Andariel"
+      },
+      {
+        "name": "Echo of Varshan",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Eyes in the Dark - Echo of Varshan"
+      },
+      {
+        "name": "Beastfall Boots",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Beastfall Boots - The Beast in the Ice"
+      },
+      {
+        "name": "Harlequin Crest",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Harlequin Crest"
+      },
+      {
+        "name": "Shroud of False Death",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Shroud of False Death"
+      },
+      {
+        "name": "Banished Lord's Talisman",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Banished Lord's Talisman"
+      }
+    ]
+  },
+  {
+    "title": "Sever Necromancer Endgame Build GuideBy MacroBioBoi | Last Updated: September 22, 2025Season 10   Infernal ChaosEndgameNecromancer",
+    "url": "https://maxroll.gg/d4/build-guides/sever-necromancer-endgame-guide",
+    "class": "Necromancer",
+    "difficulty": "Medium",
+    "tags": [
+      "endgame",
+      "necromancer",
+      "sever"
+    ],
+    "equipment": [
+      {
+        "name": "Lidless Wall",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Lidless Wall"
+      },
+      {
+        "name": "Greaves of the Empty Tomb",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Greaves of the Empty Tomb - Grigoire, The Galvanic Saint"
+      },
+      {
+        "name": "Heir of Perdition",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Heir of Perdition"
+      },
+      {
+        "name": "Shroud of False Death",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Shroud of False Death"
+      },
+      {
+        "name": "Bloodless Scream",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Bloodless Scream"
+      },
+      {
+        "name": "Ring of Starless Skies",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Ring of Starless Skies"
+      }
+    ]
+  },
+  {
+    "title": "Landslide Druid Endgame Build GuideBy boiler | Last Updated: September 26, 2025Season 10   Infernal ChaosEndgameDruid",
+    "url": "https://maxroll.gg/d4/build-guides/trampleslide-druid-guide",
+    "class": "Druid",
+    "difficulty": "Medium",
+    "tags": [
+      "endgame",
+      "druid",
+      "landslide"
+    ],
+    "equipment": [
+      {
+        "name": "Vasily's Prayer",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Vasily's Prayer - Echo of Varshan"
+      },
+      {
+        "name": "Tibault's Will",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Tibault's Will - Duriel, King of Maggots, Andariel"
+      },
+      {
+        "name": "Heir of Perdition",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Heir of Perdition"
+      },
+      {
+        "name": "Shroud of False Death",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Shroud of False Death"
+      },
+      {
+        "name": "Fists of Fate",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Fists of Fate"
+      }
+    ]
+  },
+  {
+    "title": "Barrage Rogue Endgame Build GuideBy dieoxide | Last Updated: September 22, 2025Season 10   Infernal ChaosEndgameRogue",
+    "url": "https://maxroll.gg/d4/build-guides/barrage-rogue-guide",
+    "class": "Rogue",
+    "difficulty": "Medium",
+    "tags": [
+      "endgame",
+      "rogue",
+      "barrage"
+    ],
+    "equipment": [
+      {
+        "name": "Godslayer Crown",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Godslayer Crown - Duriel, King of Maggots, Andariel"
+      },
+      {
+        "name": "The Beast",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Windforce - The Beast in the Ice"
+      },
+      {
+        "name": "Fists of Fate",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Fists of Fate - The Beast in the Ice"
+      },
+      {
+        "name": "Penitent Greaves",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Penitent Greaves - Grigoire, The Galvanic Saint"
+      },
+      {
+        "name": "Heir of Perdition",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Heir of Perdition"
+      },
+      {
+        "name": "Crown of Lucion",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Crown of Lucion"
+      },
+      {
+        "name": "Orphan Maker",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Orphan Maker"
+      },
+      {
+        "name": "Ring of Starless Skies",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Ring of Starless Skies"
+      }
+    ]
+  },
+  {
+    "title": "Stormclaw Druid Endgame GuideBy boiler | Last Updated: September 26, 2025Season 10   Infernal ChaosEndgameDruid",
+    "url": "https://maxroll.gg/d4/build-guides/stormclaw-druid-guide",
+    "class": "Druid",
+    "difficulty": "Medium",
+    "tags": [
+      "endgame",
+      "druid"
+    ],
+    "equipment": [
+      {
+        "name": "Tempest Roar",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Tempest Roar - Duriel, King of Maggots, Andariel"
+      },
+      {
+        "name": "Mad Wolf's Glee",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Mad Wolf's Glee - Echo of Varshan"
+      },
+      {
+        "name": "Greatstaff of the Crone",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Greatstaff of the Crone - Echo of Varshan"
+      },
+      {
+        "name": "Paingorger's Gauntlets",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Paingorger's Gauntlets - The Beast in the Ice"
+      },
+      {
+        "name": "Tibault's Will",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Tibault's Will - Duriel, King of Maggots, Andariel"
+      },
+      {
+        "name": "Malefic Crescent",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Malefic Crescent"
+      },
+      {
+        "name": "Shard of Verathiel",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Shard of Verathiel - Infernal Hordes"
+      }
+    ]
+  },
+  {
+    "title": "Frozen Orb Sorcerer Endgame GuideBy pandaglassjaw | Last Updated: September 21, 2025Season 10   Infernal ChaosEndgameSorcerer",
+    "url": "https://maxroll.gg/d4/build-guides/frozen-orb-sorcerer-guide",
+    "class": "Sorcerer",
+    "difficulty": "Medium",
+    "tags": [
+      "endgame",
+      "sorcerer",
+      "frozen orb"
+    ],
+    "equipment": [
+      {
+        "name": "Fractured Winterglass",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Fractured Winterglass"
+      },
+      {
+        "name": "Tal Rasha's Iridescent Loop",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Tal Rasha's Iridescent Loop - Echo of Varshan"
+      },
+      {
+        "name": "Harlequin Crest",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Harlequin Crest"
+      },
+      {
+        "name": "Shroud of False Death",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Shroud of False Death"
+      },
+      {
+        "name": "Ring of Starless Skies",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Ring of Starless Skies"
+      }
+    ]
+  },
+  {
+    "title": "Meteor Sorcerer Endgame Build GuideBy Northwar | Last Updated: September 22, 2025Season 10   Infernal ChaosEndgameSorcerer",
+    "url": "https://maxroll.gg/d4/build-guides/meteor-sorcerer-guide",
+    "class": "Sorcerer",
+    "difficulty": "Medium",
+    "tags": [
+      "endgame",
+      "sorcerer",
+      "meteor"
+    ],
+    "equipment": [
+      {
+        "name": "Starfall Coronet",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Starfall Coronet - The Beast in the Ice"
+      },
+      {
+        "name": "Tal Rasha's Iridescent Loop",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Tal Rasha's Iridescent Loop - Echo of Varshan"
+      },
+      {
+        "name": "Godslayer Crown",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Godslayer Crown - Duriel, King of Maggots, Andariel"
+      },
+      {
+        "name": "King of Maggots",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Flickerstep - Duriel, King of Maggots, Andariel"
+      },
+      {
+        "name": "Harlequin Crest",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Harlequin Crest"
+      },
+      {
+        "name": "Shroud of False Death",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Shroud of False Death"
+      },
+      {
+        "name": "Fists of Fate",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Fists of Fate"
+      }
+    ]
+  },
+  {
+    "title": "Blight Necromancer Endgame Build GuideBy MacroBioBoi | Last Updated: September 22, 2025Season 10   Infernal ChaosEndgameNecromancer",
+    "url": "https://maxroll.gg/d4/build-guides/blight-necromancer-guide",
+    "class": "Necromancer",
+    "difficulty": "Medium",
+    "tags": [
+      "endgame",
+      "necromancer",
+      "blight"
+    ],
+    "equipment": [
+      {
+        "name": "Bloodless Scream",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Bloodless Scream"
+      },
+      {
+        "name": "The Galvanic Saint",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Ebonpiercer - Grigoire, The Galvanic Saint"
+      },
+      {
+        "name": "Heir of Perdition",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Heir of Perdition"
+      },
+      {
+        "name": "Shroud of False Death",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Shroud of False Death"
+      },
+      {
+        "name": "Crown of Lucion",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Crown of Lucion"
+      },
+      {
+        "name": "Ring of Starless Skies",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Ring of Starless Skies"
+      }
+    ]
+  },
+  {
+    "title": "Ball Lightning Sorcerer Endgame Build GuideBy Northwar | Last Updated: September 25, 2025Season 10   Infernal ChaosEndgameSorcerer",
+    "url": "https://maxroll.gg/d4/build-guides/ball-lightning-sorcerer-guide",
+    "class": "Sorcerer",
+    "difficulty": "Medium",
+    "tags": [
+      "endgame",
+      "sorcerer",
+      "ball lightning"
+    ],
+    "equipment": [
+      {
+        "name": "Okun's Catalyst",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Okun's Catalyst"
+      },
+      {
+        "name": "Crown of Lucion",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Crown of Lucion - Infernal Hordes"
+      },
+      {
+        "name": "Galvanic\u00a0Azurite",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Galvanic\u00a0Azurite"
+      },
+      {
+        "name": "Tal Rasha's Iridescent Loop",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Tal Rasha's Iridescent Loop - Echo of Varshan"
+      },
+      {
+        "name": "Heir of Perdition",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Heir of Perdition"
+      },
+      {
+        "name": "Locran's Talisman",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Locran's Talisman"
+      },
+      {
+        "name": "Banished Lord's Talisman",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Banished Lord's Talisman"
+      },
+      {
+        "name": "Ring of Starless Skies",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Ring of Starless Skies"
+      }
+    ]
+  },
+  {
+    "title": "Lightning Storm Druid Endgame Build GuideBy Danger | Last Updated: September 23, 2025Season 10   Infernal ChaosEndgameDruid",
+    "url": "https://maxroll.gg/d4/build-guides/lightning-storm-druid-guide",
+    "class": "Druid",
+    "difficulty": "Medium",
+    "tags": [
+      "endgame",
+      "druid",
+      "lightning storm"
+    ],
+    "equipment": [
+      {
+        "name": "Tempest Roar",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Tempest Roar - Duriel, King of Maggots, Andariel"
+      },
+      {
+        "name": "Mad Wolf's Glee",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Mad Wolf's Glee - Echo of Varshan"
+      },
+      {
+        "name": "Unsung Ascetic's Wraps",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Unsung Ascetic's Wraps - The Beast in the Ice"
+      },
+      {
+        "name": "Tibault's Will",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Tibault's Will - Duriel, King of Maggots, Andariel"
+      },
+      {
+        "name": "Malefic Crescent",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Malefic Crescent"
+      },
+      {
+        "name": "Shroud of False Death",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Shroud of False Death"
+      },
+      {
+        "name": "Ring of Starless Skies",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Ring of Starless Skies"
+      }
+    ]
+  },
+  {
+    "title": "Chain Lightning Sorcerer Endgame Build GuideBy Northwar | Last Updated: September 22, 2025Season 10   Infernal ChaosEndgameSorcerer",
+    "url": "https://maxroll.gg/d4/build-guides/chain-lightning-sorcerer-guide",
+    "class": "Sorcerer",
+    "difficulty": "Medium",
+    "tags": [
+      "endgame",
+      "sorcerer",
+      "chain lightning"
+    ],
+    "equipment": [
+      {
+        "name": "Crown of Lucion",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Crown of Lucion - Infernal Hordes"
+      },
+      {
+        "name": "Axial Conduit",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Axial Conduit - Grigoire, The Galvanic Saint"
+      },
+      {
+        "name": "Galvanic\u00a0Azurite",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Galvanic\u00a0Azurite"
+      },
+      {
+        "name": "Tal Rasha's Iridescent Loop",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Tal Rasha's Iridescent Loop - Echo of Varshan"
+      },
+      {
+        "name": "Heir of Perdition",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Heir of Perdition"
+      },
+      {
+        "name": "Banished Lord's Talisman",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Banished Lord's Talisman"
+      },
+      {
+        "name": "Ring of Starless Skies",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Ring of Starless Skies"
+      }
+    ]
+  },
+  {
+    "title": "Thorns Barbarian Endgame Build GuideBy beatdropper | Last Updated: September 23, 2025Season 10   Infernal ChaosEndgameBarbarian",
+    "url": "https://maxroll.gg/d4/build-guides/thorns-barbarian-guide",
+    "class": "Barbarian",
+    "difficulty": "Medium",
+    "tags": [
+      "endgame",
+      "barbarian",
+      "thorns"
+    ],
+    "equipment": [
+      {
+        "name": "Crown of Lucion",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Crown of Lucion - Infernal Hordes"
+      },
+      {
+        "name": "Razorplate",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Razorplate - Lord Zir"
+      },
+      {
+        "name": "Sabre of Tsasgal",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Sabre of Tsasgal"
+      },
+      {
+        "name": "Fists of Fate",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Fists of Fate - The Beast in the Ice"
+      },
+      {
+        "name": "Harlequin Crest",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Harlequin Crest"
+      },
+      {
+        "name": "Shroud of False Death",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Shroud of False Death"
+      },
+      {
+        "name": "Doombringer",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Doombringer"
+      },
+      {
+        "name": "Ring of Starless Skies",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Ring of Starless Skies"
+      }
+    ]
+  },
+  {
+    "title": "Rapid Fire Rogue Endgame Build GuideBy dieoxide | Last Updated: September 22, 2025Season 10   Infernal ChaosEndgameRogue",
+    "url": "https://maxroll.gg/d4/build-guides/rapid-fire-rogue-guide",
+    "class": "Rogue",
+    "difficulty": "Medium",
+    "tags": [
+      "endgame",
+      "rogue",
+      "rapid fire"
+    ],
+    "equipment": [
+      {
+        "name": "Cowl of the Nameless",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Cowl of the Nameless - Duriel, King of Maggots, Andariel"
+      },
+      {
+        "name": "Orphan Maker",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Orphan Maker"
+      },
+      {
+        "name": "Echo of Varshan",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Condemnation - Echo of Varshan"
+      },
+      {
+        "name": "Fists of Fate",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Fists of Fate - The Beast in the Ice"
+      },
+      {
+        "name": "Penitent Greaves",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Penitent Greaves - Grigoire, The Galvanic Saint"
+      },
+      {
+        "name": "Scoundrel's Kiss",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Scoundrel's Kiss - Lord Zir"
+      },
+      {
+        "name": "Heir of Perdition",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Heir of Perdition"
+      },
+      {
+        "name": "Crown of Lucion",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Crown of Lucion"
+      },
+      {
+        "name": "Ring of Starless Skies",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Ring of Starless Skies"
+      }
+    ]
+  },
+  {
+    "title": "Blood Lance Necromancer Endgame Build GuideBy MacroBioBoi | Last Updated: September 22, 2025Season 10   Infernal ChaosEndgameNecromancer",
+    "url": "https://maxroll.gg/d4/build-guides/blood-lance-necromancer-guide",
+    "class": "Necromancer",
+    "difficulty": "Medium",
+    "tags": [
+      "endgame",
+      "necromancer",
+      "blood lance"
+    ],
+    "equipment": [
+      {
+        "name": "Crown of Lucion",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Crown of Lucion - Infernal Hordes"
+      },
+      {
+        "name": "Mutilator Plate",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Mutilator Plate - The Beast in the Ice"
+      },
+      {
+        "name": "Blood Moon Breeches",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Blood Moon Breeches - Duriel, King of Maggots, Andariel"
+      },
+      {
+        "name": "Lidless Wall",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Lidless Wall"
+      },
+      {
+        "name": "Heir of Perdition",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Heir of Perdition"
+      },
+      {
+        "name": "Shroud of False Death",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Shroud of False Death"
+      },
+      {
+        "name": "Fists of Fate",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Fists of Fate"
+      },
+      {
+        "name": "Ring of Starless Skies",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Ring of Starless Skies"
+      }
+    ]
+  },
+  {
+    "title": "Double Swing Barbarian Endgame Build GuideBy snail | Last Updated: September 24, 2025Season 10   Infernal ChaosEndgameBarbarian",
+    "url": "https://maxroll.gg/d4/build-guides/double-swing-barbarian-guide",
+    "class": "Barbarian",
+    "difficulty": "Medium",
+    "tags": [
+      "endgame",
+      "barbarian",
+      "double swing"
+    ],
+    "equipment": [
+      {
+        "name": "Crown of Lucion",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Crown of Lucion - Infernal Hordes"
+      },
+      {
+        "name": "Fists of Fate",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Fists of Fate"
+      },
+      {
+        "name": "Sabre of Tsasgal",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Sabre of Tsasgal"
+      },
+      {
+        "name": "Twin Strikes",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Twin Strikes - Grigoire, The Galvanic Saint"
+      },
+      {
+        "name": "Tibault's Will",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Tibault's Will - Duriel, King of Maggots, Andariel"
+      },
+      {
+        "name": "Battle Trance",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Battle Trance"
+      },
+      {
+        "name": "Ring of Red Furor",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Ring of Red Furor - Echo of Varshan"
+      },
+      {
+        "name": "Banished Lord's Talisman",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Banished Lord's Talisman - Duriel, King of Maggots, Andariel"
+      }
+    ]
+  },
+  {
+    "title": "Blizzard Sorcerer Endgame GuideBy pandaglassjaw | Last Updated: September 22, 2025Season 10   Infernal ChaosEndgameSorcerer",
+    "url": "https://maxroll.gg/d4/build-guides/blizzard-sorcerer-guide",
+    "class": "Sorcerer",
+    "difficulty": "Medium",
+    "tags": [
+      "endgame",
+      "sorcerer",
+      "blizzard"
+    ],
+    "equipment": [
+      {
+        "name": "Blue Rose",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Blue Rose - Duriel, King of Maggots, Andariel"
+      },
+      {
+        "name": "Tal Rasha's Iridescent Loop",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Tal Rasha's Iridescent Loop - Echo of Varshan"
+      },
+      {
+        "name": "Harlequin Crest",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Harlequin Crest"
+      },
+      {
+        "name": "Shroud of False Death",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Shroud of False Death"
+      },
+      {
+        "name": "Ring of Starless Skies",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Ring of Starless Skies"
+      }
+    ]
+  },
+  {
+    "title": "Companion Druid Leveling GuideBy boiler | Last Updated: September 22, 2025Season 10   Infernal ChaosLevelingDruid",
+    "url": "https://maxroll.gg/d4/build-guides/companion-druid-leveling-guide",
+    "class": "Druid",
+    "difficulty": "Medium",
+    "tags": [
+      "leveling",
+      "druid",
+      "companion"
+    ],
+    "equipment": [
+      {
+        "name": "Storm's Companion (for Wolves)",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Great Uniques",
+        "description": "\u200dStorm's Companion (for Wolves)"
+      },
+      {
+        "name": "Kilt of\u00a0Blackwing (for Ravens)",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Great Uniques",
+        "description": "\u200dKilt of\u00a0Blackwing (for Ravens)"
+      }
+    ]
+  },
+  {
+    "title": "Fireball Sorcerer Endgame Build GuideBy Northwar | Last Updated: September 23, 2025Season 10   Infernal ChaosEndgameSorcerer",
+    "url": "https://maxroll.gg/d4/build-guides/fireball-sorcerer-guide",
+    "class": "Sorcerer",
+    "difficulty": "Medium",
+    "tags": [
+      "endgame",
+      "sorcerer"
+    ],
+    "equipment": [
+      {
+        "name": "Gloves of the Illuminator",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Gloves of the Illuminator - The Beast in the Ice"
+      },
+      {
+        "name": "Godslayer Crown",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Godslayer Crown - Duriel, King of Maggots, Andariel"
+      },
+      {
+        "name": "Staff of Endless Rage",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Staff of Endless Rage - Echo of Varshan"
+      },
+      {
+        "name": "Rakanoth's Wake",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Rakanoth's Wake - Infernal Hordes"
+      },
+      {
+        "name": "Tal Rasha's Iridescent Loop",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Tal Rasha's Iridescent Loop - Echo of Varshan"
+      },
+      {
+        "name": "Harlequin Crest",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Harlequin Crest"
+      },
+      {
+        "name": "Shroud of False Death",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Shroud of False Death"
+      },
+      {
+        "name": "Fists of Fate",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Fists of Fate"
+      },
+      {
+        "name": "Ring of Starless Skies",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Ring of Starless Skies"
+      }
+    ]
+  },
+  {
+    "title": "Blood Surge Necromancer Endgame Build GuideBy MacroBioBoi | Last Updated: September 22, 2025Season 10   Infernal ChaosEndgameNecromancer",
+    "url": "https://maxroll.gg/d4/build-guides/blood-surge-necromancer-guide",
+    "class": "Necromancer",
+    "difficulty": "Medium",
+    "tags": [
+      "endgame",
+      "necromancer",
+      "blood surge"
+    ],
+    "equipment": [
+      {
+        "name": "Cruor's Embrace",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Cruor's Embrace - Lord Zir"
+      },
+      {
+        "name": "Blood Moon Breeches",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Blood Moon Breeches - Duriel, King of Maggots, Andariel"
+      },
+      {
+        "name": "Lidless Wall",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Lidless Wall"
+      },
+      {
+        "name": "Heir of Perdition",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Heir of Perdition"
+      },
+      {
+        "name": "Shroud of False Death",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Shroud of False Death"
+      },
+      {
+        "name": "Deathspeaker's Pendant",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Deathspeaker's Pendant"
+      },
+      {
+        "name": "Ring of Starless Skies",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Ring of Starless Skies"
+      }
+    ]
+  },
+  {
+    "title": "Landslide Druid Leveling GuideBy boiler | Last Updated: September 22, 2025Season 10   Infernal ChaosLevelingDruid",
+    "url": "https://maxroll.gg/d4/build-guides/landslide-druid-leveling-guide",
+    "class": "Druid",
+    "difficulty": "Medium",
+    "tags": [
+      "leveling",
+      "druid",
+      "landslide"
+    ],
+    "equipment": [
+      {
+        "name": "Vasily's Prayer",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Great Uniques",
+        "description": "\u200dVasily's Prayer"
+      },
+      {
+        "name": "Tibault's Will",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Great Uniques",
+        "description": "\u200dTibault's Will"
+      },
+      {
+        "name": "Earthbreaker",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Great Uniques",
+        "description": "\u200dEarthbreaker"
+      }
+    ]
+  },
+  {
+    "title": "Whirlwind Barbarian Leveling GuideBy kondyss | Last Updated: September 23, 2025Season 10   Infernal ChaosLevelingBarbarian",
+    "url": "https://maxroll.gg/d4/build-guides/whirlwind-barbarian-leveling-guide",
+    "class": "Barbarian",
+    "difficulty": "Medium",
+    "tags": [
+      "leveling",
+      "barbarian",
+      "whirlwind"
+    ],
+    "equipment": [
+      {
+        "name": "Razorplate",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Great Uniques",
+        "description": "\u200dRazorplate"
+      },
+      {
+        "name": "Rage of Harrogath",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Great Uniques",
+        "description": "\u200dRage of Harrogath"
+      },
+      {
+        "name": "Gohr's Devastating Grips",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Great Uniques",
+        "description": "\u200dGohr's Devastating Grips"
+      }
+    ]
+  },
+  {
+    "title": "Upheaval Barbarian Endgame Build GuideBy beatdropper | Last Updated: September 24, 2025Season 10   Infernal ChaosEndgameBarbarian",
+    "url": "https://maxroll.gg/d4/build-guides/upheaval-barbarian-guide",
+    "class": "Barbarian",
+    "difficulty": "Medium",
+    "tags": [
+      "endgame",
+      "barbarian"
+    ],
+    "equipment": [
+      {
+        "name": "Crown of Lucion",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Crown of Lucion - Infernal Hordes"
+      },
+      {
+        "name": "The Beast",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Hellhammer - The Beast in the Ice"
+      },
+      {
+        "name": "Sabre of Tsasgal",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Sabre of Tsasgal"
+      },
+      {
+        "name": "Tibault's Will",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Tibault's Will - Duriel, King of Maggots, Andariel"
+      },
+      {
+        "name": "Ring of Red Furor",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Ring of Red Furor - Echo of Varshan"
+      },
+      {
+        "name": "Banished Lord's Talisman",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Banished Lord's Talisman - Duriel, King of Maggots, Andariel"
+      },
+      {
+        "name": "Heir of Perdition",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Heir of Perdition"
+      },
+      {
+        "name": "Grandfather",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "The Grandfather"
+      },
+      {
+        "name": "Ugly Bastard Helm",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Ugly Bastard Helm"
+      },
+      {
+        "name": "Battle Trance",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Battle Trance"
+      }
+    ]
+  },
+  {
+    "title": "Boulder Druid Endgame Build GuideBy Danger | Last Updated: September 27, 2025Season 10   Infernal ChaosEndgameDruid",
+    "url": "https://maxroll.gg/d4/build-guides/boulder-druid-guide",
+    "class": "Druid",
+    "difficulty": "Medium",
+    "tags": [
+      "endgame",
+      "druid",
+      "boulder"
+    ],
+    "equipment": [
+      {
+        "name": "Vasily's Prayer",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Vasily's Prayer - Echo of Varshan"
+      },
+      {
+        "name": "Tibault's Will",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Tibault's Will - Duriel, King of Maggots, Andariel"
+      },
+      {
+        "name": "Dolmen Stone",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Dolmen Stone - Duriel, King of Maggots, Andariel"
+      },
+      {
+        "name": "Banished Lord's Talisman",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Banished Lord's Talisman"
+      },
+      {
+        "name": "Fists of Fate",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Fists of Fate"
+      },
+      {
+        "name": "Shroud of False Death",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Shroud of False Death"
+      },
+      {
+        "name": "Ring of Starless Skies",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Ring of Starless Skies"
+      }
+    ]
+  },
+  {
+    "title": "Lightning Storm Druid Leveling GuideBy Danger | Last Updated: September 22, 2025Season 10   Infernal ChaosLevelingDruid",
+    "url": "https://maxroll.gg/d4/build-guides/lightning-storm-druid-leveling-guide",
+    "class": "Druid",
+    "difficulty": "Medium",
+    "tags": [
+      "leveling",
+      "druid",
+      "lightning storm"
+    ],
+    "equipment": [
+      {
+        "name": "Unsung Ascetic's Wraps",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Great Uniques",
+        "description": "\u200dUnsung Ascetic's Wraps"
+      },
+      {
+        "name": "Tempest Roar",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Great Uniques",
+        "description": "\u200dTempest Roar"
+      }
+    ]
+  },
+  {
+    "title": "Double Swing Barbarian Leveling GuideBy kondyss | Last Updated: September 23, 2025Season 10   Infernal ChaosLevelingBarbarian",
+    "url": "https://maxroll.gg/d4/build-guides/double-swing-barbarian-leveling-guide",
+    "class": "Barbarian",
+    "difficulty": "Medium",
+    "tags": [
+      "leveling",
+      "barbarian",
+      "double swing"
+    ],
+    "equipment": [
+      {
+        "name": "Twin Strikes",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Great Uniques",
+        "description": "\u200dTwin Strikes"
+      },
+      {
+        "name": "Ramaladni's Magnum Opus",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Great Uniques",
+        "description": "\u200dRamaladni's Magnum Opus"
+      },
+      {
+        "name": "Yen's Blessing",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Great Uniques",
+        "description": "\u200dYen's Blessing"
+      }
+    ]
+  },
+  {
+    "title": "Shadow Step Rogue Build GuideBy Ava | Last Updated: September 22, 2025Season 10   Infernal ChaosEndgameRogue",
+    "url": "https://maxroll.gg/d4/build-guides/shadow-step-rogue-guide",
+    "class": "Rogue",
+    "difficulty": "Medium",
+    "tags": [
+      "endgame",
+      "rogue",
+      "shadow step"
+    ],
+    "equipment": [
+      {
+        "name": "Assassin's Stride",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Assassin's Stride"
+      },
+      {
+        "name": "Cowl of the Nameless",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Cowl of the Nameless - Duriel, King of Maggots, Andariel"
+      },
+      {
+        "name": "Asheara's Khanjar",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Asheara's Khanjar - Lord Zir"
+      },
+      {
+        "name": "Grasp of Shadow",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Grasp of Shadow - Grigoire, The Galvanic Saint"
+      },
+      {
+        "name": "Fists of Fate",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Fists of Fate"
+      },
+      {
+        "name": "Shroud of False Death",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Shroud of False Death"
+      },
+      {
+        "name": "Ring of Starless Skies",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Ring of Starless Skies"
+      }
+    ]
+  },
+  {
+    "title": "Companion Druid Endgame Build GuideBy thesssain | Last Updated: September 27, 2025Season 10   Infernal ChaosEndgameDruid",
+    "url": "https://maxroll.gg/d4/build-guides/companion-druid-guide",
+    "class": "Druid",
+    "difficulty": "Medium",
+    "tags": [
+      "endgame",
+      "druid",
+      "companion"
+    ],
+    "equipment": [
+      {
+        "name": "Kilt of\u00a0Blackwing",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Kilt of\u00a0Blackwing"
+      },
+      {
+        "name": "Heir of Perdition",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Heir of Perdition"
+      },
+      {
+        "name": "Shroud of False Death",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Shroud of False Death"
+      },
+      {
+        "name": "Fists of Fate",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Fists of Fate"
+      },
+      {
+        "name": "Ring of Starless Skies",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Ring of Starless Skies"
+      }
+    ]
+  },
+  {
+    "title": "Minion Necromancer Endgame Build GuideBy serocifkre | Last Updated: September 27, 2025Season 10   Infernal ChaosEndgameNecromancer",
+    "url": "https://maxroll.gg/d4/build-guides/minion-necromancer-guide",
+    "class": "Necromancer",
+    "difficulty": "Medium",
+    "tags": [
+      "endgame",
+      "necromancer",
+      "minion"
+    ],
+    "equipment": [
+      {
+        "name": "The Hand of Naz",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "The Hand of Naz"
+      },
+      {
+        "name": "Blood Moon Breeches",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Blood Moon Breeches - Duriel, King of Maggots, Andariel"
+      },
+      {
+        "name": "Ring of Mendeln",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Ring of Mendeln"
+      },
+      {
+        "name": "Shroud of False Death",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Shroud of False Death"
+      },
+      {
+        "name": "Lidless Wall",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Lidless Wall"
+      }
+    ]
+  },
+  {
+    "title": "Minion Necromancer Leveling Build GuideBy serocifkre | Last Updated: September 23, 2025Season 10   Infernal ChaosLevelingNecromancer",
+    "url": "https://maxroll.gg/d4/build-guides/minion-necromancer-leveling-guide",
+    "class": "Necromancer",
+    "difficulty": "Medium",
+    "tags": [
+      "leveling",
+      "necromancer",
+      "minion"
+    ],
+    "equipment": [
+      {
+        "name": "Ring of Mendeln",
+        "type": "Jewelry",
+        "is_unique": true,
+        "category": "Great Uniques",
+        "description": "\u200dRing of Mendeln"
+      },
+      {
+        "name": "Blood Moon Breeches",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Great Uniques",
+        "description": "\u200dBlood Moon Breeches"
+      }
+    ]
+  },
+  {
+    "title": "Bash Barbarian Endgame Build GuideBy beatdropper | Last Updated: September 24, 2025Season 10   Infernal ChaosEndgameBarbarian",
+    "url": "https://maxroll.gg/d4/build-guides/bash-barbarian-guide",
+    "class": "Barbarian",
+    "difficulty": "Medium",
+    "tags": [
+      "endgame",
+      "barbarian"
+    ],
+    "equipment": [
+      {
+        "name": "Shard of Verathiel",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Shard of Verathiel - Infernal Hordes"
+      },
+      {
+        "name": "Hooves of the Mountain God",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Hooves of the Mountain God"
+      },
+      {
+        "name": "Crown of Lucion",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Crown of Lucion - Infernal Hordes"
+      },
+      {
+        "name": "Ramaladni's Magnum Opus",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Ramaladni's Magnum Opus - Lord Zir"
+      },
+      {
+        "name": "Paingorger's Gauntlets",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Paingorger's Gauntlets - The Beast in the Ice"
+      },
+      {
+        "name": "Grandfather",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "The Grandfather"
+      },
+      {
+        "name": "Sabre of Tsasgal",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Sabre of Tsasgal"
+      },
+      {
+        "name": "Battle Trance",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Battle Trance"
+      },
+      {
+        "name": "Ring of Starless Skies",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Ring of Starless Skies"
+      }
+    ]
+  },
+  {
+    "title": "Heartseeker Rogue Endgame Build GuideBy dieoxide | Last Updated: September 26, 2025Season 10   Infernal ChaosEndgameRogue",
+    "url": "https://maxroll.gg/d4/build-guides/heartseeker-rogue-specialized-guide",
+    "class": "Rogue",
+    "difficulty": "Medium",
+    "tags": [
+      "endgame",
+      "rogue",
+      "heartseeker"
+    ],
+    "equipment": [
+      {
+        "name": "Cowl of the Nameless",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Cowl of the Nameless - Duriel, King of Maggots, Andariel"
+      },
+      {
+        "name": "Shard of Verathiel",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Shard of Verathiel - Infernal Hordes"
+      },
+      {
+        "name": "Paingorger's Gauntlets",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Paingorger's Gauntlets - The Beast in the Ice"
+      },
+      {
+        "name": "Penitent Greaves",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Penitent Greaves - Grigoire, The Galvanic Saint"
+      },
+      {
+        "name": "Heir of Perdition",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Heir of Perdition"
+      },
+      {
+        "name": "Fists of Fate",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Fists of Fate"
+      },
+      {
+        "name": "Crown of Lucion",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Crown of Lucion"
+      },
+      {
+        "name": "Grasp of Shadow",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Grasp of Shadow"
+      },
+      {
+        "name": "Ring of Starless Skies",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Ring of Starless Skies"
+      }
+    ]
+  },
+  {
+    "title": "Earthquake Barbarian Endgame Build GuideBy snail | Last Updated: September 23, 2025Season 10   Infernal ChaosEndgameBarbarian",
+    "url": "https://maxroll.gg/d4/build-guides/earthquake-barbarian-guide",
+    "class": "Barbarian",
+    "difficulty": "Medium",
+    "tags": [
+      "endgame",
+      "barbarian",
+      "earthquake"
+    ],
+    "equipment": [
+      {
+        "name": "Tuskhelm of Joritz the Mighty",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Tuskhelm of Joritz the Mighty - Duriel, King of Maggots, Andariel"
+      },
+      {
+        "name": "Mantle of Mountain's Fury",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Mantle of Mountain's Fury"
+      },
+      {
+        "name": "Sabre of Tsasgal",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Sabre of Tsasgal"
+      },
+      {
+        "name": "Fists of Fate",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Fists of Fate - The Beast in the Ice"
+      },
+      {
+        "name": "Battle Trance",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Battle Trance"
+      },
+      {
+        "name": "Ugly Bastard Helm",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Ugly Bastard Helm"
+      },
+      {
+        "name": "Crown of Lucion",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Crown of Lucion"
+      },
+      {
+        "name": "Ring of Starless Skies",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Ring of Starless Skies"
+      }
+    ]
+  },
+  {
+    "title": "Death Blow Barbarian Endgame Build GuideBy beatdropper | Last Updated: September 24, 2025Season 10   Infernal ChaosEndgameBarbarian",
+    "url": "https://maxroll.gg/d4/build-guides/kick-death-blow-guide",
+    "class": "Barbarian",
+    "difficulty": "Medium",
+    "tags": [
+      "endgame",
+      "barbarian",
+      "death blow"
+    ],
+    "equipment": [
+      {
+        "name": "The Third Blade",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "The Third Blade - Infernal Hordes"
+      },
+      {
+        "name": "Crown of Lucion",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Crown of Lucion - Infernal Hordes"
+      },
+      {
+        "name": "Lord Zir",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Overkill - Lord Zir"
+      },
+      {
+        "name": "Sabre of Tsasgal",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Sabre of Tsasgal"
+      },
+      {
+        "name": "Tibault's Will",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Tibault's Will - Duriel, King of Maggots, Andariel"
+      },
+      {
+        "name": "Ring of Red Furor",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Ring of Red Furor - Echo of Varshan"
+      },
+      {
+        "name": "Banished Lord's Talisman",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Banished Lord's Talisman - Duriel, King of Maggots, Andariel"
+      },
+      {
+        "name": "Grandfather",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "The Grandfather"
+      },
+      {
+        "name": "Ugly Bastard Helm",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Ugly Bastard Helm"
+      },
+      {
+        "name": "Battle Trance",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Battle Trance"
+      }
+    ]
+  },
+  {
+    "title": "Flay Barbarian Build GuideBy snail | Last Updated: September 24, 2025Season 10   Infernal ChaosEndgameBarbarian",
+    "url": "https://maxroll.gg/d4/build-guides/flay-barbarian-guide",
+    "class": "Barbarian",
+    "difficulty": "Medium",
+    "tags": [
+      "endgame",
+      "barbarian"
+    ],
+    "equipment": [
+      {
+        "name": "Tuskhelm of Joritz the Mighty",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Tuskhelm of Joritz the Mighty - Duriel, King of Maggots, Andariel"
+      },
+      {
+        "name": "Rage of Harrogath",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Rage of Harrogath - Grigoire, The Galvanic Saint"
+      },
+      {
+        "name": "Shard of Verathiel",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Shard of Verathiel - Infernal Hordes"
+      },
+      {
+        "name": "Ramaladni's Magnum Opus",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Ramaladni's Magnum Opus - Lord Zir"
+      },
+      {
+        "name": "Battle Trance",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Battle Trance"
+      },
+      {
+        "name": "Tibault's Will",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Tibault's Will - Duriel, King of Maggots, Andariel"
+      },
+      {
+        "name": "Hooves of the Mountain God",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Hooves of the Mountain God"
+      },
+      {
+        "name": "Harlequin Crest",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Harlequin Crest"
+      },
+      {
+        "name": "Crown of Lucion",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Crown of Lucion"
+      },
+      {
+        "name": "Ring of Starless Skies",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Ring of Starless Skies"
+      }
+    ]
+  },
+  {
+    "title": "Lightning Spear Sorcerer Endgame Build GuideBy Northwar | Last Updated: September 22, 2025Season 10   Infernal ChaosEndgameSorcerer",
+    "url": "https://maxroll.gg/d4/build-guides/lightning-spear-sorcerer-guide",
+    "class": "Sorcerer",
+    "difficulty": "Medium",
+    "tags": [
+      "endgame",
+      "sorcerer",
+      "lightning spear"
+    ],
+    "equipment": [
+      {
+        "name": "Godslayer Crown",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Godslayer Crown - Duriel, King of Maggots, Andariel"
+      },
+      {
+        "name": "Rakanoth's Wake",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Rakanoth's Wake - Infernal Hordes"
+      },
+      {
+        "name": "Galvanic\u00a0Azurite",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Galvanic\u00a0Azurite"
+      },
+      {
+        "name": "Tal Rasha's Iridescent Loop",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Tal Rasha's Iridescent Loop - Echo of Varshan"
+      },
+      {
+        "name": "Harlequin Crest",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Harlequin Crest"
+      },
+      {
+        "name": "Shroud of False Death",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Shroud of False Death"
+      },
+      {
+        "name": "Fists of Fate",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Fists of Fate"
+      },
+      {
+        "name": "Ring of Starless Skies",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Ring of Starless Skies"
+      }
+    ]
+  },
+  {
+    "title": "Rupture Barbarian Endgame Build GuideBy snail | Last Updated: September 24, 2025Season 10   Infernal ChaosEndgameBarbarian",
+    "url": "https://maxroll.gg/d4/build-guides/rupture-barbarian-build-guide",
+    "class": "Barbarian",
+    "difficulty": "Medium",
+    "tags": [
+      "endgame",
+      "barbarian",
+      "rupture"
+    ],
+    "equipment": [
+      {
+        "name": "Rage of Harrogath",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Rage of Harrogath - Grigoire, The Galvanic Saint"
+      },
+      {
+        "name": "The Third Blade",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "The Third Blade - Infernal Hordes"
+      },
+      {
+        "name": "Tuskhelm of Joritz the Mighty",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Tuskhelm of Joritz the Mighty - Duriel, King of Maggots, Andariel"
+      },
+      {
+        "name": "Fields of Crimson",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Fields of Crimson - Echo of Varshan"
+      },
+      {
+        "name": "Sabre of Tsasgal",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Sabre of Tsasgal"
+      },
+      {
+        "name": "Tibault's Will",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Tibault's Will - Duriel, King of Maggots, Andariel"
+      },
+      {
+        "name": "Battle Trance",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Battle Trance"
+      },
+      {
+        "name": "Heir of Perdition",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Heir of Perdition"
+      },
+      {
+        "name": "Fists of Fate",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Fists of Fate"
+      },
+      {
+        "name": "Crown of Lucion",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Crown of Lucion"
+      },
+      {
+        "name": "Ring of Starless Skies",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Ring of Starless Skies"
+      }
+    ]
+  },
+  {
+    "title": "Quill Volley Spiritborn Leveling GuideBy Wudijo | Last Updated: September 23, 2025Season 10   Infernal ChaosLevelingSpiritborn",
+    "url": "https://maxroll.gg/d4/build-guides/quill-volley-spiritborn-leveling-guide",
+    "class": "Spiritborn",
+    "difficulty": "Medium",
+    "tags": [
+      "leveling",
+      "spiritborn",
+      "quill volley"
+    ],
+    "equipment": [
+      {
+        "name": "Rod of Kepeleke",
+        "type": "Weapon",
+        "is_unique": true,
+        "category": "Great Uniques",
+        "description": "\u200dRod of Kepeleke"
+      },
+      {
+        "name": "Harmony of Ebewaka",
+        "type": "Weapon",
+        "is_unique": true,
+        "category": "Great Uniques",
+        "description": "\u200dHarmony of Ebewaka"
+      },
+      {
+        "name": "Loyalty's Mantle",
+        "type": "Armor",
+        "is_unique": true,
+        "category": "Great Uniques",
+        "description": "\u200dLoyalty's Mantle"
+      },
+      {
+        "name": "Ring of the Midnight Sun",
+        "type": "Jewelry",
+        "is_unique": true,
+        "category": "Great Uniques",
+        "description": "\u200dRing of the Midnight Sun"
+      },
+      {
+        "name": "Peacemonger's Signet",
+        "type": "Jewelry",
+        "is_unique": true,
+        "category": "Great Uniques",
+        "description": "\u200dPeacemonger's Signet"
+      },
+      {
+        "name": "Mother's Embrace",
+        "type": "Armor",
+        "is_unique": true,
+        "category": "Great Uniques",
+        "description": "\u200dMother's Embrace"
+      }
+    ]
+  },
+  {
+    "title": "Rake Spiritborn Leveling GuideBy Chronikz | Last Updated: September 22, 2025Season 10   Infernal ChaosLevelingSpiritborn",
+    "url": "https://maxroll.gg/d4/build-guides/rake-spiritborn-leveling-guide",
+    "class": "Spiritborn",
+    "difficulty": "Medium",
+    "tags": [
+      "leveling",
+      "spiritborn"
+    ],
+    "equipment": [
+      {
+        "name": "Loyalty's Mantle",
+        "type": "Armor",
+        "is_unique": true,
+        "category": "Great Uniques",
+        "description": "\u200dLoyalty's Mantle"
+      },
+      {
+        "name": "Harmony of Ebewaka",
+        "type": "Weapon",
+        "is_unique": true,
+        "category": "Great Uniques",
+        "description": "\u200dHarmony of Ebewaka"
+      },
+      {
+        "name": "Rod of Kepeleke",
+        "type": "Weapon",
+        "is_unique": true,
+        "category": "Great Uniques",
+        "description": "\u200dRod of Kepeleke"
+      },
+      {
+        "name": "Ring of the Midnight Sun",
+        "type": "Jewelry",
+        "is_unique": true,
+        "category": "Great Uniques",
+        "description": "\u200dRing of the Midnight Sun"
+      },
+      {
+        "name": "Peacemonger's Signet",
+        "type": "Jewelry",
+        "is_unique": true,
+        "category": "Great Uniques",
+        "description": "\u200dPeacemonger's Signet"
+      },
+      {
+        "name": "Razorplate",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Great Uniques",
+        "description": "\u200dRazorplate"
+      },
+      {
+        "name": "Wound Drinker",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Great Uniques",
+        "description": "\u200dWound Drinker"
+      }
+    ]
+  },
+  {
+    "title": "Rock Splitter Thorns Spiritborn Leveling GuideBy katt | Last Updated: September 22, 2025Season 10   Infernal ChaosLevelingSpiritborn",
+    "url": "https://maxroll.gg/d4/build-guides/rock-splitter-thorns-spiritborn-leveling-guide",
+    "class": "Spiritborn",
+    "difficulty": "Medium",
+    "tags": [
+      "leveling",
+      "spiritborn",
+      "thorns"
+    ],
+    "equipment": [
+      {
+        "name": "Sepazontec",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Great Uniques",
+        "description": "\u200dSepazontec"
+      },
+      {
+        "name": "Razorplate",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Great Uniques",
+        "description": "\u200dRazorplate"
+      },
+      {
+        "name": "Harmony of Ebewaka",
+        "type": "Weapon",
+        "is_unique": true,
+        "category": "Great Uniques",
+        "description": "\u200dHarmony of Ebewaka"
+      },
+      {
+        "name": "Hesha e Kesungi",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Great Uniques",
+        "description": "\u200dHesha e Kesungi"
+      }
+    ]
+  },
+  {
+    "title": "Rake Spiritborn Endgame Build GuideBy Chronikz | Last Updated: September 22, 2025Season 10   Infernal ChaosEndgameSpiritborn",
+    "url": "https://maxroll.gg/d4/build-guides/rake-spiritborn-guide",
+    "class": "Spiritborn",
+    "difficulty": "Medium",
+    "tags": [
+      "endgame",
+      "spiritborn"
+    ],
+    "equipment": [
+      {
+        "name": "Razorplate",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Razorplate - Lord Zir"
+      },
+      {
+        "name": "Balazan's Maxtlatl",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Balazan's Maxtlatl"
+      },
+      {
+        "name": "Loyalty's Mantle",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Loyalty's Mantle - Grigoire, The Galvanic Saint"
+      },
+      {
+        "name": "Rod of Kepeleke",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Rod of Kepeleke"
+      },
+      {
+        "name": "Fists of Fate",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Fists of Fate"
+      },
+      {
+        "name": "Ring of Starless Skies",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Ring of Starless Skies"
+      }
+    ]
+  },
+  {
+    "title": "Rock Splitter Thorns Spiritborn Endgame Build GuideBy katt | Last Updated: September 23, 2025Season 10   Infernal ChaosEndgameSpiritborn",
+    "url": "https://maxroll.gg/d4/build-guides/thorns-spiritborn-build-guide",
+    "class": "Spiritborn",
+    "difficulty": "Medium",
+    "tags": [
+      "endgame",
+      "spiritborn",
+      "thorns"
+    ],
+    "equipment": [
+      {
+        "name": "Harmony of Ebewaka",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Harmony of Ebewaka - The Beast in the Ice"
+      },
+      {
+        "name": "Razorplate",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Razorplate - Lord Zir"
+      },
+      {
+        "name": "Fists of Fate",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Fists of Fate"
+      }
+    ]
+  },
+  {
+    "title": "Payback Spiritborn Endgame Build GuideBy katt | Last Updated: September 23, 2025Season 10   Infernal ChaosEndgameSpiritborn",
+    "url": "https://maxroll.gg/d4/build-guides/payback-spiritborn-build-guide",
+    "class": "Spiritborn",
+    "difficulty": "Medium",
+    "tags": [
+      "endgame",
+      "spiritborn"
+    ],
+    "equipment": [
+      {
+        "name": "Rod of Kepeleke",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Rod of Kepeleke - Duriel, King of Maggots, Andariel"
+      },
+      {
+        "name": "Harmony of Ebewaka",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Harmony of Ebewaka - The Beast in the Ice"
+      },
+      {
+        "name": "Tibault's Will",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Tibault's Will - Duriel, King of Maggots, Andariel"
+      },
+      {
+        "name": "Penitent Greaves",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Penitent Greaves - Grigoire, The Galvanic Saint"
+      },
+      {
+        "name": "Sunstained\u00a0War",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Sunstained\u00a0War-Crozier"
+      },
+      {
+        "name": "Ring of Starless Skies",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Ring of Starless Skies"
+      }
+    ]
+  },
+  {
+    "title": "Quill Volley Spiritborn Endgame Build GuideBy Wudijo | Last Updated: September 22, 2025Season 10   Infernal ChaosEndgameSpiritborn",
+    "url": "https://maxroll.gg/d4/build-guides/quill-volley-spiritborn-guide",
+    "class": "Spiritborn",
+    "difficulty": "Medium",
+    "tags": [
+      "endgame",
+      "spiritborn",
+      "quill volley"
+    ],
+    "equipment": [
+      {
+        "name": "Harmony of Ebewaka",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Harmony of Ebewaka - The Beast in the Ice"
+      },
+      {
+        "name": "Rod of Kepeleke",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Rod of Kepeleke - Duriel, King of Maggots, Andariel"
+      },
+      {
+        "name": "Ring of the Midnight Sun",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Ring of the Midnight Sun - Grigoire, The Galvanic Saint"
+      },
+      {
+        "name": "Harlequin Crest",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Harlequin Crest"
+      },
+      {
+        "name": "Ring of Starless Skies",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Ring of Starless Skies"
+      }
+    ]
+  },
+  {
+    "title": "Crushing Hand Spiritborn Endgame Build GuideBy Ignition | Last Updated: September 27, 2025Season 10   Infernal ChaosEndgameSpiritborn",
+    "url": "https://maxroll.gg/d4/build-guides/crushing-hand-spiritborn-guide",
+    "class": "Spiritborn",
+    "difficulty": "Medium",
+    "tags": [
+      "endgame",
+      "spiritborn"
+    ],
+    "equipment": [
+      {
+        "name": "Harmony of Ebewaka",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Harmony of Ebewaka - The Beast in the Ice"
+      },
+      {
+        "name": "Jacinth Shell",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Jacinth Shell - Lord Zir"
+      },
+      {
+        "name": "Rod of Kepeleke",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Rod of Kepeleke - Duriel, King of Maggots, Andariel"
+      },
+      {
+        "name": "Shroud of False Death",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Shroud of False Death"
+      },
+      {
+        "name": "Fists of Fate",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Fists of Fate"
+      },
+      {
+        "name": "Ring of Starless Skies",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Ring of Starless Skies"
+      }
+    ]
+  },
+  {
+    "title": "Stinger Spiritborn Leveling GuideBy Wudijo | Last Updated: September 23, 2025Season 10   Infernal ChaosLevelingSpiritborn",
+    "url": "https://maxroll.gg/d4/build-guides/stinger-spiritborn-leveling-guide",
+    "class": "Spiritborn",
+    "difficulty": "Medium",
+    "tags": [
+      "leveling",
+      "spiritborn"
+    ],
+    "equipment": [
+      {
+        "name": "Rod of Kepeleke",
+        "type": "Weapon",
+        "is_unique": true,
+        "category": "Great Uniques",
+        "description": "\u200dRod of Kepeleke"
+      },
+      {
+        "name": "Harmony of Ebewaka",
+        "type": "Weapon",
+        "is_unique": true,
+        "category": "Great Uniques",
+        "description": "\u200dHarmony of Ebewaka"
+      },
+      {
+        "name": "Ring of the Midnight Sun",
+        "type": "Jewelry",
+        "is_unique": true,
+        "category": "Great Uniques",
+        "description": "\u200dRing of the Midnight Sun"
+      },
+      {
+        "name": "Peacemonger's Signet",
+        "type": "Jewelry",
+        "is_unique": true,
+        "category": "Great Uniques",
+        "description": "\u200dPeacemonger's Signet"
+      },
+      {
+        "name": "Mother's Embrace",
+        "type": "Armor",
+        "is_unique": true,
+        "category": "Great Uniques",
+        "description": "\u200dMother's Embrace"
+      }
+    ]
+  },
+  {
+    "title": "Crushing Hand Spiritborn Leveling GuideBy Ignition | Last Updated: September 25, 2025Season 10   Infernal ChaosLevelingSpiritborn",
+    "url": "https://maxroll.gg/d4/build-guides/crushing-hand-spiritborn-leveling-guide",
+    "class": "Spiritborn",
+    "difficulty": "Medium",
+    "tags": [
+      "leveling",
+      "spiritborn"
+    ],
+    "equipment": [
+      {
+        "name": "Harmony of Ebewaka",
+        "type": "Weapon",
+        "is_unique": true,
+        "category": "Great Uniques",
+        "description": "\u200dHarmony of Ebewaka"
+      },
+      {
+        "name": "Ring of the Midday Hunt",
+        "type": "Jewelry",
+        "is_unique": true,
+        "category": "Great Uniques",
+        "description": "\u200dRing of the Midday Hunt"
+      },
+      {
+        "name": "Peacemonger's Signet",
+        "type": "Jewelry",
+        "is_unique": true,
+        "category": "Great Uniques",
+        "description": "\u200dPeacemonger's Signet"
+      },
+      {
+        "name": "Rod of Kepeleke",
+        "type": "Weapon",
+        "is_unique": true,
+        "category": "Great Uniques",
+        "description": "\u200dRod of Kepeleke"
+      }
+    ]
+  },
+  {
+    "title": "Incinerate Sorcerer Leveling GuideBy pandaglassjaw | Last Updated: September 21, 2025Season 10   Infernal ChaosLevelingSorcerer",
+    "url": "https://maxroll.gg/d4/build-guides/incinerate-sorcerer-leveling-guide",
+    "class": "Sorcerer",
+    "difficulty": "Medium",
+    "tags": [
+      "leveling",
+      "sorcerer",
+      "incinerate"
+    ],
+    "equipment": [
+      {
+        "name": "Hydra Endgame",
+        "type": "Unknown",
+        "is_unique": false,
+        "category": "Jackpot",
+        "description": "\u200dSerpentine (enables Hydra Endgame)"
+      },
+      {
+        "name": "Frozen Tundra",
+        "type": "Unknown",
+        "is_unique": false,
+        "category": "Jackpot",
+        "description": "\u200dGlacial / \u200dFrozen Tundra (enables Blizzard Endgame)"
+      },
+      {
+        "name": "Flamethrower's",
+        "type": "Unknown",
+        "is_unique": false,
+        "category": "Jackpot",
+        "description": "\u200dFlamethrower's / \u200dOverheating (enables Incinerate Endgame)"
+      },
+      {
+        "name": "Ophidian Iris",
+        "type": "Unknown",
+        "is_unique": false,
+        "category": "Jackpot",
+        "description": "\u200dOphidian Iris (enables Hydra Endgame)"
+      },
+      {
+        "name": "Primordial Binding",
+        "type": "Unknown",
+        "is_unique": false,
+        "category": "Jackpot",
+        "description": "\u200dCir + \u200dCeh provides additional summons that freeze enemies and apply vulnerable. These also activate \u200dPrimordial Binding for mobility and Mana Regeneration."
+      },
+      {
+        "name": "Shocking Impact",
+        "type": "Unknown",
+        "is_unique": false,
+        "category": "Jackpot",
+        "description": "\u200dTun triggers \u200dShocking Impact for a large burst of damage. This is the highest damage potential once you have enough ranks of \u200dShocking Impact and plenty of movement speed to replace \u200dQua."
+      },
+      {
+        "name": "Invocation Runes",
+        "type": "Unknown",
+        "is_unique": false,
+        "category": "Jackpot",
+        "description": "\u200dTec for extra damage, with this you creates an earthquake and has the highest damage potential for early Invocation Runes."
+      },
+      {
+        "name": "Ritual Runes",
+        "type": "Unknown",
+        "is_unique": false,
+        "category": "Jackpot",
+        "description": "\u200dYax and \u200dPoc are other options for Ritual Runes."
+      }
+    ]
+  },
+  {
+    "title": "Stone Burst Druid Endgame Build GuideBy Danger | Last Updated: September 23, 2025Season 10   Infernal ChaosEndgameDruid",
+    "url": "https://maxroll.gg/d4/build-guides/stone-burst-druid-build-guide",
+    "class": "Druid",
+    "difficulty": "Medium",
+    "tags": [
+      "endgame",
+      "druid",
+      "stone burst"
+    ],
+    "equipment": [
+      {
+        "name": "Vasily's Prayer",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Vasily's Prayer - Echo of Varshan"
+      },
+      {
+        "name": "Insatiable Fury",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Insatiable Fury - Grigoire, The Galvanic Saint"
+      },
+      {
+        "name": "Stone of Vehemen",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Stone of Vehemen"
+      },
+      {
+        "name": "Tibault's Will",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Tibault's Will - Duriel, King of Maggots, Andariel"
+      },
+      {
+        "name": "Heir of Perdition",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Heir of Perdition"
+      },
+      {
+        "name": "Shroud of False Death",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Shroud of False Death"
+      },
+      {
+        "name": "Banished Lord's Talisman",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Banished Lord's Talisman"
+      },
+      {
+        "name": "Fists of Fate",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Fists of Fate"
+      }
+    ]
+  },
+  {
+    "title": "Touch of Death Spiritborn Endgame Build GuideBy katt | Last Updated: September 23, 2025Season 10   Infernal ChaosEndgameSpiritborn",
+    "url": "https://maxroll.gg/d4/build-guides/touch-of-death-spiritborn-guide",
+    "class": "Spiritborn",
+    "difficulty": "Medium",
+    "tags": [
+      "endgame",
+      "spiritborn"
+    ],
+    "equipment": [
+      {
+        "name": "Rod of Kepeleke",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Rod of Kepeleke - Duriel, King of Maggots, Andariel"
+      },
+      {
+        "name": "Harmony of Ebewaka",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Harmony of Ebewaka - The Beast in the Ice"
+      },
+      {
+        "name": "Tibault's Will",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Tibault's Will - Duriel, King of Maggots, Andariel"
+      },
+      {
+        "name": "Rakanoth's Wake",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Rakanoth's Wake - Infernal Hordes"
+      },
+      {
+        "name": "Ring of the Midday Hunt",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Ring of the Midday Hunt - Echo of Varshan"
+      },
+      {
+        "name": "Banished Lord's Talisman",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Banished Lord's Talisman"
+      },
+      {
+        "name": "Sunstained\u00a0War",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Sunstained\u00a0War-Crozier"
+      },
+      {
+        "name": "Ring of Starless Skies",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Ring of Starless Skies"
+      }
+    ]
+  },
+  {
+    "title": "Frozen Orb Sorcerer Leveling GuideBy pandaglassjaw | Last Updated: September 21, 2025Season 10   Infernal ChaosLevelingSorcerer",
+    "url": "https://maxroll.gg/d4/build-guides/frozen-orb-sorcerer-leveling-guide",
+    "class": "Sorcerer",
+    "difficulty": "Medium",
+    "tags": [
+      "leveling",
+      "sorcerer",
+      "frozen orb"
+    ],
+    "equipment": [
+      {
+        "name": "Fractured Winterglass",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Great Uniques",
+        "description": "\u200dFractured Winterglass"
+      },
+      {
+        "name": "Tal Rasha's Iridescent Loop",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Great Uniques",
+        "description": "\u200dTal Rasha's Iridescent Loop"
+      },
+      {
+        "name": "Esu's Heirloom",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Great Uniques",
+        "description": "\u200dEsu's Heirloom"
+      }
+    ]
+  },
+  {
+    "title": "Mighty Throw Barbarian Endgame Build GuideBy beatdropper | Last Updated: September 24, 2025Season 10   Infernal ChaosEndgameBarbarian",
+    "url": "https://maxroll.gg/d4/build-guides/mighty-throw-barbarian-guide",
+    "class": "Barbarian",
+    "difficulty": "Medium",
+    "tags": [
+      "endgame",
+      "barbarian",
+      "mighty throw"
+    ],
+    "equipment": [
+      {
+        "name": "The Third Blade",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "The Third Blade - Infernal Hordes"
+      },
+      {
+        "name": "Crown of Lucion",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Crown of Lucion - Infernal Hordes"
+      },
+      {
+        "name": "Sabre of Tsasgal",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Sabre of Tsasgal"
+      },
+      {
+        "name": "Bane of\u00a0Ahjad",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Bane of\u00a0Ahjad-Den"
+      },
+      {
+        "name": "Tibault's Will",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Tibault's Will - Duriel, King of Maggots, Andariel"
+      },
+      {
+        "name": "Ring of Red Furor",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Ring of Red Furor - Echo of Varshan"
+      },
+      {
+        "name": "Banished Lord's Talisman",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Banished Lord's Talisman - Duriel, King of Maggots, Andariel"
+      },
+      {
+        "name": "Heir of Perdition",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Heir of Perdition"
+      },
+      {
+        "name": "Grandfather",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "The Grandfather"
+      },
+      {
+        "name": "Battle Trance",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Battle Trance"
+      },
+      {
+        "name": "Harlequin Crest",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Harlequin Crest"
+      },
+      {
+        "name": "Ring of Starless Skies",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Ring of Starless Skies"
+      }
+    ]
+  },
+  {
+    "title": "Blood Wave Necromancer Endgame GuideBy MacroBioBoi | Last Updated: September 24, 2025Season 10   Infernal ChaosEndgameNecromancer",
+    "url": "https://maxroll.gg/d4/build-guides/blood-wave-necromancer-guide",
+    "class": "Necromancer",
+    "difficulty": "Medium",
+    "tags": [
+      "endgame",
+      "necromancer",
+      "blood wave"
+    ],
+    "equipment": [
+      {
+        "name": "Indira's Memory",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Indira's Memory"
+      },
+      {
+        "name": "Bloodless Scream",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Bloodless Scream"
+      },
+      {
+        "name": "Heir of Perdition",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Heir of Perdition"
+      },
+      {
+        "name": "Shroud of False Death",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Shroud of False Death"
+      },
+      {
+        "name": "Ring of Starless Skies",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Ring of Starless Skies"
+      }
+    ]
+  },
+  {
+    "title": "Dance of Knives Rogue Endgame Build GuideBy Ava | Last Updated: September 28, 2025Season 10   Infernal ChaosEndgameRogue",
+    "url": "https://maxroll.gg/d4/build-guides/dance-of-knives-rogue-guide",
+    "class": "Rogue",
+    "difficulty": "Medium",
+    "tags": [
+      "endgame",
+      "rogue",
+      "dance of knives"
+    ],
+    "equipment": [
+      {
+        "name": "Cowl of the Nameless",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Cowl of the Nameless - Duriel, King of Maggots, Andariel"
+      },
+      {
+        "name": "Scoundrel's Leathers",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Scoundrel's Leathers - Duriel, King of Maggots, Andariel"
+      },
+      {
+        "name": "Fists of Fate",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Fists of Fate - The Beast in the Ice"
+      },
+      {
+        "name": "Penitent Greaves",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Penitent Greaves - Grigoire, The Galvanic Saint"
+      },
+      {
+        "name": "Heir of Perdition",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Heir of Perdition"
+      },
+      {
+        "name": "Bands of Ichorous Rose",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Bands of Ichorous Rose"
+      },
+      {
+        "name": "Ring of Starless Skies",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Ring of Starless Skies"
+      }
+    ]
+  },
+  {
+    "title": "Dance of Knives Rogue Leveling GuideBy Ava | Last Updated: September 23, 2025Season 10   Infernal ChaosLevelingRogue",
+    "url": "https://maxroll.gg/d4/build-guides/dance-of-knives-rogue-leveling-guide",
+    "class": "Rogue",
+    "difficulty": "Medium",
+    "tags": [
+      "leveling",
+      "rogue",
+      "dance of knives"
+    ],
+    "equipment": [
+      {
+        "name": "Cowl of the Nameless",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Great Uniques",
+        "description": "\u200dCowl of the Nameless"
+      },
+      {
+        "name": "Grasp of Shadow",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Great Uniques",
+        "description": "\u200dGrasp of Shadow"
+      },
+      {
+        "name": "Penitent Greaves",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Great Uniques",
+        "description": "\u200dPenitent Greaves"
+      }
+    ]
+  },
+  {
+    "title": "Evade Spiritborn Endgame GuideBy Ignition | Last Updated: September 27, 2025Season 10   Infernal ChaosEndgameSpiritborn",
+    "url": "https://maxroll.gg/d4/build-guides/evade-spiritborn-build-guide",
+    "class": "Spiritborn",
+    "difficulty": "Medium",
+    "tags": [
+      "endgame",
+      "spiritborn"
+    ],
+    "equipment": [
+      {
+        "name": "Loyalty's Mantle",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Loyalty's Mantle - Grigoire, The Galvanic Saint"
+      },
+      {
+        "name": "Jacinth Shell",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Jacinth Shell - Lord Zir"
+      },
+      {
+        "name": "Wushe Nak Pa",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Wushe Nak Pa - Lord Zir"
+      },
+      {
+        "name": "Band of First Breath",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Band of First Breath - Lord Zir"
+      },
+      {
+        "name": "Shroud of False Death",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Shroud of False Death"
+      }
+    ]
+  },
+  {
+    "title": "Rain of Arrows Rogue GuideBy dieoxide | Last Updated: September 23, 2025Season 10   Infernal ChaosEndgameRogue",
+    "url": "https://maxroll.gg/d4/build-guides/rain-of-arrows-rogue-guide",
+    "class": "Rogue",
+    "difficulty": "Medium",
+    "tags": [
+      "endgame",
+      "rogue",
+      "rain of arrows"
+    ],
+    "equipment": [
+      {
+        "name": "Crown of Lucion",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Crown of Lucion - Infernal Hordes"
+      },
+      {
+        "name": "Shard of Verathiel",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Shard of Verathiel - Infernal Hordes"
+      },
+      {
+        "name": "Word of Hakan",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Word of Hakan - Grigoire, The Galvanic Saint"
+      },
+      {
+        "name": "Echo of Varshan",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Skyhunter - Echo of Varshan"
+      },
+      {
+        "name": "Fists of Fate",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Fists of Fate - The Beast in the Ice"
+      },
+      {
+        "name": "Penitent Greaves",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Penitent Greaves - Grigoire, The Galvanic Saint"
+      },
+      {
+        "name": "Heir of Perdition",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Heir of Perdition"
+      }
+    ]
+  },
+  {
+    "title": "Cataclysm Druid Endgame Build GuideBy thesssain | Last Updated: September 26, 2025Season 10  Infernal ChaosEndgameDruid",
+    "url": "https://maxroll.gg/d4/build-guides/cataclysm-druid-build-guide",
+    "class": "Druid",
+    "difficulty": "Medium",
+    "tags": [
+      "endgame",
+      "druid",
+      "cataclysm"
+    ],
+    "equipment": [
+      {
+        "name": "Tempest Roar",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Tempest Roar - Duriel, King of Maggots, Andariel"
+      },
+      {
+        "name": "Mad Wolf's Glee",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Mad Wolf's Glee - Echo of Varshan"
+      },
+      {
+        "name": "Rakanoth's Wake",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Rakanoth's Wake - Infernal Hordes"
+      },
+      {
+        "name": "Airidah's Inexorable Will",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Airidah's Inexorable Will - Echo of Varshan"
+      },
+      {
+        "name": "Lord Zir",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Mj\u00f6lnic Ryng - Lord Zir"
+      },
+      {
+        "name": "Heir of Perdition",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Heir of Perdition"
+      },
+      {
+        "name": "Shroud of False Death",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Shroud of False Death"
+      },
+      {
+        "name": "Malefic Crescent",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Malefic Crescent"
+      }
+    ]
+  },
+  {
+    "title": "Razor Wings Spiritborn Endgame Build GuideBy Chronikz | Last Updated: September 27, 2025Season 10   Infernal ChaosEndgameSpiritborn",
+    "url": "https://maxroll.gg/d4/build-guides/razor-wings-spiritborn-guide",
+    "class": "Spiritborn",
+    "difficulty": "Medium",
+    "tags": [
+      "endgame",
+      "spiritborn"
+    ],
+    "equipment": [
+      {
+        "name": "Harmony of Ebewaka",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Harmony of Ebewaka - The Beast in the Ice"
+      },
+      {
+        "name": "Jacinth Shell",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Jacinth Shell - Lord Zir"
+      },
+      {
+        "name": "Sunstained\u00a0War",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Sunstained\u00a0War-Crozier"
+      }
+    ]
+  },
+  {
+    "title": "Inferno Sorcerer Endgame GuideBy pandaglassjaw | Last Updated: September 22, 2025Season 10   Infernal ChaosEndgameSorcerer",
+    "url": "https://maxroll.gg/d4/build-guides/inferno-sorcerer-guide",
+    "class": "Sorcerer",
+    "difficulty": "Medium",
+    "tags": [
+      "endgame",
+      "sorcerer"
+    ],
+    "equipment": [
+      {
+        "name": "Crown of Lucion",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Crown of Lucion - Infernal Hordes"
+      },
+      {
+        "name": "Tal Rasha's Iridescent Loop",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Tal Rasha's Iridescent Loop - Echo of Varshan"
+      },
+      {
+        "name": "Harlequin Crest",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Harlequin Crest"
+      },
+      {
+        "name": "Shroud of False Death",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Shroud of False Death"
+      },
+      {
+        "name": "Ring of Starless Skies",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Ring of Starless Skies"
+      }
+    ]
+  },
+  {
+    "title": "Hydra Sorcerer Leveling GuideBy pandaglassjaw | Last Updated: September 23, 2025Season 10   Infernal ChaosLevelingSorcerer",
+    "url": "https://maxroll.gg/d4/build-guides/hydra-sorcerer-leveling-guide",
+    "class": "Sorcerer",
+    "difficulty": "Medium",
+    "tags": [
+      "leveling",
+      "sorcerer"
+    ],
+    "equipment": [
+      {
+        "name": "Hydra Endgame",
+        "type": "Unknown",
+        "is_unique": false,
+        "category": "Jackpot",
+        "description": "\u200dSerpentine (enables Hydra Endgame)"
+      },
+      {
+        "name": "Frozen Tundra",
+        "type": "Unknown",
+        "is_unique": false,
+        "category": "Jackpot",
+        "description": "\u200dGlacial / \u200dFrozen Tundra (enables Blizzard Endgame)"
+      },
+      {
+        "name": "Flamethrower's",
+        "type": "Unknown",
+        "is_unique": false,
+        "category": "Jackpot",
+        "description": "\u200dFlamethrower's / \u200dOverheating (enables Incinerate Endgame)"
+      },
+      {
+        "name": "Unique Items",
+        "type": "Unknown",
+        "is_unique": false,
+        "category": "Jackpot",
+        "description": "Build-defining Unique Items"
+      },
+      {
+        "name": "Ophidian Iris",
+        "type": "Unknown",
+        "is_unique": false,
+        "category": "Jackpot",
+        "description": "\u200dOphidian Iris (enables Hydra Endgame)"
+      },
+      {
+        "name": "Primordial Binding",
+        "type": "Unknown",
+        "is_unique": false,
+        "category": "Jackpot",
+        "description": "\u200dCir + \u200dCeh provides additional summons that Freeze enemies and apply Vulnerable. These also activate \u200dPrimordial Binding for mobility and Mana Regeneration."
+      },
+      {
+        "name": "Critical Strike Chance",
+        "type": "Unknown",
+        "is_unique": false,
+        "category": "Jackpot",
+        "description": "\u200dGar provides additional Critical Strike Chance and is a great generic option."
+      },
+      {
+        "name": "Shocking Impact",
+        "type": "Unknown",
+        "is_unique": false,
+        "category": "Jackpot",
+        "description": "\u200dTun triggers \u200dShocking Impact for a large burst of damage. This is the highest damage potential once you have enough ranks of \u200dShocking Impact and plenty of movement speed to replace \u200dQua."
+      },
+      {
+        "name": "Invocation Runes",
+        "type": "Unknown",
+        "is_unique": false,
+        "category": "Jackpot",
+        "description": "\u200dTec for extra damage, with this you creates an earthquake and has the highest damage potential for early Invocation Runes."
+      },
+      {
+        "name": "Ritual Runes",
+        "type": "Unknown",
+        "is_unique": false,
+        "category": "Jackpot",
+        "description": "\u200dYax and \u200dPoc are other options for Ritual Runes."
+      }
+    ]
+  },
+  {
+    "title": "Invigorating Strike Rogue Build GuideBy dieoxide | Last Updated: September 22, 2025Season 10   Infernal ChaosEndgameRogue",
+    "url": "https://maxroll.gg/d4/build-guides/invigorating-strike-rogue-endgame-build-guide",
+    "class": "Rogue",
+    "difficulty": "Medium",
+    "tags": [
+      "endgame",
+      "rogue",
+      "invigorating strike"
+    ],
+    "equipment": [
+      {
+        "name": "Cowl of the Nameless",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Cowl of the Nameless - Duriel, King of Maggots, Andariel"
+      },
+      {
+        "name": "Shard of Verathiel",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Shard of Verathiel - Infernal Hordes"
+      },
+      {
+        "name": "Grasp of Shadow",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Grasp of Shadow - Grigoire, The Galvanic Saint"
+      },
+      {
+        "name": "Penitent Greaves",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Penitent Greaves - Grigoire, The Galvanic Saint"
+      },
+      {
+        "name": "Heir of Perdition",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Heir of Perdition"
+      },
+      {
+        "name": "Fists of Fate",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Fists of Fate"
+      },
+      {
+        "name": "Crown of Lucion",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Crown of Lucion"
+      },
+      {
+        "name": "Paingorger's Gauntlets",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Paingorger's Gauntlets"
+      },
+      {
+        "name": "Ring of Starless Skies",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Ring of Starless Skies"
+      }
+    ]
+  },
+  {
+    "title": "Heartseeker Rogue Leveling Build GuideBy dieoxide | Last Updated: September 22, 2025Season 10   Infernal ChaosLevelingRogue",
+    "url": "https://maxroll.gg/d4/build-guides/heartseeker-rogue-leveling-build-guide",
+    "class": "Rogue",
+    "difficulty": "Medium",
+    "tags": [
+      "leveling",
+      "rogue",
+      "heartseeker"
+    ],
+    "equipment": [
+      {
+        "name": "Cowl of the Nameless",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Great Uniques",
+        "description": "\u200dCowl of the Nameless"
+      },
+      {
+        "name": "Fists of Fate",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Great Uniques",
+        "description": "\u200dFists of Fate"
+      },
+      {
+        "name": "Penitent Greaves",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Great Uniques",
+        "description": "\u200dPenitent Greaves"
+      },
+      {
+        "name": "Frostburn",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Great Uniques",
+        "description": "\u200dFrostburn"
+      },
+      {
+        "name": "Grasp of Shadow",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Great Uniques",
+        "description": "\u200dGrasp of Shadow"
+      }
+    ]
+  },
+  {
+    "title": "Minion Barbarian Endgame Build GuideBy snail | Last Updated: September 23, 2025Season 10   Infernal ChaosEndgameBarbarian",
+    "url": "https://maxroll.gg/d4/build-guides/minion-barbarian-guide",
+    "class": "Barbarian",
+    "difficulty": "Medium",
+    "tags": [
+      "endgame",
+      "barbarian",
+      "minion"
+    ],
+    "equipment": [
+      {
+        "name": "Arreat's Bearing",
+        "type": "Jewelry",
+        "is_unique": false,
+        "category": "Gear & Skills",
+        "description": "Important: This build heavily relies on Arreat's Bearing in order to do any kind of meaningful damage. It is not recommended to play without first acquiring this item.The Starter variant of the Earthquake Barbarian Endgame Guide is a good place to start before transitioning to this build."
+      },
+      {
+        "name": "The Starter",
+        "type": "Unknown",
+        "is_unique": false,
+        "category": "Gear & Skills",
+        "description": "The Starter variant of the Earthquake Barbarian Endgame Guide is a good place to start before transitioning to this build."
+      },
+      {
+        "name": "Each Torment",
+        "type": "Jewelry",
+        "is_unique": false,
+        "category": "Gear & Skills",
+        "description": "During early progression, Armor & Resistances should be prioritized in order to survive. Each Torment difficulty adds a penalty of -250 Armor and -25% to all Resistances and it's recommended to keep both capped at all times; this means having a value of 1,000 for Armor and 75% for each Resistance."
+      },
+      {
+        "name": "Ancestral Charge",
+        "type": "Legendary Aspect",
+        "is_unique": false,
+        "category": "Gear & Skills",
+        "description": "Next, focus on the Summon and Ultimate-themed Aspects for their strong multiplicative damage boosts. Note that though some of these Aspects call out specific skills, they aren't required to be used to gain the damage bonus. They include:Ancestral ChargeAncestral EchoesApogeic Furor"
+      },
+      {
+        "name": "Ancestral Echoes",
+        "type": "Unknown",
+        "is_unique": false,
+        "category": "Gear & Skills",
+        "description": "Ancestral Echoes"
+      },
+      {
+        "name": "Apogeic Furor",
+        "type": "Unknown",
+        "is_unique": false,
+        "category": "Gear & Skills",
+        "description": "Apogeic Furor"
+      },
+      {
+        "name": "Juggernaut's",
+        "type": "Unknown",
+        "is_unique": false,
+        "category": "Gear & Skills",
+        "description": "Juggernaut's and Steadfast Berserker's are both extremely important, especially at this progression point. The former is very helpful for reaching Armor cap, while the latter is a worry-free way of keeping Fortify."
+      },
+      {
+        "name": "Vehement Brawler's",
+        "type": "Unknown",
+        "is_unique": false,
+        "category": "Gear & Skills",
+        "description": "Vehement Brawler's is a good generic multiplier that also gives us +2 Ranks of Call of the Ancients."
+      },
+      {
+        "name": "Movement Speed",
+        "type": "Unknown",
+        "is_unique": false,
+        "category": "Gear & Skills",
+        "description": "Hectic is useful early on to help reset all of our cooldowns, but Ghostwalker can be used instead for some extra Movement Speed."
+      },
+      {
+        "name": "Tuskhelm of Joritz the Mighty",
+        "type": "Armor",
+        "is_unique": false,
+        "category": "Gear & Skills",
+        "description": "Tuskhelm of Joritz the Mighty is a good choice at this progression stage as it offers us a ton of useful stats, as well as a pretty decent 1.35x damage multiplier from its Unique effect."
+      },
+      {
+        "name": "Mantle of Mountain's Fury",
+        "type": "Armor",
+        "is_unique": false,
+        "category": "Gear & Skills",
+        "description": "Mantle of Mountain's Fury gives us Earthquake explosions by using Hammer of the Ancients. This slot competes with Rage of Harrogath, but that item is more suited to being used as a Chaos Armor variant."
+      },
+      {
+        "name": "The Third Blade",
+        "type": "Unknown",
+        "is_unique": false,
+        "category": "Gear & Skills",
+        "description": "The Third Blade is a good choice at this progression stage, purely for its ability to make Rupture a spammable skill. It's not needed later on, but for now, it makes the gameplay feel much smoother."
+      },
+      {
+        "name": "Sabre of Tsasgal",
+        "type": "Unknown",
+        "is_unique": false,
+        "category": "Gear & Skills",
+        "description": "Sabre of Tsasgal is a weapon that encourages use of multiple damaging skills to maximize its effect; in our case, we have four such skills. The unnaturally high ranks of Warpath that are present on this item make it an even more valuable option in terms of pure offense."
+      },
+      {
+        "name": "Rage of Harrogath",
+        "type": "Armor",
+        "is_unique": false,
+        "category": "Gear & Skills",
+        "description": "Rage of Harrogath is a core part of the build and enables Rupture to constantly reset Call of the Ancients.Use the non-Chaos Armor version of this item in the Chest Armor slot (instead of Mantle of Mountain's Fury) if you don't have this. The ability to detonate Earthquakes for instant damage is lost, but the \"tick\" damage from them is still very strong."
+      },
+      {
+        "name": "Use the",
+        "type": "Armor",
+        "is_unique": false,
+        "category": "Gear & Skills",
+        "description": "Use the non-Chaos Armor version of this item in the Chest Armor slot (instead of Mantle of Mountain's Fury) if you don't have this. The ability to detonate Earthquakes for instant damage is lost, but the \"tick\" damage from them is still very strong."
+      },
+      {
+        "name": "Battle Trance",
+        "type": "Armor",
+        "is_unique": false,
+        "category": "Gear & Skills",
+        "description": "Battle Trance is the next priority, and it fits nicely into either the Boots or Gloves slot. This is a staple for most builds since it has the very powerful +% Strength stat, some Critical Strike Chance, and a strong damage multiplier from its Unique power. Not only that, it has an implicit that grants 30% Resistances to All Elements, making it a great defensive choice as well."
+      },
+      {
+        "name": "Fists of Fate",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Gear & Skills",
+        "description": "Fists of Fate (Chaos Armor) is the only new Unique addition, and it comes packed with a ton of great stats which are all useful to us in some way, especially Lucky Hit Chance (this should be the priority when masterworking). With high Lucky Hit Chance, Rage of Harrogath procs are much more frequent, making The Third Blade obsolete in most cases. This allows us to pick up Ancestral Charge and some more Earthquake Duration, both of which increase our damage significantly."
+      }
+    ]
+  },
+  {
+    "title": "Poison Trap Rogue Endgame GuideBy mattias | Last Updated: September 23, 2025Season 10   Infernal ChaosEndgameRogue",
+    "url": "https://maxroll.gg/d4/build-guides/poison-trap-rogue-guide",
+    "class": "Rogue",
+    "difficulty": "Medium",
+    "tags": [
+      "endgame",
+      "rogue"
+    ],
+    "equipment": [
+      {
+        "name": "Bands of Ichorous Rose",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Bands of Ichorous Rose"
+      },
+      {
+        "name": "Godslayer Crown",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Godslayer Crown - Duriel, King of Maggots, Andariel"
+      },
+      {
+        "name": "Scoundrel's Leathers",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Scoundrel's Leathers - Duriel, King of Maggots, Andariel"
+      },
+      {
+        "name": "Penitent Greaves",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Penitent Greaves - Grigoire, The Galvanic Saint"
+      },
+      {
+        "name": "Heir of Perdition",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Heir of Perdition"
+      },
+      {
+        "name": "Fists of Fate",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Fists of Fate"
+      }
+    ]
+  },
+  {
+    "title": "Incinerate Sorcerer Endgame GuideBy pandaglassjaw | Last Updated: September 21, 2025Season 10   Infernal ChaosEndgameSorcerer",
+    "url": "https://maxroll.gg/d4/build-guides/incinerate-sorcerer-guide",
+    "class": "Sorcerer",
+    "difficulty": "Medium",
+    "tags": [
+      "endgame",
+      "sorcerer",
+      "incinerate"
+    ],
+    "equipment": [
+      {
+        "name": "Crown of Lucion",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Crown of Lucion - Infernal Hordes"
+      },
+      {
+        "name": "Tal Rasha's Iridescent Loop",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Tal Rasha's Iridescent Loop - Echo of Varshan"
+      },
+      {
+        "name": "Harlequin Crest",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Harlequin Crest"
+      },
+      {
+        "name": "Shroud of False Death",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Shroud of False Death"
+      },
+      {
+        "name": "Ring of Starless Skies",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Ring of Starless Skies"
+      }
+    ]
+  },
+  {
+    "title": "Lunging Strike Barbarian Endgame Build GuideBy aoinomiku | Last Updated: September 26, 2025Season 10   Infernal ChaosEndgameBarbarian",
+    "url": "https://maxroll.gg/d4/build-guides/lunging-strike-barbarian-guide",
+    "class": "Barbarian",
+    "difficulty": "Medium",
+    "tags": [
+      "endgame",
+      "barbarian"
+    ],
+    "equipment": [
+      {
+        "name": "Ugly Bastard Helm",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Ugly Bastard Helm"
+      },
+      {
+        "name": "Rage of Harrogath",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Rage of Harrogath - Grigoire, The Galvanic Saint"
+      },
+      {
+        "name": "Ramaladni's Magnum Opus",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Ramaladni's Magnum Opus - Lord Zir"
+      },
+      {
+        "name": "Shard of Verathiel",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Shard of Verathiel - Infernal Hordes"
+      },
+      {
+        "name": "Paingorger's Gauntlets",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Paingorger's Gauntlets - The Beast in the Ice"
+      },
+      {
+        "name": "Hooves of the Mountain God",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Hooves of the Mountain God"
+      },
+      {
+        "name": "Battle Trance",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Battle Trance"
+      },
+      {
+        "name": "Grandfather",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "The Grandfather"
+      },
+      {
+        "name": "Fists of Fate",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Fists of Fate"
+      },
+      {
+        "name": "Ring of Starless Skies",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Ring of Starless Skies"
+      }
+    ]
+  },
+  {
+    "title": "Earth Spike Druid Endgame Build GuideBy boiler | Last Updated: September 21, 2025Season 10   Infernal ChaosEndgameDruid",
+    "url": "https://maxroll.gg/d4/build-guides/earth-spike-druid-guide",
+    "class": "Druid",
+    "difficulty": "Medium",
+    "tags": [
+      "endgame",
+      "druid"
+    ],
+    "equipment": [
+      {
+        "name": "Vasily's Prayer",
+        "type": "Weapon",
+        "is_unique": false,
+        "category": "Gear & Skills",
+        "description": "Note that this midgame skill tree differs quite a bit from the endgame setups. Without access to Vasily's Prayer, Earth Spike cannot be used during Grizzly Rage. Instead, employ Petrify for a periodic Critical Strike Damage bonus and to reset all skill cooldowns. Blood Howl provides a short-lived but high-uptime Attack Speed bonus, while Earthen Bulwark grants extended Unstoppable when paired with Mending Stone. A Staff is preferable for now. Use Shred for traversal and to apply Poison to priority targets via Purge the Infected."
+      },
+      {
+        "name": "Paragon Board",
+        "type": "Unknown",
+        "is_unique": false,
+        "category": "Gear & Skills",
+        "description": "Another key issue to highlight is in the Paragon Board. Because this variant does not have access to Vasily's Prayer or Shard of Verathiel, it cannot leverage either Survival Instincts or Ancestral Guidance. You can still utilize the first half of the board effectively with this setup, but the intent is that you graduate into the Ancestral variant before this becomes a concern. Make it a priority to farm Echo of Varshan for both of these items early into your Torment progression."
+      },
+      {
+        "name": "Each Torment",
+        "type": "Unknown",
+        "is_unique": false,
+        "category": "Gear & Skills",
+        "description": "Early on in your progression, focus on Armor & Resistances to survive. Each Torment difficulty adds a penalty of -250 Armor and -25% all Res and it's recommended to keep both capped (1000 Armor, 75+ Res; 800 Armor, 50% Res with Brawn Over Brains) at all times. As you unlock higher power gear, masterworking levels and more Paragon points, you naturally scale your character into the higher difficulties and can start replacing some of these rolls with offensive or utility stats. In this Starter variant, Might can be exchanged for Disobedience or Juggernaut's if you still need additional Armor."
+      },
+      {
+        "name": "From the",
+        "type": "Unknown",
+        "is_unique": false,
+        "category": "Gear & Skills",
+        "description": "From the time you reach Earthen Devastation in your Paragon Board, be mindful of your Damage to Crowd Controlled Enemies bonus. The target for this stat is 250%, and your personal value will depend on the nodes taken on this board, your Offensive Tempers, and the level of your Earth and Sky glyph. Over time, you'll be able to exchange Offensive tempers from Damage to Crowd Controlled Enemies for other Offensive tempers."
+      },
+      {
+        "name": "Core Uniques",
+        "type": "Unknown",
+        "is_unique": false,
+        "category": "Gear & Skills",
+        "description": "Once you've acquired the Core Uniques for this build, you can transition to what is essentially the final version, with a skill tree, playstyle, and paragon board identical to those described in the main sections of this guide. The addition of Mythic Uniques and Chaos Armors from this point are more build-enhancing than build-enabling."
+      },
+      {
+        "name": "Insatiable Fury",
+        "type": "Unknown",
+        "is_unique": false,
+        "category": "Gear & Skills",
+        "description": "Insatiable Fury is a powerhouse Unique for the Earth Spike Druid and is nearly on par to its eventual Mythic replacement. The stat line is amazing, but doesn't really warrant any gameplay changes. Acquire this Body Armour from Grigoire, the Galvanic Saint."
+      },
+      {
+        "name": "Grizzly Rage",
+        "type": "Unknown",
+        "is_unique": false,
+        "category": "Gear & Skills",
+        "description": "As you're dependent on Grizzly Rage to cap Armor, make sure your Duration and Cooldown tempers afford you a generous overlap. Once you have that, feel free to use the remaining Offensive tempers on rolls such as Werebear Overpower damage and Resource tempers on Resource generation."
+      },
+      {
+        "name": "Brawn Over Brains",
+        "type": "Unknown",
+        "is_unique": false,
+        "category": "Gear & Skills",
+        "description": "As you upgrade your gear to Ancestrals with more masterworking levels and reach higher paragon, you can focus more and more on replacing Armor & Resistance rolls with better stats, but be sure to stay capped (1000 Armor, 75+ Res; 800 Armor, 50% Res with Brawn Over Brains) for the difficulty you're currently in."
+      },
+      {
+        "name": "Fists of Fate",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Gear & Skills",
+        "description": "When it comes to incorporating Chaos Armors, make sure to never lose the effect of Vasily's Prayer. After that, your priorities are:Fists of Fate for a strong multiplier, additional Attack Speed, and Vulnerable application. Until you incorporate this, be sure to keep a roll of Lucky Hit: Chance to Inflict Vulnerable on your Gloves or Rings.Paingorger's Gauntlets for some great stats and to dramatically improve your clear speed."
+      },
+      {
+        "name": "Paingorger's Gauntlets",
+        "type": "Unknown",
+        "is_unique": false,
+        "category": "Gear & Skills",
+        "description": "Paingorger's Gauntlets for some great stats and to dramatically improve your clear speed."
+      },
+      {
+        "name": "Shroud of False Death",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Gear & Skills",
+        "description": "As mentioned in the Ancestral section, Shroud of False Death and Insatiable Fury are about even with each other both Defensively and Offensively, and it's not a big deal if you don't have the Mythic. However, the former's extra rank to Passive Skills (particularly Provocation and Ancestral Fortitude) sets it apart, and the All Stats roll is helpful for capping Critical Strike Chance, Armor, and Resistances, as well as activating Rare Node bonuses in the Paragon board."
+      },
+      {
+        "name": "Movement Speed",
+        "type": "Jewelry",
+        "is_unique": false,
+        "category": "Gear & Skills",
+        "description": "Prioritize an Amulet with double Movement Speed rolls to try to cap."
+      },
+      {
+        "name": "Swap Cir",
+        "type": "Unknown",
+        "is_unique": false,
+        "category": "Gear & Skills",
+        "description": "Swap Cir - Ohm with Bac-Jah for a high-uptime Teleport."
+      },
+      {
+        "name": "In Paragon",
+        "type": "Unknown",
+        "is_unique": false,
+        "category": "Gear & Skills",
+        "description": "In Paragon, you can choose to incorporate Guzzler onto your Starter board in place of Headhunter. Technically, this is the highest damage Glyph available, but it requires you to maintain a low Potion count by selectively avoiding globes, manage the Healthy status, and simultaneously maximize uptime on Crazy Brew. This Glyph and playstyle are not recommended for general play, but it is a little extra damage if managed well."
+      }
+    ]
+  },
+  {
+    "title": "Frenzy Barbarian Endgame Build GuideBy snail | Last Updated: September 24, 2025Season 10   Infernal ChaosEndgameBarbarian",
+    "url": "https://maxroll.gg/d4/build-guides/frenzy-barbarian-guide",
+    "class": "Barbarian",
+    "difficulty": "Medium",
+    "tags": [
+      "endgame",
+      "barbarian"
+    ],
+    "equipment": [
+      {
+        "name": "Each Torment",
+        "type": "Jewelry",
+        "is_unique": false,
+        "category": "Gear & Skills",
+        "description": "During early progression, Armor & Resistances should be prioritized in order to survive. Each Torment difficulty adds a penalty of -250 Armor and -25% to all Resistances and it's recommended to keep both capped at all times; this means having a value of 1,000 for Armor and 70% for each Resistance."
+      },
+      {
+        "name": "Defensive Aspects",
+        "type": "Legendary Aspect",
+        "is_unique": false,
+        "category": "Gear & Skills",
+        "description": "Next, focus on Defensive Aspects to make sure the Starter build doesn't just fall over.Juggernaut's and Steadfast Berserker's are both extremely important. The former is very helpful for reaching Armor cap, while the latter is a worry-free way of keeping Fortify.Might gives us some very welcome generic damage mitigation; it activates simply by attacking with Frenzy. Bul-Kathos is also an option here, but requires standing in Earthquakes periodically to function."
+      },
+      {
+        "name": "Juggernaut's",
+        "type": "Unknown",
+        "is_unique": false,
+        "category": "Gear & Skills",
+        "description": "Juggernaut's and Steadfast Berserker's are both extremely important. The former is very helpful for reaching Armor cap, while the latter is a worry-free way of keeping Fortify."
+      },
+      {
+        "name": "Utility Aspects",
+        "type": "Legendary Aspect",
+        "is_unique": false,
+        "category": "Gear & Skills",
+        "description": "To round out the build, we add some extra Offensive and Utility Aspects to fill out the rest of our gear.Edgemaster's gives us a damage multiplier based on our Fury pool (which is always full at this point).Rapid gives us some extra Attack Speed; this is useful early on as we don't have many good sources of this in the build quite yet.Anger Management gives us stress-free Berserking uptime.Bold Chieftain's helps keep all of our Shouts off cooldown.Accursed Touch gives us some early Vulnerable application. When this is no longer needed, it can be replaced with an Offensive Aspect, such as Elements.Lastly, Ghostwalker is used for some extra Movement Speed to help speed up the leveling process."
+      },
+      {
+        "name": "Edgemaster's",
+        "type": "Unknown",
+        "is_unique": false,
+        "category": "Gear & Skills",
+        "description": "Edgemaster's gives us a damage multiplier based on our Fury pool (which is always full at this point)."
+      },
+      {
+        "name": "Attack Speed",
+        "type": "Unknown",
+        "is_unique": false,
+        "category": "Gear & Skills",
+        "description": "Rapid gives us some extra Attack Speed; this is useful early on as we don't have many good sources of this in the build quite yet."
+      },
+      {
+        "name": "Anger Management",
+        "type": "Unknown",
+        "is_unique": false,
+        "category": "Gear & Skills",
+        "description": "Anger Management gives us stress-free Berserking uptime."
+      },
+      {
+        "name": "Bold Chieftain's",
+        "type": "Unknown",
+        "is_unique": false,
+        "category": "Gear & Skills",
+        "description": "Bold Chieftain's helps keep all of our Shouts off cooldown."
+      },
+      {
+        "name": "Accursed Touch",
+        "type": "Legendary Aspect",
+        "is_unique": false,
+        "category": "Gear & Skills",
+        "description": "Accursed Touch gives us some early Vulnerable application. When this is no longer needed, it can be replaced with an Offensive Aspect, such as Elements."
+      },
+      {
+        "name": "Movement Speed",
+        "type": "Unknown",
+        "is_unique": false,
+        "category": "Gear & Skills",
+        "description": "Lastly, Ghostwalker is used for some extra Movement Speed to help speed up the leveling process."
+      },
+      {
+        "name": "Crown of Lucion",
+        "type": "Armor",
+        "is_unique": false,
+        "category": "Gear & Skills",
+        "description": "Crown of Lucion is an incredibly strong item that gives a ton of damage via its Unique effect, which occurs automatically by spending Fury.In order to for Basic Skills to be Fury spenders, Shard of Verathiel must be equipped. If you do not yet have Shard of Verathiel, use Tuskhelm of Joritz the Mighty or Ugly Bastard Helm instead."
+      },
+      {
+        "name": "Basic Skills",
+        "type": "Armor",
+        "is_unique": false,
+        "category": "Gear & Skills",
+        "description": "In order to for Basic Skills to be Fury spenders, Shard of Verathiel must be equipped. If you do not yet have Shard of Verathiel, use Tuskhelm of Joritz the Mighty or Ugly Bastard Helm instead."
+      },
+      {
+        "name": "Paingorger's Gauntlets",
+        "type": "Unknown",
+        "is_unique": false,
+        "category": "Gear & Skills",
+        "description": "Paingorger's Gauntlets give us a ton of useful stats, including Basic Skill ranks, Attack Speed, and Cooldown Reduction. Its Unique effect makes all of our hits echo and then multiplies the damage, so long as we have a way to trigger it. In this setup, this is accomplished mainly by using Wrath of the Berserker and Ground Stomp. For more reliable activation, the Ceh Rune can be used as well."
+      },
+      {
+        "name": "Tassets of the Dawning Sky",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Gear & Skills",
+        "description": "Tibault's Will works in combination with Wrath of the Berserker to provide a decent damage boost, as well as a fairly high amount of damage reduction while Unstoppable.If Resistances are a problem, use Tassets of the Dawning Sky here instead.."
+      },
+      {
+        "name": "Hooves of the Mountain God",
+        "type": "Jewelry",
+        "is_unique": false,
+        "category": "Gear & Skills",
+        "description": "Hooves of the Mountain God are what give Frenzy its ability to cleave in a small area in front of it. Many of the stats on this item are great, but ranks to Belligerence  should be prioritized first. When wearing these, Fury will constantly drain at an increasing rate until it is empty, at which point the draining effect resets. This is offset by the inherent Fury per Second that is present here, as well as other sources of Resource Generation and the natural ability of Basic Skills to generate Fury on their own."
+      },
+      {
+        "name": "Ramaladni's Magnum Opus",
+        "type": "Unknown",
+        "is_unique": false,
+        "category": "Gear & Skills",
+        "description": "Ramaladni's Magnum Opus gives us a massive damage multiplier that is based on our Maximum Fury. For this reason, we prioritize this stat where it is convenient on gear and also via paragon points."
+      },
+      {
+        "name": "Shard of Verathiel",
+        "type": "Unknown",
+        "is_unique": false,
+        "category": "Gear & Skills",
+        "description": "Shard of Verathiel gives us yet another massive damage multiplier, as well as some Basic Skill ranks and Maximum Fury. In general, the Basic Attack Speed stat on this item (which is also present on Hooves of the Mountain God) is not that important to focus on, since we naturally cap this Attack Speed breakpoint with almost no effort."
+      },
+      {
+        "name": "Battle Trance",
+        "type": "Unknown",
+        "is_unique": false,
+        "category": "Gear & Skills",
+        "description": "Battle Trance is the priority when it comes to Chaos Armor. This is a staple for most builds, but is especially powerful here since it provides a bunch of Frenzy ranks alongside its other great stats. The implicit that grants 30% Resistances to All Elements makes it a great defensive choice as well."
+      },
+      {
+        "name": "Tibault's Will",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Gear & Skills",
+        "description": "Sabre of Tsasgal should replace either Paingorger's Gauntlets or Tibault's Will if you happen to find it - both of these are merely placeholders at this progression stage."
+      },
+      {
+        "name": "Grandfather",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Gear & Skills",
+        "description": "The The Grandfather is used in this setup to help maximize damage. The massive boost to our Maximum Life substantially increases our defensive capabilities, and its Unique effect serves as a permanent 2x damage multiplier since we have 100% Critical Strike Chance. All of the stats on this item benefit us in some way, especially the Maximum Fury, making it a very good addition to the build."
+      },
+      {
+        "name": "Fists of Fate",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Gear & Skills",
+        "description": "Many of the Uniques used in the Ancestral version of the build are still present here, but they have been upgraded to their Chaos Armor counterparts. There are some new additions as well:Sabre of Tsasgal, the weapon that puts emphasis on using multiple attack skills for a stacking damage buff. This task is easily accomplished just by equipping Dual Threat.Fists of Fate has great stats all around and provides an 80% damage multiplier on average. It also gives us extremely reliable Vulnerable application, as well as a ton of Lucky Hit Chance to ensure that the Battle Trance buff never falls off."
+      },
+      {
+        "name": "Sabre of Tsasgal",
+        "type": "Unknown",
+        "is_unique": false,
+        "category": "Gear & Skills",
+        "description": "Sabre of Tsasgal, the weapon that puts emphasis on using multiple attack skills for a stacking damage buff. This task is easily accomplished just by equipping Dual Threat."
+      },
+      {
+        "name": "Violent Hammer of the Ancients",
+        "type": "Unknown",
+        "is_unique": false,
+        "category": "Gear & Skills",
+        "description": "Violent Hammer of the Ancients is swapped in at this point for some extra damage, though it is technically a flex slot. Ground Stomp, Steel Grasp or any other utility skill are viable options as well."
+      }
+    ]
+  },
+  {
+    "title": "Chain Lightning Sorcerer Leveling GuideBy pandaglassjaw | Last Updated: September 23, 2025Season 10   Infernal ChaosLevelingSorcerer",
+    "url": "https://maxroll.gg/d4/build-guides/chain-lightning-sorcerer-leveling-guide",
+    "class": "Sorcerer",
+    "difficulty": "Medium",
+    "tags": [
+      "leveling",
+      "sorcerer",
+      "chain lightning"
+    ],
+    "equipment": [
+      {
+        "name": "Hydra Endgame",
+        "type": "Unknown",
+        "is_unique": false,
+        "category": "Jackpot",
+        "description": "\u200dSerpentine (enables Hydra Endgame)"
+      },
+      {
+        "name": "Frozen Tundra",
+        "type": "Unknown",
+        "is_unique": false,
+        "category": "Jackpot",
+        "description": "\u200dGlacial / \u200dFrozen Tundra (enables Blizzard Endgame)"
+      },
+      {
+        "name": "Flamethrower's",
+        "type": "Unknown",
+        "is_unique": false,
+        "category": "Jackpot",
+        "description": "\u200dFlamethrower's / \u200dOverheating (enables Incinerate Endgame)"
+      },
+      {
+        "name": "Unique Items",
+        "type": "Unknown",
+        "is_unique": false,
+        "category": "Jackpot",
+        "description": "Build-defining Unique Items"
+      },
+      {
+        "name": "Ophidian Iris",
+        "type": "Unknown",
+        "is_unique": false,
+        "category": "Jackpot",
+        "description": "\u200dOphidian Iris (enables Hydra Endgame)"
+      },
+      {
+        "name": "Critical Strike Chance",
+        "type": "Unknown",
+        "is_unique": false,
+        "category": "Jackpot",
+        "description": "\u200dCem + \u200dGar provides additional Critical Strike Chance after evading and is a great generic option to increase damage and create more Crackling Energy from \u200dDestructive Chain Lightning."
+      },
+      {
+        "name": "Primordial Binding",
+        "type": "Unknown",
+        "is_unique": false,
+        "category": "Jackpot",
+        "description": "\u200dCir + \u200dCeh provides additional summons that Freeze enemies and apply Vulnerable. These also activate \u200dPrimordial Binding for mobility and Mana Regeneration."
+      },
+      {
+        "name": "Shocking Impact",
+        "type": "Unknown",
+        "is_unique": false,
+        "category": "Jackpot",
+        "description": "\u200dTun triggers \u200dShocking Impact for a large burst of damage. This is the highest damage potential once you have enough ranks of \u200dShocking Impact and plenty of movement speed to replace \u200dQua."
+      },
+      {
+        "name": "Invocation Runes",
+        "type": "Unknown",
+        "is_unique": false,
+        "category": "Jackpot",
+        "description": "\u200dTec for extra damage, with this you creates an earthquake and has the highest damage potential for early Invocation Runes."
+      },
+      {
+        "name": "Ritual Runes",
+        "type": "Unknown",
+        "is_unique": false,
+        "category": "Jackpot",
+        "description": "\u200dYax and \u200dPoc are other options for Ritual Runes."
+      }
+    ]
+  },
+  {
+    "title": "Shadowblight Necromancer Endgame Build GuideBy MacroBioBoi | Last Updated: September 26, 2025Season 10   Infernal ChaosEndgameNecromancer",
+    "url": "https://maxroll.gg/d4/build-guides/shadowblight-necromancer-guide",
+    "class": "Necromancer",
+    "difficulty": "Medium",
+    "tags": [
+      "endgame",
+      "necromancer",
+      "blight"
+    ],
+    "equipment": [
+      {
+        "name": "Godslayer Crown",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Godslayer Crown - Duriel, King of Maggots, Andariel"
+      },
+      {
+        "name": "Heir of Perdition",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Heir of Perdition"
+      },
+      {
+        "name": "Shroud of False Death",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Shroud of False Death"
+      },
+      {
+        "name": "Lidless Wall",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Lidless Wall"
+      },
+      {
+        "name": "Fists of Fate",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Fists of Fate"
+      }
+    ]
+  },
+  {
+    "title": "Fleshrender Druid Endgame Build GuideBy Danger | Last Updated: September 27, 2025Season 10   Infernal ChaosEndgameDruid",
+    "url": "https://maxroll.gg/d4/build-guides/fleshrender-druid-guide",
+    "class": "Druid",
+    "difficulty": "Medium",
+    "tags": [
+      "endgame",
+      "druid",
+      "rend"
+    ],
+    "equipment": [
+      {
+        "name": "The Fleshrender Druid",
+        "type": "Armor",
+        "is_unique": false,
+        "category": "Gear & Skills",
+        "description": "The Fleshrender Druid cannot be played without a Fleshrender. As such, prioritize obtaining this item from Lord Zir, with an emphasis on Ancestral versions with high unique effects. If you're having difficulty defeating this Boss, remember to lower your Torment tier for an easier fight.If possible, try to obtain a multi-GA version of this item as all its stats are desirable, or a Chaos Armor variant, preferably your Boots."
+      },
+      {
+        "name": "Chaos Armor",
+        "type": "Armor",
+        "is_unique": false,
+        "category": "Gear & Skills",
+        "description": "If possible, try to obtain a multi-GA version of this item as all its stats are desirable, or a Chaos Armor variant, preferably your Boots."
+      },
+      {
+        "name": "Wild Transformations",
+        "type": "Legendary Aspect",
+        "is_unique": false,
+        "category": "Gear & Skills",
+        "description": "The other requirements, Que and Wild Transformations, can be obtained from Rune Tributes and leveling up your Seasonal Reputation Track, respectively. Dire Wolf's is a drop-only Aspect and is best farmed by gambling Boots with Obols. Once you've acquired the core components for this build, you essentially are close to the final version. The addition of other Uniques / Chaos Uniques from this point are build-enhancing."
+      },
+      {
+        "name": "Tibault's Will",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Gear & Skills",
+        "description": "Tibault's Will offers a healthy amount of All Stats and Damage Reduction, mainly paired with Grizzly Rage's Unstoppable for a solid damage multiplier. This unique can be obtained from Duriel, King of Maggots and/or Andariel."
+      },
+      {
+        "name": "Malefic Crescent",
+        "type": "Unknown",
+        "is_unique": false,
+        "category": "Gear & Skills",
+        "description": "Malefic Crescent boasts a fantastic range of stats and a big damage multiplier. This item drops from Lord Zir and Urivar. Lastly, Tempest Roar comes with some Spirit generating capabilities, but is mainly used to transform Cyclone Armor into a Werewolf skill, improving its damage. You can find this unique from Duriel, King of Maggots and/or Andariel."
+      },
+      {
+        "name": "From the",
+        "type": "Unknown",
+        "is_unique": false,
+        "category": "Gear & Skills",
+        "description": "From the time you reach Thunderstruck in your Paragon Board, be mindful of your Damage vs. Close and Damage vs. Distant bonus. The target for this stat is 300%, and your personal value will depend on the nodes taken on this board and the level of your Earth and Sky Glyph."
+      },
+      {
+        "name": "Sky Glyph",
+        "type": "Unknown",
+        "is_unique": false,
+        "category": "Gear & Skills",
+        "description": "The target for this stat is 300%, and your personal value will depend on the nodes taken on this board and the level of your Earth and Sky Glyph."
+      },
+      {
+        "name": "Shroud of False Death",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Gear & Skills",
+        "description": "Shroud of False Death is an excellent addition, as its +1 to All Passive skills implicit is a massive offensive and defensive boon. On top of that, this Mythic comes with a very large amount of Willpower which is beneficial to Fleshrender's multiplier."
+      },
+      {
+        "name": "Fleshrender's",
+        "type": "Unknown",
+        "is_unique": false,
+        "category": "Gear & Skills",
+        "description": "On top of that, this Mythic comes with a very large amount of Willpower which is beneficial to Fleshrender's multiplier."
+      },
+      {
+        "name": "Ring of Starless Skies",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Gear & Skills",
+        "description": "Ring of Starless Skies gives you a sizeable amount of Attack Speed and Lucky Hit Chance, both powerful stats for your build. Its unique effect is a very potent damage increase that also reduces the Spirit cost of your Shred."
+      },
+      {
+        "name": "All Chaos Armors",
+        "type": "Unknown",
+        "is_unique": false,
+        "category": "Gear & Skills",
+        "description": "All Chaos Armors are available from Bartuc, or Obol gambling."
+      },
+      {
+        "name": "Earthen Bulwark",
+        "type": "Unknown",
+        "is_unique": false,
+        "category": "Gear & Skills",
+        "description": "Earthen Bulwark is your main damage dealer, due to its incredibly short cast time and Werebear Overpower synergies when paired with Vasily's Prayer."
+      },
+      {
+        "name": "Defensive Skills",
+        "type": "Jewelry",
+        "is_unique": false,
+        "category": "Gear & Skills",
+        "description": "Petrify is used to reset your Defensive Skills instantly. The focus of the variant is primarily on resetting Petrify as fast and as often as possible, to supply your Fleshrender with numerous Defensive Skill casts. As a result, it's a very spam heavy build, requiring you to cast your skills as they come off Cooldown for optimal damage.Ensure your Petrify Cooldown is sub 10 seconds for Supreme Petrify, allowing you to spam it against Bosses. You can meet this threshold using Ultimate Cooldown Reduction and Petrify Cooldown Reduction Tempers, alongside Vehement Brawler's. For more information consult the gear above."
+      },
+      {
+        "name": "Petrify Cooldown",
+        "type": "Unknown",
+        "is_unique": false,
+        "category": "Gear & Skills",
+        "description": "Ensure your Petrify Cooldown is sub 10 seconds for Supreme Petrify, allowing you to spam it against Bosses. You can meet this threshold using Ultimate Cooldown Reduction and Petrify Cooldown Reduction Tempers, alongside Vehement Brawler's. For more information consult the gear above."
+      },
+      {
+        "name": "While Fleshrender",
+        "type": "Jewelry",
+        "is_unique": false,
+        "category": "Gear & Skills",
+        "description": "While Fleshrender has no natural way to Overpower, you use Zan and Petrify to generate large amounts of Offering for Xan, resulting in very frequent Overpowers. Pair Qax with Yul in your other Runeword to take advantage of Petrify's large Spirit generation for even more damage."
+      },
+      {
+        "name": "Pair Qax",
+        "type": "Unknown",
+        "is_unique": false,
+        "category": "Gear & Skills",
+        "description": "Pair Qax with Yul in your other Runeword to take advantage of Petrify's large Spirit generation for even more damage."
+      },
+      {
+        "name": "Fists of Fate",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Gear & Skills",
+        "description": "Calm Before the Storm is essential in reducing the Cooldown of your Petrify against regular monster packs. Use Wind Shear as your primary tool to activate it, since it boasts a very high Lucky Hit Chance when paired with Fists of Fate, pierces and multi-hits enemies, and can be cast from a distance to not interfere with Nature's Reach during combat. Additionally, Wind Shear helps with the lack of Movement Speed on Chaos Armor Boots, by increasing your Movement speed with Fierce Wind Shear."
+      },
+      {
+        "name": "Wind Shear",
+        "type": "Armor",
+        "is_unique": false,
+        "category": "Gear & Skills",
+        "description": "Additionally, Wind Shear helps with the lack of Movement Speed on Chaos Armor Boots, by increasing your Movement speed with Fierce Wind Shear."
+      },
+      {
+        "name": "Use Blessed Guide",
+        "type": "Unknown",
+        "is_unique": false,
+        "category": "Gear & Skills",
+        "description": "Use Blessed Guide, Reddamine Buzz and Soothing Spices Incenses for more Willpower, Maximum Life, Armor, and to cap Resistances."
+      },
+      {
+        "name": "Consume Elixir of Advantage",
+        "type": "Unknown",
+        "is_unique": false,
+        "category": "Gear & Skills",
+        "description": "Consume Elixir of Advantage II for extra Attack Speed and Lucky Hit Chance, both useful in activating your Calm Before the Storm more often. If you find yourself needing more survivability, opt for Elixir of Fortitude II instead of  Elixir of Advantage II."
+      },
+      {
+        "name": "Elixir of Fortitude",
+        "type": "Unknown",
+        "is_unique": false,
+        "category": "Gear & Skills",
+        "description": "If you find yourself needing more survivability, opt for Elixir of Fortitude II instead of  Elixir of Advantage II."
+      }
+    ]
+  },
+  {
+    "title": "Hydra Sorcerer Endgame Build GuideBy Northwar | Last Updated: September 25, 2025Season 10   Infernal ChaosEndgameSorcerer",
+    "url": "https://maxroll.gg/d4/build-guides/hydra-sorcerer-guide",
+    "class": "Sorcerer",
+    "difficulty": "Medium",
+    "tags": [
+      "endgame",
+      "sorcerer"
+    ],
+    "equipment": [
+      {
+        "name": "Tal Rasha's Iridescent Loop",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Tal Rasha's Iridescent Loop - Echo of Varshan"
+      },
+      {
+        "name": "Ophidian Iris",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Ophidian Iris"
+      },
+      {
+        "name": "Harlequin Crest",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Harlequin Crest"
+      },
+      {
+        "name": "Shroud of False Death",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Shroud of False Death"
+      },
+      {
+        "name": "Crown of Lucion",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Crown of Lucion"
+      },
+      {
+        "name": "Ring of Starless Skies",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Ring of Starless Skies"
+      }
+    ]
+  },
+  {
+    "title": "Evade Spiritborn Leveling GuideBy Ignition | Last Updated: September 23, 2025Season 10   Infernal ChaosLevelingSpiritborn",
+    "url": "https://maxroll.gg/d4/build-guides/evade-spiritborn-leveling-guide",
+    "class": "Spiritborn",
+    "difficulty": "Medium",
+    "tags": [
+      "leveling",
+      "spiritborn"
+    ],
+    "equipment": [
+      {
+        "name": "Loyalty's Mantle",
+        "type": "Armor",
+        "is_unique": true,
+        "category": "Great Uniques",
+        "description": "\u200dLoyalty's Mantle"
+      },
+      {
+        "name": "Wushe Nak Pa",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Great Uniques",
+        "description": "\u200dWushe Nak Pa"
+      },
+      {
+        "name": "Jacinth Shell",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Great Uniques",
+        "description": "\u200dJacinth Shell"
+      }
+    ]
+  },
+  {
+    "title": "Crackling Energy Sorcerer Endgame GuideBy pandaglassjaw | Last Updated: September 27, 2025Season 10   Infernal ChaosEndgameSorcerer",
+    "url": "https://maxroll.gg/d4/build-guides/crackling-energy-sorcerer-guide",
+    "class": "Sorcerer",
+    "difficulty": "Medium",
+    "tags": [
+      "endgame",
+      "sorcerer"
+    ],
+    "equipment": [
+      {
+        "name": "Esadora's Overflowing Cameo",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Esadora's Overflowing Cameo - Lord Zir"
+      },
+      {
+        "name": "Tal Rasha's Iridescent Loop",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Tal Rasha's Iridescent Loop - Echo of Varshan"
+      },
+      {
+        "name": "Galvanic\u00a0Azurite",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Galvanic\u00a0Azurite"
+      },
+      {
+        "name": "Harlequin Crest",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Harlequin Crest"
+      },
+      {
+        "name": "Crown of Lucion",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Crown of Lucion"
+      },
+      {
+        "name": "Ring of Starless Skies",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Ring of Starless Skies"
+      }
+    ]
+  },
+  {
+    "title": "Ball Lightning Sorcerer Leveling GuideBy pandaglassjaw | Last Updated: September 24, 2025Season 10   Infernal ChaosLevelingSorcerer",
+    "url": "https://maxroll.gg/d4/build-guides/ball-lightning-sorcerer-leveling-guide",
+    "class": "Sorcerer",
+    "difficulty": "Medium",
+    "tags": [
+      "leveling",
+      "sorcerer",
+      "ball lightning"
+    ],
+    "equipment": [
+      {
+        "name": "Hydra Endgame",
+        "type": "Unknown",
+        "is_unique": false,
+        "category": "Jackpot",
+        "description": "\u200dSerpentine (enables Hydra Endgame)"
+      },
+      {
+        "name": "Frozen Tundra",
+        "type": "Unknown",
+        "is_unique": false,
+        "category": "Jackpot",
+        "description": "\u200dGlacial / \u200dFrozen Tundra (enables Blizzard Endgame)"
+      },
+      {
+        "name": "Flamethrower's",
+        "type": "Unknown",
+        "is_unique": false,
+        "category": "Jackpot",
+        "description": "\u200dFlamethrower's / \u200dOverheating (enables Incinerate Endgame)"
+      },
+      {
+        "name": "Unique Items",
+        "type": "Unknown",
+        "is_unique": false,
+        "category": "Jackpot",
+        "description": "Build-defining Unique Items"
+      },
+      {
+        "name": "Ophidian Iris",
+        "type": "Unknown",
+        "is_unique": false,
+        "category": "Jackpot",
+        "description": "\u200dOphidian Iris (enables Hydra Endgame)"
+      },
+      {
+        "name": "Primordial Binding",
+        "type": "Unknown",
+        "is_unique": false,
+        "category": "Jackpot",
+        "description": "\u200dCir + \u200dCeh provides additional summons that Freeze enemies and apply Vulnerable. These also activate \u200dPrimordial Binding for mobility and Mana Regeneration."
+      },
+      {
+        "name": "Critical Strike Chance",
+        "type": "Unknown",
+        "is_unique": false,
+        "category": "Jackpot",
+        "description": "\u200dGar provides additional Critical Strike Chance and is a great generic option."
+      },
+      {
+        "name": "Shocking Impact",
+        "type": "Unknown",
+        "is_unique": false,
+        "category": "Jackpot",
+        "description": "\u200dTun triggers \u200dShocking Impact for a large burst of damage. This has high damage potential once you have enough ranks of \u200dShocking Impact and plenty of movement speed to replace \u200dQua."
+      },
+      {
+        "name": "Invocation Runes",
+        "type": "Unknown",
+        "is_unique": false,
+        "category": "Jackpot",
+        "description": "\u200dTec for extra damage, with this you creates an earthquake and has the highest damage potential for early Invocation Runes."
+      },
+      {
+        "name": "Ritual Runes",
+        "type": "Unknown",
+        "is_unique": false,
+        "category": "Jackpot",
+        "description": "\u200dYax and \u200dPoc are other options for Ritual Runes."
+      }
+    ]
+  },
+  {
+    "title": "Stinger Spiritborn Endgame Build GuideBy Wudijo | Last Updated: September 22, 2025Season 10   Infernal ChaosEndgameSpiritborn",
+    "url": "https://maxroll.gg/d4/build-guides/stinger-spiritborn-guide",
+    "class": "Spiritborn",
+    "difficulty": "Medium",
+    "tags": [
+      "endgame",
+      "spiritborn"
+    ],
+    "equipment": [
+      {
+        "name": "Harlequin Crest",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Harlequin Crest"
+      },
+      {
+        "name": "Rod of Kepeleke",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Rod of Kepeleke"
+      },
+      {
+        "name": "Harmony of Ebewaka",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Harmony of Ebewaka"
+      },
+      {
+        "name": "Ring of Starless Skies",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Ring of Starless Skies"
+      }
+    ]
+  },
+  {
+    "title": "Whirlwind Barbarian Endgame Build GuideBy aoinomiku | Last Updated: September 25, 2025Season 10   Infernal ChaosEndgameBarbarian",
+    "url": "https://maxroll.gg/d4/build-guides/whirlwind-barbarian-guide",
+    "class": "Barbarian",
+    "difficulty": "Medium",
+    "tags": [
+      "endgame",
+      "barbarian",
+      "whirlwind"
+    ],
+    "equipment": [
+      {
+        "name": "Ugly Bastard Helm",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Ugly Bastard Helm"
+      },
+      {
+        "name": "Sabre of Tsasgal",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Sabre of Tsasgal"
+      },
+      {
+        "name": "Gohr's Devastating Grips",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Gohr's Devastating Grips - Echo of Varshan"
+      },
+      {
+        "name": "Tibault's Will",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Tibault's Will - Duriel, King of Maggots, Andariel"
+      },
+      {
+        "name": "Heir of Perdition",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Heir of Perdition"
+      },
+      {
+        "name": "Grandfather",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "The Grandfather"
+      },
+      {
+        "name": "Battle Trance",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Battle Trance"
+      },
+      {
+        "name": "Crown of Lucion",
+        "type": "Unique",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Crown of Lucion"
+      },
+      {
+        "name": "Ring of Starless Skies",
+        "type": "Unique/Legendary",
+        "is_unique": true,
+        "category": "Uniques",
+        "description": "Ring of Starless Skies"
+      }
+    ]
+  }
+]
