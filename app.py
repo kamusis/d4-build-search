@@ -25,6 +25,7 @@ event_queue = Queue()
 total_builds = 0
 current_build = 0
 refresh_in_progress = False
+refresh_mode: Optional[str] = None
 
 # Custom logger handler to capture logs for the web UI
 class QueueHandler(logging.Handler):
@@ -43,6 +44,7 @@ class QueueHandler(logging.Handler):
 # Add queue handler to logger
 queue_handler = QueueHandler(event_queue)
 queue_handler.setFormatter(logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s'))
+queue_handler.setLevel(logging.WARNING)
 logger.addHandler(queue_handler)
 
 # Create FastAPI app
@@ -253,120 +255,178 @@ async def refresh_data_page(request: Request):
 
 @app.get("/api/refresh-data")
 async def start_refresh_data(background_tasks: BackgroundTasks):
-    """Start the data refresh process in the background."""
-    global refresh_in_progress, total_builds, current_build
-    
+    """Start the full data refresh process in the background."""
+    return _schedule_refresh(background_tasks, fake=False)
+
+
+@app.get("/api/refresh-data-fake")
+async def start_fake_refresh(background_tasks: BackgroundTasks):
+    """Start the fake refresh process that mimics the real workflow."""
+    return _schedule_refresh(background_tasks, fake=True)
+
+
+def _schedule_refresh(background_tasks: BackgroundTasks, fake: bool) -> JSONResponse:
+    """Common logic for preparing a refresh job."""
+    global refresh_in_progress, total_builds, current_build, refresh_mode
+
     if refresh_in_progress:
-        return JSONResponse({"message": "Refresh already in progress"})
-    
-    # Clear the event queue
+        return JSONResponse(
+            {"message": "Refresh already in progress", "in_progress": True},
+            status_code=409
+        )
+
     while not event_queue.empty():
         event_queue.get()
-    
-    # Reset counters
+
     refresh_in_progress = True
     total_builds = 0
     current_build = 0
-    
-    # Start the refresh process in the background
-    background_tasks.add_task(refresh_data_background)
-    
-    return JSONResponse({"message": "Refresh started"})
+    refresh_mode = "fake" if fake else "real"
 
-async def refresh_data_background():
+    background_tasks.add_task(refresh_data_background, fake)
+
+    return JSONResponse({"message": "Refresh started", "mode": refresh_mode})
+
+
+def refresh_data_background(fake: bool = False):
     """Background task to refresh the builds data."""
     global refresh_in_progress, total_builds, current_build
-    
+
     try:
-        logger.info("Starting data refresh process")
-        event_queue.put({"type": "log", "message": "Starting data refresh process", "log_level": "info"})
-        
-        # Remove the cached data file if it exists
-        if os.path.exists("all_builds.json"):
-            os.remove("all_builds.json")
-            logger.info("Removed existing all_builds.json file")
-        
-        # Re-scrape the build list
-        logger.info("Fetching build list from MaxRoll.gg")
-        builds = scraper.get_build_list()
-        total_builds = len(builds)
-        event_queue.put({"type": "log", "message": f"Found {total_builds} builds to process", "log_level": "info"})
-        event_queue.put({"type": "progress", "current": 0, "total": total_builds})
-        
-        # Initialize all_builds.json with an empty list
-        with open("all_builds.json", 'w') as f:
-            json.dump([], f)
-        
-        # Keep track of processed builds for incremental updates
-        processed_builds = []
-        
-        # Create a mapping of URLs to build data for quick lookup
-        build_map = {build['url']: build for build in builds}
-        
-        # We'll use a more direct approach instead of monkey patching
-        # Process each build individually and update progress
-        total_builds = len(builds)
-        current_build = 0
-        
-        logger.info(f"Getting equipment for {total_builds} builds")
-        event_queue.put({"type": "progress", "current": 0, "total": total_builds})
-        
-        # Initialize processed_builds list
-        processed_builds = []
-        
-        # Process each build one by one
-        for i, build in enumerate(builds):
-            build_url = build['url']
-            logger.info(f"Processing build {i+1}/{total_builds}: {build['title']}")
-            
-            try:
-                # Get equipment for this build
-                equipment = scraper.get_build_equipment(build_url)
-                build['equipment'] = equipment
-                logger.info(f"Found {len(equipment)} equipment items for build: {build['title']}")
-                
-                # Update progress
-                current_build += 1
-                
-                # Send explicit log message to UI
-                log_message = f"Processed build {current_build}/{total_builds}: {build['title']}"
-                logger.info(log_message)
-                
-                # Send events directly without using the logger
-                # This bypasses any potential issues with the QueueHandler
-                event_queue.put({"type": "progress", "current": current_build, "total": total_builds})
-                event_queue.put({"type": "log", "message": log_message, "log_level": "info"})
-                
-                # Add to processed builds and update file
-                processed_builds.append(build)
-                with open("all_builds.json", 'w') as f:
-                    json.dump(processed_builds, f, indent=2)
-                
-                # Sleep briefly to avoid overloading the server
-                time.sleep(1)
-            except Exception as e:
-                logger.error(f"Error getting equipment for build {build['title']}: {e}")
-                build['equipment'] = []
-                
-        # Update the builds list with our processed data
-        builds = processed_builds
-        
-        # Equipment data for all builds has been processed
-        logger.info("Completed fetching equipment data for all builds")
-        
-        # Final save of all builds data (should be complete by now, but just to be safe)
-        with open("all_builds.json", 'w') as f:
-            json.dump(processed_builds, f, indent=2)
-        
-        logger.info(f"Data refresh completed successfully. Found {len(builds)} builds.")
-        event_queue.put({"type": "completed", "build_count": len(builds)})
-    
-    except Exception as e:
-        logger.error(f"Error during data refresh: {e}")
-        event_queue.put({"type": "error", "message": str(e)})
-    
+        mode_description = "Fake data refresh" if fake else "Data refresh"
+        logger.info("%s started", mode_description)
+        event_queue.put({
+            "type": "log",
+            "message": f"{mode_description} started",
+            "log_level": "info"
+        })
+
+        if fake:
+            _run_fake_refresh()
+        else:
+            _run_real_refresh()
+
+    except Exception as exc:
+        logger.error("Error during refresh: %s", exc)
+        event_queue.put({"type": "error", "message": str(exc)})
     finally:
         refresh_in_progress = False
+
+
+def _run_real_refresh() -> None:
+    """Execute the long-running refresh logic."""
+    global total_builds, current_build
+
+    if os.path.exists("all_builds.json"):
+        os.remove("all_builds.json")
+        logger.info("Removed existing all_builds.json file")
+        event_queue.put({
+            "type": "log",
+            "message": "Removed existing all_builds.json file",
+            "log_level": "info"
+        })
+
+    logger.info("Fetching build list from MaxRoll.gg")
+    builds = scraper.get_build_list()
+    total_builds = len(builds)
+    current_build = 0
+
+    event_queue.put({
+        "type": "log",
+        "message": f"Found {total_builds} builds to process",
+        "log_level": "info"
+    })
+    event_queue.put({"type": "progress", "current": current_build, "total": total_builds})
+
+    with open("all_builds.json", "w", encoding="utf-8") as file:
+        json.dump([], file)
+
+    processed_builds = []
+
+    for build_index, build in enumerate(builds, start=1):
+        build_url = build.get("url")
+        title = build.get("title", "Unknown build")
+        logger.info("Processing build %s/%s: %s", build_index, total_builds, title)
+
+        try:
+            equipment = scraper.get_build_equipment(build_url)
+            build["equipment"] = equipment
+        except Exception as exc:  # pylint: disable=broad-except
+            logger.error("Error getting equipment for build %s: %s", title, exc)
+            event_queue.put({
+                "type": "log",
+                "message": f"Failed to fetch equipment for {title}: {exc}",
+                "log_level": "warning"
+            })
+            build["equipment"] = []
+        finally:
+            current_build = build_index
+            log_message = f"Processed build {current_build}/{total_builds}: {title}"
+            event_queue.put({
+                "type": "progress",
+                "current": current_build,
+                "total": total_builds
+            })
+            event_queue.put({"type": "log", "message": log_message, "log_level": "info"})
+
+            processed_builds.append(build)
+            with open("all_builds.json", "w", encoding="utf-8") as file:
+                json.dump(processed_builds, file, indent=2)
+
+            time.sleep(1)
+
+    event_queue.put({
+        "type": "log",
+        "message": "Completed fetching equipment data for all builds",
+        "log_level": "info"
+    })
+
+    with open("all_builds.json", "w", encoding="utf-8") as file:
+        json.dump(processed_builds, file, indent=2)
+
+    logger.info("Data refresh completed successfully. Found %s builds.", len(processed_builds))
+    event_queue.put({"type": "completed", "build_count": len(processed_builds)})
+
+
+def _run_fake_refresh(total_steps: int = 20, delay_seconds: float = 1.0) -> None:
+    """Run a lightweight fake refresh for UI validation."""
+    global total_builds, current_build
+
+    total_builds = total_steps
+    current_build = 0
+
+    event_queue.put({
+        "type": "log",
+        "message": f"Preparing {total_steps} fake builds for testing",
+        "log_level": "info"
+    })
+    event_queue.put({"type": "progress", "current": current_build, "total": total_builds})
+
+    fake_builds = []
+
+    for step in range(1, total_steps + 1):
+        time.sleep(delay_seconds)
+        current_build = step
+        fake_title = f"Fake Build #{step}"
+        fake_builds.append({"title": fake_title, "url": f"https://example.com/fake/{step}", "equipment": []})
+
+        event_queue.put({
+            "type": "progress",
+            "current": current_build,
+            "total": total_builds
+        })
+        event_queue.put({
+            "type": "log",
+            "message": f"Simulated progress for {fake_title}",
+            "log_level": "info"
+        })
+
+    event_queue.put({
+        "type": "log",
+        "message": "Fake refresh completed successfully",
+        "log_level": "info"
+    })
+    event_queue.put({"type": "completed", "build_count": len(fake_builds)})
 
 @app.get("/api/refresh-events")
 async def refresh_events():
@@ -374,37 +434,24 @@ async def refresh_events():
     async def event_generator():
         # Send an initial event to establish the connection
         initial_event = {'type': 'log', 'message': 'Connected to event stream', 'log_level': 'info'}
-        logger.info(f"Sending initial event: {initial_event}")
         yield f"data: {json.dumps(initial_event)}\n\n"
-        
-        # Send a progress update at the start
+
         progress_event = {'type': 'progress', 'current': current_build, 'total': total_builds}
-        logger.info(f"Sending initial progress: {progress_event}")
         yield f"data: {json.dumps(progress_event)}\n\n"
-        
-        # Keep track of connection state
-        connected = True
-        counter = 0
-        
-        while connected:
+
+        while True:
             try:
-                counter += 1
-                if counter % 10 == 0:
-                    logger.info(f"SSE check: queue size={event_queue.qsize()}, refresh_in_progress={refresh_in_progress}")
-                
                 # If there are events in the queue, yield them
                 if not event_queue.empty():
                     event = event_queue.get()
-                    logger.info(f"Sending event: {event}")
                     yield f"data: {json.dumps(event)}\n\n"
-                
+
                 # If refresh is not in progress and queue is empty, end the stream
                 elif not refresh_in_progress and event_queue.empty():
                     final_event = {'type': 'log', 'message': 'Refresh process completed', 'log_level': 'info'}
-                    logger.info(f"Sending final event: {final_event}")
                     yield f"data: {json.dumps(final_event)}\n\n"
                     break
-                
+
                 # Otherwise, send a keep-alive comment and wait a bit
                 else:
                     yield ": keep-alive\n\n"
@@ -413,10 +460,10 @@ async def refresh_events():
                 logger.error(f"Error in event stream: {e}")
                 error_event = {'type': 'error', 'message': f'Error in event stream: {str(e)}', 'log_level': 'error'}
                 yield f"data: {json.dumps(error_event)}\n\n"
-                connected = False
-    
+                break
+
     return StreamingResponse(
-        event_generator(), 
+        event_generator(),
         media_type="text/event-stream",
         headers={
             "Cache-Control": "no-cache",
