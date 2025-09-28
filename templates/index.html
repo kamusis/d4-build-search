@@ -179,6 +179,12 @@
             color: var(--accent-color);
             font-size: 1.2em;
         }
+
+        .translation-note {
+            margin-bottom: 15px;
+            color: #bbb;
+            font-style: italic;
+        }
         
         .class-section {
             margin-bottom: 30px;
@@ -307,9 +313,10 @@
     <nav class="main-nav">
         <div class="container">
             <ul class="nav-list">
-                <li><a href="/" class="nav-item active">Search</a></li>
-                <li><a href="/tier-list" class="nav-item">Equipment Tier List</a></li>
-                <li><a href="#" class="nav-item" id="refresh-data-link">Refresh Data</a></li>
+                <li><a href="/" class="nav-item {% if active_page == 'search' %}active{% endif %}">Search</a></li>
+                <li><a href="/tier-list" class="nav-item {% if active_page == 'tier-list' %}active{% endif %}">Equipment Tier List</a></li>
+                <li><a href="/unique-translations" class="nav-item {% if active_page == 'unique-reference' %}active{% endif %}">Unique Name Reference</a></li>
+                <li><a href="/refresh-data" class="nav-item {% if active_page == 'refresh' %}active{% endif %}" id="refresh-data-link">Refresh Data</a></li>
             </ul>
         </div>
     </nav>
@@ -322,7 +329,7 @@
                     <input type="text" id="equipment_name" name="equipment_name" 
                            placeholder="e.g., Andariel's Visage, Harlequin Crest..." 
                            required
-                           value="{{ equipment_name if equipment_name else '' }}">
+                           value="{{ original_query if original_query is defined else equipment_name if equipment_name else '' }}">
                 </div>
                 <button type="submit" id="search-btn">Search Builds</button>
             </form>
@@ -334,6 +341,11 @@
                 <div class="search-count">
                     Found {{ results|length }} builds using "{{ equipment_name }}"
                 </div>
+                {% if original_query is defined and search_query is defined and original_query != search_query %}
+                <div class="translation-note">
+                    Showing results for "{{ search_query }}" translated from "{{ original_query }}".
+                </div>
+                {% endif %}
                 
                 <!-- Group results by class -->
                 {% set classes = {} %}
@@ -403,13 +415,18 @@
         });
         
         // Add confirmation dialog for refresh data
-        document.getElementById('refresh-data-link').addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            if (confirm('Warning: Refreshing data will scrape all build pages from MaxRoll.gg and may take 10 minutes or longer to complete. During this time, the server will be busy and may be less responsive.\n\nAre you sure you want to continue?')) {
-                window.location.href = '/refresh-data';
-            }
-        });
+        const refreshDataLink = document.getElementById('refresh-data-link');
+        if (refreshDataLink) {
+            refreshDataLink.addEventListener('click', function(e) {
+                if (refreshDataLink.getAttribute('href') === '/refresh-data') {
+                    e.preventDefault();
+                }
+
+                if (confirm('Warning: Refreshing data will scrape all build pages from MaxRoll.gg and may take 10 minutes or longer to complete. During this time, the server will be busy and may be less responsive.\n\nAre you sure you want to continue?')) {
+                    window.location.href = '/refresh-data';
+                }
+            });
+        }
     </script>
 </body>
 </html>

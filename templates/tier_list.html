@@ -318,9 +318,10 @@
     <nav class="main-nav">
         <div class="container">
             <ul class="nav-list">
-                <li><a href="/" class="nav-item">Search</a></li>
-                <li><a href="/tier-list" class="nav-item active">Equipment Tier List</a></li>
-                <li><a href="#" class="nav-item" id="refresh-data-link">Refresh Data</a></li>
+                <li><a href="/" class="nav-item {% if active_page == 'search' %}active{% endif %}">Search</a></li>
+                <li><a href="/tier-list" class="nav-item {% if active_page == 'tier-list' %}active{% endif %}">Equipment Tier List</a></li>
+                <li><a href="/unique-translations" class="nav-item {% if active_page == 'unique-reference' %}active{% endif %}">Unique Name Reference</a></li>
+                <li><a href="/refresh-data" class="nav-item {% if active_page == 'refresh' %}active{% endif %}" id="refresh-data-link">Refresh Data</a></li>
             </ul>
         </div>
     </nav>
@@ -410,13 +411,18 @@
         }
         
         // Add confirmation dialog for refresh data
-        document.getElementById('refresh-data-link').addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            if (confirm('Warning: Refreshing data will scrape all build pages from MaxRoll.gg and may take 10 minutes or longer to complete. During this time, the server will be busy and may be less responsive.\n\nAre you sure you want to continue?')) {
-                window.location.href = '/refresh-data';
-            }
-        });
+        const refreshDataLink = document.getElementById('refresh-data-link');
+        if (refreshDataLink) {
+            refreshDataLink.addEventListener('click', function(e) {
+                if (refreshDataLink.getAttribute('href') === '/refresh-data') {
+                    e.preventDefault();
+                }
+
+                if (confirm('Warning: Refreshing data will scrape all build pages from MaxRoll.gg and may take 10 minutes or longer to complete. During this time, the server will be busy and may be less responsive.\n\nAre you sure you want to continue?')) {
+                    window.location.href = '/refresh-data';
+                }
+            });
+        }
     </script>
 </body>
 </html>
