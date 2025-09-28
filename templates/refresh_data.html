@@ -93,11 +93,52 @@
             align-items: center;
             margin-bottom: 20px;
         }
-        
+
         .refresh-title {
             font-size: 1.8em;
             color: var(--accent-color);
             margin: 0;
+        }
+
+        .button-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .refresh-button {
+            border: none;
+            border-radius: 4px;
+            padding: 10px 18px;
+            font-size: 1em;
+            font-weight: bold;
+            cursor: pointer;
+            background-color: #2a2a2a;
+            color: var(--text-color);
+            transition: background-color 0.2s ease, transform 0.2s ease;
+        }
+
+        .refresh-button.primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .refresh-button:hover:not(:disabled) {
+            background-color: var(--accent-color);
+            color: white;
+            transform: translateY(-1px);
+        }
+
+        .refresh-button:disabled {
+            cursor: not-allowed;
+            opacity: 0.6;
+            transform: none;
+        }
+
+        .button-hint {
+            margin: 0 0 20px;
+            color: #aaa;
         }
         
         .progress-container {
@@ -174,6 +215,10 @@
         .status-error {
             color: #ff4040;
         }
+
+        .status-warning {
+            color: #ffcc00;
+        }
         
         .back-button {
             display: inline-block;
@@ -220,22 +265,29 @@
             <div class="refresh-header">
                 <h2 class="refresh-title">Refreshing Data</h2>
             </div>
-            
-            <div class="status-container">
-                <div class="status-text status-running" id="status-text">Status: Running...</div>
-                <div id="build-count">Builds: 0/0</div>
+
+            <div class="button-group">
+                <button class="refresh-button primary" data-refresh-mode="real">Start Full Refresh</button>
+                <button class="refresh-button" data-refresh-mode="fake">Run Fake Refresh (20s)</button>
             </div>
-            
+
+            <p class="button-hint">Use the fake refresh to validate the progress updates without triggering the full scraper.</p>
+
+            <div class="status-container">
+                <div class="status-text" id="status-text">Status: Waiting to start</div>
+                <div id="build-count">Builds: 0/?</div>
+            </div>
+
             <div class="progress-container">
                 <div class="progress-bar" id="progress-bar">0%</div>
             </div>
-            
+
             <div class="log-container" id="log-container">
-                <div class="log-entry log-info">Starting data refresh process...</div>
+                <div class="log-entry log-info">Select a refresh option to begin.</div>
             </div>
-            
+
             <div id="completion-message" style="display: none;">
-                <p>Data refresh completed successfully! You can now:</p>
+                <p id="completion-text">Refresh completed successfully! You can now:</p>
                 <div style="display: flex; gap: 15px; margin-top: 15px;">
                     <a href="/" class="back-button">Return to Search</a>
                     <a href="/tier-list" class="back-button">View Equipment Tier List</a>
@@ -250,129 +302,210 @@
     </div>
     
     <script>
-        // Debug mode - set to true to see more console logs
-        const DEBUG = true;
-        
-        // DOM elements
-        const refreshDataLink = document.getElementById('refresh-data-link');
-        if (refreshDataLink) {
-            refreshDataLink.addEventListener('click', function(e) {
-                if (refreshDataLink.getAttribute('href') === '/refresh-data') {
-                    e.preventDefault();
-                }
-
-                if (confirm('Warning: Refreshing data will scrape all build pages from MaxRoll.gg and may take 10 minutes or longer to complete. During this time, the server will be busy and may be less responsive.\n\nAre you sure you want to continue?')) {
-                    window.location.href = '/refresh-data';
-                }
-            });
-        }
-
         const logContainer = document.getElementById('log-container');
         const progressBar = document.getElementById('progress-bar');
         const statusText = document.getElementById('status-text');
         const buildCount = document.getElementById('build-count');
         const completionMessage = document.getElementById('completion-message');
-        
-        // Clear any existing log entries
-        logContainer.innerHTML = '';
-        
+        const completionText = document.getElementById('completion-text');
+        const refreshButtons = document.querySelectorAll('[data-refresh-mode]');
+
+        const REFRESH_CONFIG = {
+            real: {
+                startUrl: '/api/refresh-data',
+                eventsUrl: '/api/refresh-events',
+                label: 'Full data refresh',
+                completion: 'Data refresh completed successfully! You can now:',
+                confirm: 'Warning: Refreshing data will scrape all build pages from MaxRoll.gg and may take 10 minutes or longer to complete. During this time, the server will be busy and may be less responsive.\n\nDo you want to continue?'
+            },
+            fake: {
+                startUrl: '/api/refresh-data-fake',
+                eventsUrl: '/api/refresh-events',
+                label: 'Fake refresh (20s test)',
+                completion: 'Fake refresh completed. The UI update logic is working as expected.'
+            }
+        };
+
+        let eventSource = null;
+        let refreshActive = false;
+        let lastKnownTotal = 0;
+        let activeMode = null;
+
+        function setButtonsDisabled(disabled) {
+            refreshButtons.forEach(button => {
+                button.disabled = disabled;
+            });
+        }
+
+        function resetProgressDisplay(label) {
+            statusText.textContent = label ? `Status: Initializing ${label}` : 'Status: Running...';
+            statusText.className = 'status-text status-running';
+            progressBar.style.width = '0%';
+            progressBar.textContent = '0%';
+            buildCount.textContent = 'Builds: 0/?';
+            completionMessage.style.display = 'none';
+            logContainer.innerHTML = '';
+            lastKnownTotal = 0;
+        }
+
+        function finishRefresh() {
+            refreshActive = false;
+            activeMode = null;
+            setButtonsDisabled(false);
+            if (eventSource) {
+                eventSource.close();
+                eventSource = null;
+            }
+        }
+
         // Function to add a log entry
         function addLogEntry(message, type = 'info') {
-            console.log(`[${type}] ${message}`);
-            
             const entry = document.createElement('div');
             entry.className = `log-entry log-${type}`;
             entry.textContent = message;
             logContainer.appendChild(entry);
             logContainer.scrollTop = logContainer.scrollHeight;
         }
-        
+
         // Function to update progress
         function updateProgress(current, total) {
-            console.log(`Progress: ${current}/${total}`);
-            
-            const percentage = Math.round((current / total) * 100);
+            const parsedCurrent = Number(current);
+            const parsedTotal = Number(total);
+            const numericCurrent = Number.isFinite(parsedCurrent) ? parsedCurrent : 0;
+            const numericTotal = Number.isFinite(parsedTotal) ? parsedTotal : 0;
+
+            if (numericTotal > 0) {
+                lastKnownTotal = numericTotal;
+            }
+
+            const effectiveTotal = lastKnownTotal > 0 ? lastKnownTotal : 0;
+            const percentage = effectiveTotal > 0 ? Math.min(100, Math.round((numericCurrent / effectiveTotal) * 100)) : 0;
+
             progressBar.style.width = `${percentage}%`;
             progressBar.textContent = `${percentage}%`;
-            buildCount.textContent = `Builds: ${current}/${total}`;
+            const totalLabel = lastKnownTotal > 0 ? lastKnownTotal : '?';
+            buildCount.textContent = `Builds: ${numericCurrent}/${totalLabel}`;
         }
-        
+
         // Function to mark as completed
-        function markCompleted(buildCount) {
-            console.log(`Completed with ${buildCount} builds`);
-            
+        function markCompleted(buildCountValue) {
             statusText.textContent = 'Status: Completed';
             statusText.className = 'status-text status-completed';
             progressBar.style.width = '100%';
             progressBar.textContent = '100%';
             completionMessage.style.display = 'block';
-            addLogEntry(`Data refresh completed successfully! Found ${buildCount} builds.`, 'info');
+            const config = activeMode ? REFRESH_CONFIG[activeMode] : null;
+            const completionLabel = config ? config.completion : 'Refresh completed successfully.';
+            completionText.textContent = completionLabel;
+            if (Number.isFinite(buildCountValue) && buildCountValue > 0) {
+                lastKnownTotal = buildCountValue;
+                buildCount.textContent = `Builds: ${buildCountValue}/${buildCountValue}`;
+            }
+            addLogEntry(`Refresh completed successfully. Found ${buildCountValue} builds.`, 'info');
+            finishRefresh();
         }
-        
+
         // Function to mark as error
         function markError(error) {
-            console.error(`Error: ${error}`);
-            
             statusText.textContent = 'Status: Error';
             statusText.className = 'status-text status-error';
             addLogEntry(`Error: ${error}`, 'error');
+            finishRefresh();
         }
-        
-        // Add initial log entry
-        addLogEntry('Starting data refresh process...', 'info');
-        
-        // Start the data refresh process
-        fetch('/api/refresh-data')
-            .then(response => response.json())
-            .then(data => {
-                addLogEntry('Refresh process started. Connecting to event stream...', 'info');
-                
-                // Connect to the event stream
-                const eventSource = new EventSource('/api/refresh-events');
-                
-                // Handle messages
-                eventSource.onmessage = function(event) {
-                    console.log('Raw event received:', event.data);
-                    
-                    try {
-                        const data = JSON.parse(event.data);
-                        console.log('Parsed event:', data);
-                        
-                        if (data.type === 'log') {
-                            addLogEntry(data.message, data.log_level || 'info');
-                        } else if (data.type === 'progress') {
-                            updateProgress(data.current, data.total);
-                        } else if (data.type === 'completed') {
-                            markCompleted(data.build_count);
-                            eventSource.close();
-                        } else if (data.type === 'error') {
-                            markError(data.message);
-                            eventSource.close();
-                        } else {
-                            addLogEntry(`Unknown event type: ${data.type}`, 'warning');
-                        }
-                    } catch (error) {
-                        console.error('Error processing event:', error);
-                        addLogEntry(`Error processing event: ${error.message}`, 'error');
+
+        function connectToEventStream(config) {
+            if (eventSource) {
+                eventSource.close();
+            }
+
+            eventSource = new EventSource(config.eventsUrl);
+
+            eventSource.onmessage = function(event) {
+                try {
+                    const data = JSON.parse(event.data);
+
+                    if (data.type === 'log') {
+                        addLogEntry(data.message, data.log_level || 'info');
+                    } else if (data.type === 'progress') {
+                        updateProgress(data.current, data.total);
+                    } else if (data.type === 'completed') {
+                        markCompleted(data.build_count);
+                    } else if (data.type === 'error') {
+                        markError(data.message);
+                    } else {
+                        addLogEntry(`Unknown event type: ${data.type}`, 'warning');
                     }
-                };
-                
-                // Handle connection open
-                eventSource.onopen = function() {
-                    addLogEntry('Connected to event stream', 'info');
-                };
-                
-                // Handle errors
-                eventSource.onerror = function(error) {
-                    console.error('EventSource error:', error);
-                    addLogEntry('Connection to server lost. The refresh process may still be running in the background.', 'warning');
-                    eventSource.close();
-                };
-            })
-            .catch(error => {
-                console.error('Fetch error:', error);
-                markError(`Failed to start refresh process: ${error.message}`);
+                } catch (parseError) {
+                    addLogEntry(`Error processing event: ${parseError.message}`, 'error');
+                }
+            };
+
+            eventSource.onopen = function() {
+                const modeLabel = config.label || 'Refresh';
+                addLogEntry('Connected to event stream', 'info');
+                statusText.textContent = `Status: Running (${modeLabel})`;
+            };
+
+            eventSource.onerror = function() {
+                if (!refreshActive) {
+                    if (eventSource) {
+                        eventSource.close();
+                        eventSource = null;
+                    }
+                    return;
+                }
+                addLogEntry('Connection to server lost. The refresh process may still be running in the background.', 'warning');
+                statusText.textContent = 'Status: Connection lost';
+                statusText.className = 'status-text status-warning';
+                finishRefresh();
+            };
+        }
+
+        function startRefresh(mode) {
+            const config = REFRESH_CONFIG[mode];
+            if (!config) {
+                return;
+            }
+
+            if (refreshActive) {
+                addLogEntry('A refresh is already in progress. Please wait for it to finish.', 'warning');
+                return;
+            }
+
+            if (config.confirm && !confirm(config.confirm)) {
+                return;
+            }
+
+            refreshActive = true;
+            activeMode = mode;
+            setButtonsDisabled(true);
+            resetProgressDisplay(config.label);
+            addLogEntry(`${config.label} starting...`, 'info');
+
+            fetch(config.startUrl)
+                .then(response => {
+                    if (!response.ok) {
+                        return response.json().then(body => {
+                            throw new Error(body.message || 'Failed to start refresh');
+                        });
+                    }
+                    return response.json();
+                })
+                .then(() => {
+                    addLogEntry('Refresh process started. Connecting to event stream...', 'info');
+                    connectToEventStream(config);
+                })
+                .catch(error => {
+                    markError(error.message);
+                });
+        }
+
+        refreshButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const mode = button.getAttribute('data-refresh-mode');
+                startRefresh(mode);
             });
+        });
     </script>
 </body>
 </html>
