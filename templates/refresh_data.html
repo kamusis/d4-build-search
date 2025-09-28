@@ -249,15 +249,23 @@
     </div>
     
     <script>
-        // WebSocket connection for real-time updates
+        // Debug mode - set to true to see more console logs
+        const DEBUG = true;
+        
+        // DOM elements
         const logContainer = document.getElementById('log-container');
         const progressBar = document.getElementById('progress-bar');
         const statusText = document.getElementById('status-text');
         const buildCount = document.getElementById('build-count');
         const completionMessage = document.getElementById('completion-message');
         
+        // Clear any existing log entries
+        logContainer.innerHTML = '';
+        
         // Function to add a log entry
         function addLogEntry(message, type = 'info') {
+            console.log(`[${type}] ${message}`);
+            
             const entry = document.createElement('div');
             entry.className = `log-entry log-${type}`;
             entry.textContent = message;
@@ -267,6 +275,8 @@
         
         // Function to update progress
         function updateProgress(current, total) {
+            console.log(`Progress: ${current}/${total}`);
+            
             const percentage = Math.round((current / total) * 100);
             progressBar.style.width = `${percentage}%`;
             progressBar.textContent = `${percentage}%`;
@@ -275,6 +285,8 @@
         
         // Function to mark as completed
         function markCompleted(buildCount) {
+            console.log(`Completed with ${buildCount} builds`);
+            
             statusText.textContent = 'Status: Completed';
             statusText.className = 'status-text status-completed';
             progressBar.style.width = '100%';
@@ -285,39 +297,67 @@
         
         // Function to mark as error
         function markError(error) {
+            console.error(`Error: ${error}`);
+            
             statusText.textContent = 'Status: Error';
             statusText.className = 'status-text status-error';
             addLogEntry(`Error: ${error}`, 'error');
         }
         
+        // Add initial log entry
+        addLogEntry('Starting data refresh process...', 'info');
+        
         // Start the data refresh process
         fetch('/api/refresh-data')
-            .then(response => {
+            .then(response => response.json())
+            .then(data => {
+                addLogEntry('Refresh process started. Connecting to event stream...', 'info');
+                
+                // Connect to the event stream
                 const eventSource = new EventSource('/api/refresh-events');
                 
+                // Handle messages
                 eventSource.onmessage = function(event) {
-                    const data = JSON.parse(event.data);
+                    console.log('Raw event received:', event.data);
                     
-                    if (data.type === 'log') {
-                        addLogEntry(data.message, data.log_level || 'info');
-                    } else if (data.type === 'progress') {
-                        updateProgress(data.current, data.total);
-                    } else if (data.type === 'completed') {
-                        markCompleted(data.build_count);
-                        eventSource.close();
-                    } else if (data.type === 'error') {
-                        markError(data.message);
-                        eventSource.close();
+                    try {
+                        const data = JSON.parse(event.data);
+                        console.log('Parsed event:', data);
+                        
+                        if (data.type === 'log') {
+                            addLogEntry(data.message, data.log_level || 'info');
+                        } else if (data.type === 'progress') {
+                            updateProgress(data.current, data.total);
+                        } else if (data.type === 'completed') {
+                            markCompleted(data.build_count);
+                            eventSource.close();
+                        } else if (data.type === 'error') {
+                            markError(data.message);
+                            eventSource.close();
+                        } else {
+                            addLogEntry(`Unknown event type: ${data.type}`, 'warning');
+                        }
+                    } catch (error) {
+                        console.error('Error processing event:', error);
+                        addLogEntry(`Error processing event: ${error.message}`, 'error');
                     }
                 };
                 
-                eventSource.onerror = function() {
+                // Handle connection open
+                eventSource.onopen = function() {
+                    addLogEntry('Connected to event stream', 'info');
+                };
+                
+                // Handle errors
+                eventSource.onerror = function(error) {
+                    console.error('EventSource error:', error);
                     addLogEntry('Connection to server lost. The refresh process may still be running in the background.', 'warning');
                     eventSource.close();
                 };
             })
             .catch(error => {
-                markError('Failed to start refresh process: ' + error.message);
+                console.error('Fetch error:', error);
+                markError(`Failed to start refresh process: ${error.message}`);
             });
     </script>
 </body>
