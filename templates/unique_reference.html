@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diablo 4 Unique Item Name Reference</title>
+    <style>
+        :root {
+            --primary-color: #8b0000;
+            --secondary-color: #333;
+            --text-color: #eee;
+            --bg-color: #121212;
+            --card-bg: #1e1e1e;
+            --accent-color: #ff4040;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-bottom: 30px;
+            border-bottom: 4px solid #470000;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .main-nav {
+            background-color: #1a1a1a;
+            border-bottom: 1px solid #333;
+            margin-bottom: 30px;
+        }
+
+        .nav-list {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            flex-wrap: wrap;
+        }
+
+        .nav-item {
+            display: block;
+            padding: 15px 20px;
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: bold;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .nav-item:hover {
+            background-color: #252525;
+            color: var(--accent-color);
+        }
+
+        .nav-item.active {
+            border-bottom-color: var(--primary-color);
+            color: var(--accent-color);
+        }
+
+        .reference-card {
+            background-color: var(--card-bg);
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .reference-intro {
+            margin-bottom: 20px;
+        }
+
+        .reference-intro p {
+            margin: 0 0 10px 0;
+        }
+
+        .note {
+            color: #bbbbbb;
+            font-size: 0.95em;
+        }
+
+        .filter-bar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .filter-bar input[type="text"] {
+            flex: 1 1 250px;
+            padding: 12px;
+            border: 2px solid #333;
+            background-color: #252525;
+            color: var(--text-color);
+            border-radius: 4px;
+            font-size: 1em;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #333;
+            text-align: left;
+        }
+
+        th {
+            background-color: #1f1f1f;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        tr:hover {
+            background-color: #1d1d1d;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 4px;
+            background-color: var(--primary-color);
+            color: white;
+            font-size: 0.85em;
+            margin-left: 10px;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            color: #777;
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 20px;
+            color: #aaa;
+            font-style: italic;
+        }
+
+        @media (max-width: 768px) {
+            th, td {
+                padding: 10px 12px;
+            }
+
+            .filter-bar {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Diablo 4 Unique Item Name Reference</h1>
+        <p>Cross-reference English, Simplified Chinese, and Traditional Chinese item names</p>
+    </header>
+
+    <nav class="main-nav">
+        <div class="container">
+            <ul class="nav-list">
+                <li><a href="/" class="nav-item {% if active_page == 'search' %}active{% endif %}">Search</a></li>
+                <li><a href="/tier-list" class="nav-item {% if active_page == 'tier-list' %}active{% endif %}">Equipment Tier List</a></li>
+                <li><a href="/unique-translations" class="nav-item {% if active_page == 'unique-reference' %}active{% endif %}">Unique Name Reference</a></li>
+                <li><a href="/refresh-data" class="nav-item {% if active_page == 'refresh' %}active{% endif %}" id="refresh-data-link">Refresh Data</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="reference-card">
+            <div class="reference-intro">
+                <p>Use this list to quickly match Diablo 4 unique item names across languages. The search below filters all columns, making it easier to find the term you need.</p>
+                <p class="note">Data compiled from official Diablo IV tooltips and regional community resources.</p>
+            </div>
+
+            <div class="filter-bar">
+                <input type="text" id="name-filter" placeholder="Filter by any language...">
+                <div class="result-count" id="result-count">Total items: {{ items|length }}</div>
+            </div>
+
+            <div class="table-wrapper">
+                <table id="reference-table">
+                    <thead>
+                        <tr>
+                            <th>English Name</th>
+                            <th>Simplified Chinese</th>
+                            <th>Traditional Chinese</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% if items and items|length > 0 %}
+                            {% for item in items %}
+                            <tr>
+                                <td>{{ item.english }}</td>
+                                <td>{{ item.simplified }}</td>
+                                <td>{{ item.traditional }}</td>
+                            </tr>
+                            {% endfor %}
+                        {% else %}
+                            <tr>
+                                <td colspan="3" class="no-results">No item data available.</td>
+                            </tr>
+                        {% endif %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>Looking for builds that use these items? Head back to the <a href="/">search page</a> or explore the <a href="/tier-list">tier list</a>.</p>
+        </div>
+    </div>
+
+    <script>
+        const filterInput = document.getElementById('name-filter');
+        const table = document.getElementById('reference-table');
+        const resultCount = document.getElementById('result-count');
+        const refreshDataLink = document.getElementById('refresh-data-link');
+
+        function updateResultCount(visibleRows) {
+            const total = table.tBodies[0].rows.length;
+            if (visibleRows === total) {
+                resultCount.textContent = `Total items: ${total}`;
+            } else {
+                resultCount.textContent = `Showing ${visibleRows} of ${total} items`;
+            }
+        }
+
+        function filterTable() {
+            const query = filterInput.value.trim().toLowerCase();
+            let visibleRows = 0;
+
+            Array.from(table.tBodies[0].rows).forEach(row => {
+                const cells = Array.from(row.cells);
+                const matches = cells.some(cell => cell.textContent.toLowerCase().includes(query));
+
+                if (matches) {
+                    row.style.display = '';
+                    visibleRows += 1;
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+
+            updateResultCount(visibleRows);
+        }
+
+        if (filterInput) {
+            filterInput.addEventListener('input', filterTable);
+        }
+
+        if (refreshDataLink) {
+            refreshDataLink.addEventListener('click', function(e) {
+                if (refreshDataLink.getAttribute('href') === '/refresh-data') {
+                    e.preventDefault();
+                }
+
+                if (confirm('Warning: Refreshing data will scrape all build pages from MaxRoll.gg and may take 10 minutes or longer to complete. During this time, the server will be busy and may be less responsive.\n\nAre you sure you want to continue?')) {
+                    window.location.href = '/refresh-data';
+                }
+            });
+        }
+    </script>
+</body>
+</html>

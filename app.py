@@ -9,7 +9,7 @@ import json
 import asyncio
 import time
 from queue import Queue
-from typing import Dict, List, Any, Optional, AsyncGenerator
+from typing import Dict, List, Any, Optional, AsyncGenerator, Tuple
 from scraper import Scraper
 from contextlib import asynccontextmanager
 
@@ -57,10 +57,101 @@ templates = Jinja2Templates(directory="templates")
 # Initialize scraper
 scraper = Scraper()
 
+ITEM_TRANSLATION_FILE = "all_items.json"
+item_translations: List[Dict[str, str]] = []
+english_canonical_map: Dict[str, str] = {}
+chinese_to_english_map: Dict[str, str] = {}
+
+
+def load_item_translations() -> None:
+    """Load localized unique item names for lookup and display."""
+
+    global item_translations, english_canonical_map, chinese_to_english_map
+
+    if not os.path.exists(ITEM_TRANSLATION_FILE):
+        logger.warning("Item translation file not found: %s", ITEM_TRANSLATION_FILE)
+        item_translations = []
+        english_canonical_map = {}
+        chinese_to_english_map = {}
+        return
+
+    try:
+        with open(ITEM_TRANSLATION_FILE, "r", encoding="utf-8") as f:
+            data = json.load(f)
+        if not isinstance(data, list):
+            raise ValueError("Item translation data must be a list of entries")
+    except (json.JSONDecodeError, ValueError) as exc:
+        logger.error("Failed to load item translations: %s", exc)
+        item_translations = []
+        english_canonical_map = {}
+        chinese_to_english_map = {}
+        return
+
+    item_translations = []
+    english_canonical_map = {}
+    chinese_to_english_map = {}
+
+    for entry in data:
+        if not isinstance(entry, dict):
+            continue
+
+        english = entry.get("english", "").strip()
+        simplified = entry.get("simplified", "").strip()
+        traditional = entry.get("traditional", "").strip()
+
+        record = {
+            "english": english,
+            "simplified": simplified,
+            "traditional": traditional
+        }
+        item_translations.append(record)
+
+        if english:
+            english_canonical_map[english.casefold()] = english
+
+        for localized_name in (simplified, traditional):
+            if localized_name:
+                chinese_to_english_map[localized_name.casefold()] = english or localized_name
+
+
+def get_canonical_equipment_name(query: str) -> Tuple[str, bool]:
+    """Resolve a user query to the canonical English item name."""
+
+    normalized = query.casefold()
+
+    if normalized in chinese_to_english_map:
+        return chinese_to_english_map[normalized], True
+
+    if normalized in english_canonical_map:
+        return english_canonical_map[normalized], False
+
+    for entry in item_translations:
+        english = (entry.get("english") or "").strip()
+        simplified = (entry.get("simplified") or "").strip()
+        traditional = (entry.get("traditional") or "").strip()
+
+        if simplified and normalized in simplified.casefold():
+            return english or simplified, True
+
+        if traditional and normalized in traditional.casefold():
+            return english or traditional, True
+
+        if english and normalized in english.casefold():
+            return english, False
+
+    return query, False
+
+
+load_item_translations()
+
 @app.get("/", response_class=HTMLResponse)
 async def home(request: Request):
     """Render the home page."""
-    return templates.TemplateResponse("index.html", {"request": request, "results": None})
+    return templates.TemplateResponse("index.html", {
+        "request": request,
+        "results": None,
+        "active_page": "search"
+    })
 
 @app.post("/search", response_class=HTMLResponse)
 async def search(request: Request, equipment_name: str = Form(...)):
@@ -70,20 +161,58 @@ async def search(request: Request, equipment_name: str = Form(...)):
     Args:
         equipment_name: The name of the equipment to search for.
     """
-    logger.info(f"Searching for builds with equipment: {equipment_name}")
-    
-    # Search for builds using the equipment name
-    results = scraper.search_builds_by_equipment(equipment_name)
-    
-    # Log the number of results found
-    logger.info(f"Found {len(results)} builds matching '{equipment_name}'")
-    
-    # Return the template response with the search results
+    original_query = equipment_name.strip()
+
+    canonical_name, used_translation = get_canonical_equipment_name(original_query)
+
+    if used_translation:
+        logger.info(
+            "Resolved localized equipment name '%s' to canonical '%s'",
+            original_query,
+            canonical_name
+        )
+    else:
+        logger.info("Searching for builds with equipment: %s", canonical_name)
+
+    results = scraper.search_builds_by_equipment(canonical_name)
+
+    display_name = (
+        canonical_name
+        if canonical_name.casefold() == original_query.casefold()
+        else f"{original_query} ({canonical_name})"
+    )
+
+    logger.info("Found %d builds matching '%s'", len(results), canonical_name)
+
     return templates.TemplateResponse("index.html", {
         "request": request,
         "results": results,
-        "equipment_name": equipment_name
+        "equipment_name": display_name,
+        "active_page": "search",
+        "search_query": canonical_name,
+        "original_query": original_query
     })
+
+@app.get("/unique-translations", response_class=HTMLResponse)
+async def unique_translations(request: Request):
+    """Display a localized reference table for all unique items."""
+
+    if not item_translations:
+        load_item_translations()
+
+    sorted_items = sorted(
+        item_translations,
+        key=lambda entry: (entry.get("english") or "").casefold()
+    )
+
+    return templates.TemplateResponse(
+        "unique_reference.html",
+        {
+            "request": request,
+            "items": sorted_items,
+            "active_page": "unique-reference"
+        }
+    )
 
 @app.get("/build/{build_url:path}", response_class=HTMLResponse)
 async def view_build(request: Request, build_url: str):
@@ -120,7 +249,7 @@ async def view_build(request: Request, build_url: str):
 @app.get("/refresh-data", response_class=HTMLResponse)
 async def refresh_data_page(request: Request):
     """Show the refresh data page with real-time progress."""
-    return templates.TemplateResponse("refresh_data.html", {"request": request})
+    return templates.TemplateResponse("refresh_data.html", {"request": request, "active_page": "refresh"})
 
 @app.get("/api/refresh-data")
 async def start_refresh_data(background_tasks: BackgroundTasks):
@@ -391,7 +520,8 @@ async def tier_list(request: Request):
         "request": request,
         "tiers": tiers,
         "tier_thresholds": tier_thresholds,
-        "total_items": len(sorted_equipment)
+        "total_items": len(sorted_equipment),
+        "active_page": "tier-list"
     })
 
 if __name__ == "__main__":
