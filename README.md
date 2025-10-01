@@ -6,6 +6,7 @@ A tool to search Diablo 4 builds based on specific unique equipment (including M
 
 - Scrape build data from https://maxroll.gg/d4/build-guides
 - Search builds by specific unique equipment, class, or tags
+- **Multilingual support**: Search using English, Simplified Chinese (简体中文), or Traditional Chinese (繁體中文) equipment names
 - Web interface with search, build details, and equipment tier list
 - Real-time progress tracking during data refresh
 
@@ -29,18 +30,21 @@ You can also use the scraper directly from the command line:
 
 ```bash
 # Scrape builds and save to JSON file
-python scraper.py --scrape
+python scraper.py --get-all-builds
 
-# Search for builds using specific equipment
+# Search for builds using specific equipment (supports English and Chinese names)
 python scraper.py --search "Harlequin Crest"
+python scraper.py --search "谐角之冠"
+python scraper.py --search "諧角之冠"
 
-# Search for builds by class
-python scraper.py --search --class Barbarian
+# Filter search results by class
+python scraper.py --search "雷神之戒" --class Druid
+python scraper.py --search "破碎冬镜" --class Sorcerer
 
-# Search for builds with specific tags
-python scraper.py --search --tags endgame,hardcore
+# Filter search results by tags
+python scraper.py --search "Harlequin Crest" --tags endgame
 
-# Combine search parameters
+# Combine multiple filters
 python scraper.py --search "Harlequin Crest" --class Sorcerer --tags endgame
 ```
 
@@ -65,6 +69,30 @@ python scraper.py --search "Harlequin Crest" --class Sorcerer --tags endgame
 - Click "Refresh Data" from any page to update the build database
 - A confirmation dialog will warn about the processing time
 - The refresh page shows real-time progress and logs
+
+## Data Files
+
+### all_items.json
+Contains multilingual names for all Diablo 4 unique items:
+- English names
+- Simplified Chinese (简体中文)
+- Traditional Chinese (繁體中文)
+
+The data is scraped from https://diablo4.cc and includes 160+ unique items sorted alphabetically.
+
+### Updating Item Names
+
+To refresh the unique item names database:
+
+```bash
+python scripts/scrape_uniques.py
+```
+
+This will:
+1. Fetch all unique items from diablo4.cc
+2. Retrieve names in English, Simplified Chinese, and Traditional Chinese
+3. Save results to `scraped_items.json`
+4. You can then copy the data to `all_items.json`
 
 ## How it Works
 

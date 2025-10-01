@@ -7,6 +7,7 @@ import time
 import argparse
 import re
 from typing import Dict, List, Any, Optional
+from item_translator import ItemTranslator
 
 # Platform detection for ChromeDriver path
 import platform
@@ -105,6 +106,9 @@ class Scraper:
         # Internal cache file for the scraper (different from the app's all_builds.json output file)
         self.builds_data_file = "scraper_cache.json"
         self.driver = None
+        
+        # Initialize item translator for Chinese name support
+        self.translator = ItemTranslator()
     
     def __del__(self):
         """
@@ -775,6 +779,8 @@ class Scraper:
     def search_builds_by_equipment(self, equipment_name: str) -> List[Dict[str, Any]]:
         """Search for builds that use a specific equipment item.
         
+        Supports both English and Chinese (Simplified/Traditional) equipment names.
+        
         Args:
             equipment_name: The name of the equipment item to search for.
             
@@ -789,6 +795,8 @@ class Scraper:
             with open("all_builds.json", 'w') as f:
                 json.dump(builds, f, indent=2)
         
+        # Translate Chinese name to English if needed
+        equipment_name = self.translator.translate_to_english(equipment_name)
         equipment_name = equipment_name.lower()
         
         matching_builds = []
@@ -838,6 +846,8 @@ if __name__ == "__main__":
         parser.add_argument("--get-all-builds", action="store_true", help="Get all builds from MaxRoll")
         parser.add_argument("--output", type=str, default="all_builds.json", help="Output file for builds data")
         parser.add_argument("--search", type=str, help="Search for builds that use a specific piece of equipment")
+        parser.add_argument("--class", type=str, dest="class_filter", help="Filter builds by class (e.g., Barbarian, Rogue)")
+        parser.add_argument("--tags", type=str, help="Filter builds by tags (comma-separated, e.g., endgame,hardcore)")
         parser.add_argument("--get-equipment", action="store_true", help="Get equipment for all builds")
         parser.add_argument("--build-url", type=str, help="URL of a specific build to get equipment for")
         
@@ -872,33 +882,63 @@ if __name__ == "__main__":
                 print(f"- {item['name']} ({item['type']}) - {item['category']}")
         elif args.search:
             matching_builds = scraper.search_builds_by_equipment(args.search)
-            print(f"Found {len(matching_builds)} builds that use '{args.search}':")
-            print("\nSearch Results:")
-            print("-" * 80)
             
-            # Group builds by class for better organization
-            builds_by_class = {}
-            for build in matching_builds:
-                class_name = build['class']
-                if class_name not in builds_by_class:
-                    builds_by_class[class_name] = []
-                builds_by_class[class_name].append(build)
+            # Apply class filter if specified
+            if args.class_filter:
+                class_filter_lower = args.class_filter.lower()
+                matching_builds = [b for b in matching_builds if b['class'].lower() == class_filter_lower]
+                print(f"Filtered by class: {args.class_filter}")
             
-            # Print builds grouped by class
-            for class_name, builds in sorted(builds_by_class.items()):
-                print(f"\n{class_name} Builds ({len(builds)}):")
-                print("-" * 40)
+            # Apply tags filter if specified
+            if args.tags:
+                tag_filters = [tag.strip().lower() for tag in args.tags.split(',')]
+                original_count = len(matching_builds)
                 
-                for build in builds:
-                    print(f"Title: {build['title']}")
-                    print(f"URL: {build['url']}")
-                    print(f"Difficulty: {build['difficulty']}")
-                    print(f"Item: {build['matched_item']} ({build['item_type']})")
-                    if build['category'] != 'Unknown':
-                        print(f"Category: {build['category']}")
-                    if build['description']:
-                        print(f"Description: {build['description']}")
+                # Load full build data to access tags
+                all_builds = scraper._load_builds()
+                build_tags_map = {b['url']: b.get('tags', []) for b in all_builds}
+                
+                # Filter builds that have ALL specified tags
+                filtered_builds = []
+                for build in matching_builds:
+                    build_tags = [tag.lower() for tag in build_tags_map.get(build['url'], [])]
+                    if all(tag in build_tags for tag in tag_filters):
+                        filtered_builds.append(build)
+                
+                matching_builds = filtered_builds
+                print(f"Filtered by tags: {args.tags} ({original_count} -> {len(matching_builds)} builds)")
+            
+            print(f"\nFound {len(matching_builds)} builds that use '{args.search}':")
+            
+            if len(matching_builds) == 0:
+                print("No builds found matching the criteria.")
+            else:
+                print("\nSearch Results:")
+                print("-" * 80)
+                
+                # Group builds by class for better organization
+                builds_by_class = {}
+                for build in matching_builds:
+                    class_name = build['class']
+                    if class_name not in builds_by_class:
+                        builds_by_class[class_name] = []
+                    builds_by_class[class_name].append(build)
+                
+                # Print builds grouped by class
+                for class_name, builds in sorted(builds_by_class.items()):
+                    print(f"\n{class_name} Builds ({len(builds)}):")
                     print("-" * 40)
+                    
+                    for build in builds:
+                        print(f"Title: {build['title']}")
+                        print(f"URL: {build['url']}")
+                        print(f"Difficulty: {build['difficulty']}")
+                        print(f"Item: {build['matched_item']} ({build['item_type']})")
+                        if build['category'] != 'Unknown':
+                            print(f"Category: {build['category']}")
+                        if build['description']:
+                            print(f"Description: {build['description']}")
+                        print("-" * 40)
         else:
             parser.print_help()
             
